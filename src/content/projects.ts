@@ -29,9 +29,9 @@ export const projects: Project[] = [
   },
   {
     slug: 'ai-experiment',
-    title: 'AI Experiment',
+    title: 'AI Visual Experiment',
     summary:
-      'Placeholder: a small prototype exploring model-assisted workflows, evaluation, and guardrails.',
+      'A lightweight visual experiment testing AI-assisted image-to-video workflow and mood direction.',
     coverImage: '/src/assets/projects/ai-experiment-cover.jpg',
     tags: ['AI', 'Prototype', 'Research'],
     featured: true,

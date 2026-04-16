@@ -93,13 +93,16 @@ export function CarConfigurator() {
           </p>
         </div>
 
-        <div className="case-video-placeholder" aria-label="YouTube video placeholder">
-          <strong>Video Placeholder</strong>
-          <p>
-            Replace this area with your YouTube embed later.
-            <br />
-            Suggested: 16:9 iframe or video player block.
-          </p>
+        <div className="case-video-embed" aria-label="Car Configurator YouTube video">
+          <iframe
+            className="case-video-embed__iframe"
+            title="Car Configurator video walkthrough"
+            src="https://www.youtube.com/embed/OL9nCV1RQnI"
+            loading="lazy"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
         </div>
       </section>
 
