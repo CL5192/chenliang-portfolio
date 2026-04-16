@@ -1,7 +1,3 @@
-import aiExperimentCover from '../assets/projects/ai-experiment-cover.svg'
-import carConfiguratorCover from '../assets/projects/car-configurator-cover.svg'
-import designWorkCover from '../assets/projects/design-work-cover.svg'
-
 /**
  * Single source of truth for portfolio projects.
  * Add a new row here, set `order` for list position, and toggle `featured` for the home page grid.
@@ -26,7 +22,7 @@ export const projects: Project[] = [
     title: 'Car Configurator',
     summary:
       'Placeholder: an interactive 3D configurator experience for exploring trims, colors, and options.',
-    coverImage: carConfiguratorCover,
+    coverImage: '/src/assets/projects/car-configurator-cover.jpg',
     tags: ['WebGL', 'Product', 'UX'],
     featured: true,
     order: 1,
@@ -36,7 +32,7 @@ export const projects: Project[] = [
     title: 'AI Experiment',
     summary:
       'Placeholder: a small prototype exploring model-assisted workflows, evaluation, and guardrails.',
-    coverImage: aiExperimentCover,
+    coverImage: '/src/assets/projects/ai-experiment-cover.jpg',
     tags: ['AI', 'Prototype', 'Research'],
     featured: true,
     order: 2,
@@ -46,7 +42,7 @@ export const projects: Project[] = [
     title: 'Design Work',
     summary:
       'Placeholder: visual design explorations, systems thinking, and handoff-ready specifications.',
-    coverImage: designWorkCover,
+    coverImage: '/src/assets/projects/design-work-cover.jpg',
     tags: ['UI', 'Systems', 'Brand'],
     featured: true,
     order: 3,
