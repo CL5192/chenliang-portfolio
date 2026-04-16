@@ -8,11 +8,15 @@ export function Home() {
 
   return (
     <>
-      <h1 className="page-title">Portfolio</h1>
-      <p className="page-lead">
-        Placeholder introduction: a short line about your focus (product engineering, design, creative
-        technology — swap this later).
-      </p>
+      <header className="home-hero">
+        <div className="home-hero__content">
+          <h1 className="home-hero__headline">Realtime 3D & Visualization Designer</h1>
+          <p className="home-hero__subline">
+            Background in concept design, creating interactive 3D demos and visual prototypes with Unreal
+            Engine and AI-assisted workflows.
+          </p>
+        </div>
+      </header>
 
       <PageSection title="Featured projects" id="featured">
         {featuredProjects.length > 0 ? (
