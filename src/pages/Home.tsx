@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom'
 import { PageSection } from '../components/PageSection'
+import { ProjectCard } from '../components/ProjectCard'
+import { getFeaturedProjectsSorted } from '../content/projects'
 
 export function Home() {
+  const featuredProjects = getFeaturedProjectsSorted()
+
   return (
     <>
       <h1 className="page-title">Portfolio</h1>
@@ -10,11 +14,19 @@ export function Home() {
         technology — swap this later).
       </p>
 
-      <PageSection title="Featured snapshot" id="snapshot">
-        <div className="placeholder-block">
-          Replace this block with a hero image, a short reel, or a highlighted case study when you are
-          ready.
-        </div>
+      <PageSection title="Featured projects" id="featured">
+        {featuredProjects.length > 0 ? (
+          <div className="card-grid">
+            {featuredProjects.map((project) => (
+              <ProjectCard key={project.slug} project={project} />
+            ))}
+          </div>
+        ) : (
+          <div className="placeholder-block">
+            No featured projects yet — set <code>featured: true</code> on entries in{' '}
+            <code>src/content/projects.ts</code>.
+          </div>
+        )}
       </PageSection>
 
       <PageSection title="What to explore next" id="next">

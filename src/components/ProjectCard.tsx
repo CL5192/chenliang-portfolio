@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import type { ProjectSummary } from '../content/projects'
+import type { Project } from '../content/projects'
 
 type ProjectCardProps = {
-  project: ProjectSummary
+  project: Project
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {

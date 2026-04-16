@@ -1,8 +1,10 @@
 import { ProjectCard } from '../components/ProjectCard'
 import { PageSection } from '../components/PageSection'
-import { projects } from '../content/projects'
+import { getAllProjectsSorted } from '../content/projects'
 
 export function Projects() {
+  const allProjects = getAllProjectsSorted()
+
   return (
     <>
       <h1 className="page-title">Projects</h1>
@@ -13,7 +15,7 @@ export function Projects() {
 
       <PageSection title="All projects" id="list">
         <div className="card-grid">
-          {projects.map((project) => (
+          {allProjects.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
