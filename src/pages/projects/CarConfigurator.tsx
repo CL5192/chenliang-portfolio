@@ -1,9 +1,14 @@
 import { Link } from 'react-router-dom'
 import { PageSection } from '../../components/PageSection'
 import { getProjectBySlug } from '../../content/projects'
+import sceneOverviewImage from '../../assets/projects/Car-configurator/01_scene-overview_triptych.jpg'
+import uiOverviewImage from '../../assets/projects/Car-configurator/02_ui-overview_main.jpg'
+import systemArchitectureImage from '../../assets/projects/Car-configurator/03_system-architecture_collage.jpg'
+import stateSwitchImage from '../../assets/projects/Car-configurator/04_state-switch_logic.jpg'
+import cameraHandoffImage from '../../assets/projects/Car-configurator/05_camera-handoff_logic.jpg'
+import uiToVehicleConfigImage from '../../assets/projects/Car-configurator/06_ui-to-vehicle-config_collage.jpg'
 
 const slug = 'car-configurator'
-const imageBasePath = '/src/assets/projects/car-configurator'
 
 type CaseStudyImageData = {
   src: string
@@ -13,37 +18,37 @@ type CaseStudyImageData = {
 
 const caseStudyImages: CaseStudyImageData[] = [
   {
-    src: `${imageBasePath}/01_scene-overview_triptych.jpg`,
+    src: sceneOverviewImage,
     alt: 'Three presentation scenes from the Car Configurator experience: Skyline, Oasis, and Studio.',
     caption:
       'Three presentation scenes inside a single level, each with its own mood, lighting setup, and transition flow.',
   },
   {
-    src: `${imageBasePath}/02_ui-overview_main.jpg`,
+    src: uiOverviewImage,
     alt: 'Main Car Configurator interface showing scene switching, paint presets, panel controls, and interior mode.',
     caption:
       'The UI exposes the main interaction layer: scene switching, paint presets, open panels, and interior mode.',
   },
   {
-    src: `${imageBasePath}/03_system-architecture_collage.jpg`,
+    src: systemArchitectureImage,
     alt: 'System architecture collage showing the central showroom controller, key variables, and scene and transition enums.',
     caption:
       'The core system is organized around a central controller, supported by explicit scene and transition enums.',
   },
   {
-    src: `${imageBasePath}/04_state-switch_logic.jpg`,
+    src: stateSwitchImage,
     alt: 'Blueprint logic for controlled scene switching using explicit transition states.',
     caption:
       'Scene switching is controlled through explicit state tracking rather than direct button-to-scene jumps.',
   },
   {
-    src: `${imageBasePath}/05_camera-handoff_logic.jpg`,
+    src: cameraHandoffImage,
     alt: 'Blueprint logic for handing control back to the orbit camera after guided scene transitions.',
     caption:
       'After each guided transition, control is handed back to the orbit camera for interactive viewing.',
   },
   {
-    src: `${imageBasePath}/06_ui-to-vehicle-config_collage.jpg`,
+    src: uiToVehicleConfigImage,
     alt: 'UI request flow connected to vehicle configuration logic such as paint and interior settings.',
     caption:
       'UI actions are routed through the controller and then applied to the vehicle configuration systems.',
