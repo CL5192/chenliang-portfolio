@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { PageSection } from '../../components/PageSection'
 import { getDesignWorkCategoriesSorted } from '../../content/designWorkCategories'
 import { getProjectBySlug } from '../../content/projects'
-import fallbackCoverImage from '../../assets/projects/design-work-cover.svg'
+import fallbackCoverImage from '../../assets/projects/design-work-cover.jpg'
 
 const slug = 'design-work'
 

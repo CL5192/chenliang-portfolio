@@ -3,9 +3,9 @@
  * Add a new row here, set `order` for list position, and toggle `featured` for the home page grid.
  */
 
-import carConfiguratorCover from '../assets/projects/car-configurator-cover.svg'
-import aiExperimentCover from '../assets/projects/ai-experiment-cover.svg'
-import designWorkCover from '../assets/projects/design-work-cover.svg'
+import carConfiguratorCover from '../assets/projects/car-configurator-cover.jpg'
+import aiExperimentCover from '../assets/projects/ai-experiment-cover.jpg'
+import designWorkCover from '../assets/projects/design-work-cover.jpg'
 
 export type Project = {
   slug: string
