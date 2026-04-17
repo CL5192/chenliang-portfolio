@@ -2,10 +2,9 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { PageSection } from '../../components/PageSection'
 import { getProjectBySlug } from '../../content/projects'
+import processImage from '../../assets/projects/AI-visual-experiment/01_process_image_iteration_collage.jpg'
 
 const slug = 'ai-experiment'
-const processImagePath =
-  '/src/assets/projects/AI-visual-experiment/01_process_image_iteration_collage.jpg'
 const processImageCaption = 'Process collage showing visual iterations and frame development'
 
 export function AIExperiment() {
@@ -52,13 +51,11 @@ export function AIExperiment() {
         <div className="case-media-stack">
           <figure className="case-image">
             {isProcessImageMissing ? (
-              <div className="placeholder-block">
-                Add process image at <code>{processImagePath}</code>.
-              </div>
+              <div className="placeholder-block">Process image unavailable.</div>
             ) : (
               <img
                 className="case-image__asset"
-                src={processImagePath}
+                src={processImage}
                 alt={processImageCaption}
                 loading="lazy"
                 onError={() => setIsProcessImageMissing(true)}
