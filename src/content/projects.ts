@@ -3,6 +3,10 @@
  * Add a new row here, set `order` for list position, and toggle `featured` for the home page grid.
  */
 
+import carConfiguratorCover from '../assets/projects/car-configurator-cover.svg'
+import aiExperimentCover from '../assets/projects/ai-experiment-cover.svg'
+import designWorkCover from '../assets/projects/design-work-cover.svg'
+
 export type Project = {
   slug: string
   title: string
@@ -22,7 +26,7 @@ export const projects: Project[] = [
     title: 'Car Configurator',
     summary:
       'Placeholder: an interactive 3D configurator experience for exploring trims, colors, and options.',
-    coverImage: '/src/assets/projects/car-configurator-cover.jpg',
+    coverImage: carConfiguratorCover,
     tags: ['WebGL', 'Product', 'UX'],
     featured: true,
     order: 1,
@@ -32,7 +36,7 @@ export const projects: Project[] = [
     title: 'AI Visual Experiment',
     summary:
       'A lightweight visual experiment testing AI-assisted image-to-video workflow and mood direction.',
-    coverImage: '/src/assets/projects/ai-experiment-cover.jpg',
+    coverImage: aiExperimentCover,
     tags: ['AI', 'Prototype', 'Research'],
     featured: true,
     order: 2,
@@ -42,7 +46,7 @@ export const projects: Project[] = [
     title: 'Design Work',
     summary:
       'Placeholder: visual design explorations, systems thinking, and handoff-ready specifications.',
-    coverImage: '/src/assets/projects/design-work-cover.jpg',
+    coverImage: designWorkCover,
     tags: ['UI', 'Systems', 'Brand'],
     featured: true,
     order: 3,

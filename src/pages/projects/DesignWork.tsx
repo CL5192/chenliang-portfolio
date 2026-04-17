@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 import { PageSection } from '../../components/PageSection'
 import { getDesignWorkCategoriesSorted } from '../../content/designWorkCategories'
 import { getProjectBySlug } from '../../content/projects'
+import fallbackCoverImage from '../../assets/projects/design-work-cover.svg'
 
 const slug = 'design-work'
-const fallbackCoverImage = '/src/assets/projects/design-work-cover.svg'
 
 export function DesignWork() {
   const project = getProjectBySlug(slug)

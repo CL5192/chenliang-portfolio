@@ -1,3 +1,7 @@
+import environmentsCover from '../assets/design-work/environments/cover.jpg'
+import hardSurfaceCover from '../assets/design-work/hard-surface/cover.jpg'
+import projectWorkCover from '../assets/design-work/project-work/cover.jpg'
+
 export type DesignWorkCategory = {
   slug: string
   title: string
@@ -15,7 +19,7 @@ export const designWorkCategories: DesignWorkCategory[] = [
       'Personal environment and concept design work for game and film-style settings, including architecture, interior scenes, and worldbuilding exploration.',
     intro:
       'A focused archive of personal environment and concept design studies covering architecture, interior spaces, and worldbuilding direction.',
-    coverImage: '/src/assets/design-work/environments/cover.jpg',
+    coverImage: environmentsCover,
     order: 1,
   },
   {
@@ -25,7 +29,7 @@ export const designWorkCategories: DesignWorkCategory[] = [
       'Personal hard-surface design work, including vehicles, mecha, weapons, and other mechanical concepts with realistic or sci-fi influences.',
     intro:
       'A selection of hard-surface concept explorations across vehicles, mecha, and prop design, with both grounded and sci-fi visual language.',
-    coverImage: '/src/assets/design-work/hard-surface/cover.jpg',
+    coverImage: hardSurfaceCover,
     order: 2,
   },
   {
@@ -35,7 +39,7 @@ export const designWorkCategories: DesignWorkCategory[] = [
       'Selected images from past projects, including visual development, concept work, and production-related artwork.',
     intro:
       'A compact gallery of selected production-context images, including visual development and concept work created within past project timelines.',
-    coverImage: '/src/assets/design-work/project-work/cover.jpg',
+    coverImage: projectWorkCover,
     order: 3,
   },
 ]
