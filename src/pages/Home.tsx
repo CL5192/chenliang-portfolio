@@ -9,7 +9,7 @@ export function Home() {
     <>
       <header className="home-hero">
         <div className="home-hero__content">
-          <h1 className="home-hero__headline">Realtime 3D & Visualization Designer</h1>
+          <h1 className="home-hero__headline">AAA Concept Design Background | Realtime 3D Visualization | Unreal Engine</h1>
           <p className="home-hero__subline page-title-intro">
             Background in concept design, creating interactive 3D demos and visual prototypes with Unreal
             Engine and AI-assisted workflows.

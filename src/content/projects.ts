@@ -25,7 +25,7 @@ export const projects: Project[] = [
     slug: 'car-configurator',
     title: 'Car Configurator',
     summary:
-      'Placeholder: an interactive 3D configurator experience for exploring trims, colors, and options.',
+      'A realtime automotive configurator built in Unreal Engine, featuring Blueprint-driven interaction, cinematic presentation, and structured user exploration.',
     coverImage: carConfiguratorCover,
     tags: ['WebGL', 'Product', 'UX'],
     featured: true,
@@ -35,7 +35,7 @@ export const projects: Project[] = [
     slug: 'ai-experiment',
     title: 'AI Visual Experiment',
     summary:
-      'A lightweight visual experiment testing AI-assisted image-to-video workflow and mood direction.',
+      'An AI workflow experiment using ComfyUI and Midjourney to explore image-to-video pipelines, visual direction, and rapid iteration.',
     coverImage: aiExperimentCover,
     tags: ['AI', 'Prototype', 'Research'],
     featured: true,
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     slug: 'design-work',
     title: 'Design Work',
     summary:
-      'Placeholder: visual design explorations, systems thinking, and handoff-ready specifications.',
+      'A curated archive of AAA concept design work across environments, hard-surface design, and visual development.',
     coverImage: designWorkCover,
     tags: ['UI', 'Systems', 'Brand'],
     featured: true,
