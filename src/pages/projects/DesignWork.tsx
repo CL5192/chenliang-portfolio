@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom'
 import { PageSection } from '../../components/PageSection'
+import { getDesignWorkCategoriesSorted } from '../../content/designWorkCategories'
 import { getProjectBySlug } from '../../content/projects'
 
 const slug = 'design-work'
+const fallbackCoverImage = '/src/assets/projects/design-work-cover.svg'
 
 export function DesignWork() {
   const project = getProjectBySlug(slug)
+  const categories = getDesignWorkCategoriesSorted()
 
   return (
     <>
@@ -14,20 +17,38 @@ export function DesignWork() {
       </p>
       <h1 className="page-title">{project?.title ?? 'Design Work'}</h1>
       <p className="page-lead">
-        Placeholder detail page for visual and product design work. Drop in galleries, Figma links, or
-        annotated screens when available.
+        This section includes selected concept design work from past years, covering both personal work
+        and images from previous projects.
       </p>
 
-      <PageSection title="Context" id="context">
-        <div className="placeholder-block">Audience, brand constraints, and success criteria.</div>
-      </PageSection>
-
-      <PageSection title="Exploration" id="exploration">
-        <div className="placeholder-block">Iterations, directions considered, and tradeoffs.</div>
-      </PageSection>
-
-      <PageSection title="Delivery" id="delivery">
-        <div className="placeholder-block">Final artifacts, specs, and collaboration with engineering.</div>
+      <PageSection title="Categories" id="categories">
+        <div className="card-grid">
+          {categories.map((category) => (
+            <Link
+              key={category.slug}
+              className="project-card"
+              to={`/projects/design-work/${category.slug}`}
+              aria-label={`Browse design work category: ${category.title}`}
+            >
+              <div className="project-card__top">
+                <h3 className="project-card__title">{category.title}</h3>
+                <p className="project-card__summary">{category.summary}</p>
+                <span className="project-card__link">Browse work →</span>
+              </div>
+              <div className="project-card__image-wrap">
+                <img
+                  className="project-card__image"
+                  src={category.coverImage}
+                  alt={`${category.title} cover preview`}
+                  loading="lazy"
+                  onError={(event) => {
+                    event.currentTarget.src = fallbackCoverImage
+                  }}
+                />
+              </div>
+            </Link>
+          ))}
+        </div>
       </PageSection>
     </>
   )
