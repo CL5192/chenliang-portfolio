@@ -637,6 +637,27 @@ p:last-child {
   max-width: 44rem;
 }
 
+/* Contact — vertical rhythm (page-specific, Contact.tsx only) */
+.contact-lead {
+  margin-bottom: 1.7rem;
+}
+
+.contact-stack--primary > p:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.contact-stack--social {
+  margin-top: 1.9rem;
+}
+
+.contact-stack--social > p:not(:last-child) {
+  margin-bottom: 0.55rem;
+}
+
+.contact-locale {
+  margin-top: 2.1rem;
+}
+
 .case-media-stack {
   display: grid;
   width: 100%;
