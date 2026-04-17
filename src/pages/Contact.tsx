@@ -1,39 +1,52 @@
-import { PageSection } from '../components/PageSection'
-
 export function Contact() {
   return (
     <>
       <h1 className="page-title top-page-title">Contact</h1>
-      <p className="page-lead page-title-intro">
-        Placeholder contact page. Wire this form to your provider or replace it with mailto links when
-        you are ready.
-      </p>
 
-      <PageSection title="Send a message" id="form">
-        <form className="form-grid" onSubmit={(e) => e.preventDefault()} noValidate>
-          <div>
-            <label htmlFor="contact-name">Name</label>
-            <input id="contact-name" name="name" type="text" autoComplete="name" placeholder="Your name" />
-          </div>
-          <div>
-            <label htmlFor="contact-email">Email</label>
-            <input
-              id="contact-email"
-              name="email"
-              type="email"
-              autoComplete="email"
-              placeholder="you@example.com"
-            />
-          </div>
-          <div>
-            <label htmlFor="contact-message">Message</label>
-            <textarea id="contact-message" name="message" placeholder="Write your message…" />
-          </div>
-        </form>
-        <p className="form-note">
-          This form does not submit anywhere yet — it is layout-only so you can hook it up later.
+      <div className="case-copy">
+        <p>For opportunities or collaboration, feel free to get in touch.</p>
+
+        <p>
+          Email:{' '}
+          <a href="mailto:liangchenart@gmail.com">liangchenart@gmail.com</a>
         </p>
-      </PageSection>
+
+        <p>
+          Phone:{' '}
+          <a href="tel:+4915129555240">+49 151 29555240</a>
+        </p>
+
+        <p>
+          LinkedIn:{' '}
+          <a
+            href="https://www.linkedin.com/in/liang-chen-6403791b/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            https://www.linkedin.com/in/liang-chen-6403791b/
+          </a>
+        </p>
+
+        <p>
+          ArtStation:{' '}
+          <a
+            href="https://www.artstation.com/liangchendesign"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            https://www.artstation.com/liangchendesign
+          </a>
+        </p>
+
+        <p>
+          GitHub:{' '}
+          <a href="https://github.com/CL5192" target="_blank" rel="noopener noreferrer">
+            https://github.com/CL5192
+          </a>
+        </p>
+
+        <p>Berlin, Germany</p>
+      </div>
     </>
   )
 }

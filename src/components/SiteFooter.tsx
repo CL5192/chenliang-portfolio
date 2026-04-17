@@ -4,8 +4,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="site-footer__inner">
-        <span>© {year} Your Name. All rights reserved.</span>
-        <span>Built with Vite + React + TypeScript</span>
+        <span>© {year} Chen Liang</span>
       </div>
     </footer>
   )

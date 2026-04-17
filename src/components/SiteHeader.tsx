@@ -13,7 +13,7 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="site-header__inner">
         <Link to="/" className="site-logo" onClick={closeMenu}>
-          Your Name
+          Chen Liang
         </Link>
         <button
           type="button"
