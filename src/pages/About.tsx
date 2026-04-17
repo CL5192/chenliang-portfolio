@@ -1,8 +1,8 @@
 export function About() {
   return (
     <>
-      <h1 className="page-title">About</h1>
-      <p className="page-lead about-page__lead">
+      <h1 className="page-title top-page-title">About</h1>
+      <p className="page-lead page-title-intro">
         I’m Chen Liang, a designer with a background in concept design, now focused on realtime 3D,
         visualization, and interactive digital production.
       </p>

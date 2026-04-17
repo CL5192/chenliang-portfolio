@@ -7,8 +7,8 @@ export function Projects() {
 
   return (
     <>
-      <h1 className="page-title">Projects</h1>
-      <p className="page-lead">
+      <h1 className="page-title top-page-title">Projects</h1>
+      <p className="page-lead page-title-intro">
         A selection of projects across realtime 3D, visual experiments, and visual design work.
       </p>
 

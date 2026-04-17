@@ -3,8 +3,8 @@ import { PageSection } from '../components/PageSection'
 export function Contact() {
   return (
     <>
-      <h1 className="page-title">Contact</h1>
-      <p className="page-lead">
+      <h1 className="page-title top-page-title">Contact</h1>
+      <p className="page-lead page-title-intro">
         Placeholder contact page. Wire this form to your provider or replace it with mailto links when
         you are ready.
       </p>

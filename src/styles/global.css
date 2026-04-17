@@ -247,6 +247,16 @@ p:last-child {
   margin-bottom: 0.35rem;
 }
 
+.top-page-title {
+  margin-top: 2.75rem;
+  margin-bottom: 1.125rem;
+  font-size: clamp(1.3125rem, 2.35vw, 1.625rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+}
+
 .page-lead {
   font-size: 1.05rem;
   max-width: 42rem;
@@ -256,8 +266,14 @@ p:last-child {
   margin-bottom: 0;
 }
 
-.about-page__lead {
-  margin-top: 0.55rem;
+.page-title-intro {
+  margin-top: 4.5rem;
+}
+
+@media (min-width: 720px) {
+  .top-page-title {
+    margin-top: 3.75rem;
+  }
 }
 
 /* Home — landing hero (not document-style page title) */
@@ -294,6 +310,10 @@ p:last-child {
   line-height: 1.62;
   letter-spacing: 0.01em;
   color: var(--color-hero-subline);
+}
+
+.home-hero__subline.page-title-intro {
+  margin-top: 4.5rem;
 }
 
 /* Sections & cards */
