@@ -9,8 +9,7 @@ export function Projects() {
     <>
       <h1 className="page-title">Projects</h1>
       <p className="page-lead">
-        Placeholder grid of case studies and experiments. Card copy lives in{' '}
-        <code>src/content/projects.ts</code> for easy bulk edits.
+        A selection of projects across realtime 3D, visual experiments, and visual design work.
       </p>
 
       <PageSection title="All projects" id="list">

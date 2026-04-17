@@ -256,6 +256,10 @@ p:last-child {
   margin-bottom: 0;
 }
 
+.about-page__lead {
+  margin-top: 0.55rem;
+}
+
 /* Home — landing hero (not document-style page title) */
 
 .home-hero {
@@ -303,7 +307,7 @@ p:last-child {
 }
 
 .home-hero + .page-section {
-  margin-top: 2.75rem;
+  margin-top: 1.4rem;
 }
 
 .page-section__title {
@@ -537,6 +541,24 @@ p:last-child {
   margin-bottom: 1.15rem;
 }
 
+.case-meta {
+  max-width: 44rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.35rem 1.25rem;
+  margin: 0 0 1.15rem;
+}
+
+.case-meta p {
+  margin: 0;
+  font-size: 0.93rem;
+}
+
+.detail-support-line {
+  max-width: 42rem;
+  margin-top: -0.15rem;
+}
+
 .case-video-embed {
   width: 100%;
   max-width: 44rem;
@@ -574,6 +596,8 @@ p:last-child {
 
 .case-media-stack {
   display: grid;
+  width: 100%;
+  max-width: 44rem;
   gap: 1.1rem;
   margin-top: 1rem;
 }

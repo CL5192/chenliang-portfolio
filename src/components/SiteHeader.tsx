@@ -41,6 +41,9 @@ export function SiteHeader() {
           <NavLink to="/contact" className={navLinkClass} onClick={closeMenu}>
             Contact
           </NavLink>
+          <a href="/resume.pdf" onClick={closeMenu}>
+            Resume
+          </a>
         </nav>
       </div>
     </header>

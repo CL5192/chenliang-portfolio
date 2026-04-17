@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { PageSection } from '../components/PageSection'
 import { ProjectCard } from '../components/ProjectCard'
 import { getFeaturedProjectsSorted } from '../content/projects'
@@ -31,13 +30,6 @@ export function Home() {
             <code>src/content/projects.ts</code>.
           </div>
         )}
-      </PageSection>
-
-      <PageSection title="What to explore next" id="next">
-        <div className="placeholder-block">
-          Use the navigation to browse <Link to="/projects">projects</Link>, read the{' '}
-          <Link to="/about">about</Link> page, or reach out on <Link to="/contact">contact</Link>.
-        </div>
       </PageSection>
     </>
   )
