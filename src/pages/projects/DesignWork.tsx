@@ -12,7 +12,7 @@ export function DesignWork() {
 
   return (
     <>
-      <p className="page-lead" style={{ marginBottom: '0.5rem' }}>
+      <p className="page-lead page-back-link">
         <Link to="/projects">← Back to projects</Link>
       </p>
       <h1 className="page-title">{project?.title ?? 'Design Work'}</h1>

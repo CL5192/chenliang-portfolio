@@ -14,7 +14,7 @@ export function AIExperiment() {
 
   return (
     <>
-      <p className="page-lead" style={{ marginBottom: '0.5rem' }}>
+      <p className="page-lead page-back-link">
         <Link to="/projects">← Back to projects</Link>
       </p>
       <h1 className="page-title">{project?.title ?? 'AI Visual Experiment'}</h1>
@@ -31,7 +31,7 @@ export function AIExperiment() {
         />
       </div>
 
-      <p className="page-lead" style={{ marginTop: '1rem' }}>
+      <p className="page-lead page-lead--after-media">
         A self-initiated visual experiment exploring AI-assisted image-to-video workflow and cinematic
         mood development.
       </p>

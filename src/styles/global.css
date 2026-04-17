@@ -15,6 +15,11 @@
   --content-max: 960px;
   --gutter: 1.25rem;
   --header-z: 50;
+  --title-main-size: clamp(1.3125rem, 2.35vw, 1.625rem);
+  --title-main-weight: 600;
+  --title-main-line-height: 1.2;
+  --title-main-letter-spacing: -0.03em;
+  --title-main-gap-after: 1.125rem;
 }
 
 *,
@@ -249,11 +254,11 @@ p:last-child {
 
 .top-page-title {
   margin-top: 2.75rem;
-  margin-bottom: 1.125rem;
-  font-size: clamp(1.3125rem, 2.35vw, 1.625rem);
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
+  margin-bottom: var(--title-main-gap-after);
+  font-size: var(--title-main-size);
+  font-weight: var(--title-main-weight);
+  line-height: var(--title-main-line-height);
+  letter-spacing: var(--title-main-letter-spacing);
   color: var(--color-text);
 }
 
@@ -268,6 +273,18 @@ p:last-child {
 
 .page-title-intro {
   margin-top: 4.5rem;
+}
+
+.page-back-link {
+  margin-bottom: 0.5rem;
+}
+
+.page-back-link--loose {
+  margin-bottom: 0.65rem;
+}
+
+.page-lead--after-media {
+  margin-top: 1rem;
 }
 
 @media (min-width: 720px) {
@@ -295,12 +312,12 @@ p:last-child {
 }
 
 .home-hero__headline {
-  font-size: clamp(1.3125rem, 2.35vw, 1.625rem);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
+  font-size: var(--title-main-size);
+  font-weight: var(--title-main-weight);
+  letter-spacing: var(--title-main-letter-spacing);
+  line-height: var(--title-main-line-height);
   color: var(--color-text);
-  margin: 0 0 1.125rem;
+  margin: 0 0 var(--title-main-gap-after);
 }
 
 .home-hero__subline {
