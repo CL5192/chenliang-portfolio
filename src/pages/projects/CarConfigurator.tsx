@@ -21,37 +21,37 @@ const caseStudyImages: CaseStudyImageData[] = [
     src: sceneOverviewImage,
     alt: 'Three presentation scenes from the Car Configurator experience: Skyline, Oasis, and Studio.',
     caption:
-      'Three presentation scenes inside a single level, each with its own mood, lighting setup, and transition flow.',
+      'Three presentation scenes inside one level, each with its own mood, lighting, and transition flow.',
   },
   {
     src: uiOverviewImage,
     alt: 'Main Car Configurator interface showing scene switching, paint presets, panel controls, and interior mode.',
     caption:
-      'The UI exposes the main interaction layer: scene switching, paint presets, open panels, and interior mode.',
+      'The UI handles the main interaction layer: scene switching, paint presets, open panels, and interior mode.',
   },
   {
     src: systemArchitectureImage,
     alt: 'System architecture collage showing the central showroom controller, key variables, and scene and transition enums.',
     caption:
-      'The core system is organized around a central controller, supported by explicit scene and transition enums.',
+      'The core system is built around a central controller, with clear scene and transition enums.',
   },
   {
     src: stateSwitchImage,
     alt: 'Blueprint logic for controlled scene switching using explicit transition states.',
     caption:
-      'Scene switching is controlled through explicit state tracking rather than direct button-to-scene jumps.',
+      'Scene switching uses explicit state tracking instead of direct button-to-scene jumps.',
   },
   {
     src: cameraHandoffImage,
     alt: 'Blueprint logic for handing control back to the orbit camera after guided scene transitions.',
     caption:
-      'After each guided transition, control is handed back to the orbit camera for interactive viewing.',
+      'After each guided transition, control returns to the orbit camera for interactive viewing.',
   },
   {
     src: uiToVehicleConfigImage,
     alt: 'UI request flow connected to vehicle configuration logic such as paint and interior settings.',
     caption:
-      'UI actions are routed through the controller and then applied to the vehicle configuration systems.',
+      'UI actions go through the controller and are then applied to the vehicle configuration systems.',
   },
 ]
 
@@ -79,8 +79,8 @@ export function CarConfigurator() {
         </h1>
 
         <p className="page-lead case-hero__lead">
-          An interactive automotive showroom prototype built in Unreal Engine, focused on
-          multi-scene presentation, cinematic transitions, and blueprint-driven interaction.
+          A realtime automotive showroom project built in Unreal Engine, focused on scene switching,
+          cinematic presentation, and Blueprint-driven interaction.
         </p>
 
         <div className="case-meta" aria-label="Project details">
@@ -88,13 +88,13 @@ export function CarConfigurator() {
             <strong>Duration:</strong> 4 weeks
           </p>
           <p>
-            <strong>Role:</strong> 3D Generalist with Blueprint Logic Ability
+            <strong>Role:</strong> 3D Generalist / Blueprint-driven interaction
           </p>
           <p>
             <strong>Tools:</strong> Unreal Engine 5, Blueprint, Sequencer, UMG
           </p>
           <p>
-            <strong>Focus:</strong> Realtime presentation, interaction logic, scene transition system
+            <strong>Focus:</strong> Realtime presentation, interaction, scene transition system
           </p>
         </div>
 
@@ -114,20 +114,18 @@ export function CarConfigurator() {
       <PageSection title="Overview" id="overview">
         <div className="case-copy">
           <p>
-            This project is not a gameplay prototype. It is a realtime automotive
-            showroom/configurator built around presentation flow, scene switching, and interactive
-            viewing.
+            This is not a gameplay prototype. It is a realtime automotive showroom and configurator
+            built around presentation, scene switching, and user interaction.
           </p>
           <p>
-            The experience contains three display environments inside a single level:{' '}
-            <strong>Skyline</strong>, a rooftop parking lot in daylight; <strong>Oasis</strong>, a
-            desert villa setting at dusk; and <strong>Studio</strong>, a clean indoor setup with
-            white lighting. Each scene has its own entry and exit sequence, while the overall flow
-            is coordinated through a central blueprint controller.
+            The project includes three display scenes inside one level: Skyline, a rooftop parking lot
+            in daylight; Oasis, a desert villa at dusk; and Studio, a clean indoor setup with white
+            lighting. Each scene has its own entry and exit sequence, while the overall flow is
+            controlled through a central Blueprint controller.
           </p>
           <p>
-            My goal was to combine visual presentation with structured interaction logic, rather
-            than relying on a static render setup alone.
+            My goal was to combine visual presentation with interaction logic instead of relying only
+            on a static render setup.
           </p>
         </div>
 
@@ -151,10 +149,7 @@ export function CarConfigurator() {
             <li>Scene-dependent lighting changes.</li>
           </ul>
 
-          <p>
-            Rather than building isolated features, I focused on making them work together as one
-            coherent showroom flow.
-          </p>
+          <p>I focused on making these features work together as one showroom flow.</p>
         </div>
 
         <div className="case-media-stack">
@@ -164,12 +159,9 @@ export function CarConfigurator() {
 
       <PageSection title="System Design" id="system-design">
         <div className="case-copy">
-          <p>One of the main things I wanted to improve in this project was structure.</p>
+          <p>One of the main things I focused on in this project was structure.</p>
 
-          <p>
-            Instead of placing everything into a single blueprint, I separated the system into clear
-            layers:
-          </p>
+          <p>Instead of putting everything in one Blueprint, I split the system into clear layers:</p>
 
           <ul className="case-list">
             <li>
@@ -194,15 +186,12 @@ export function CarConfigurator() {
             </li>
           </ul>
 
-          <p>
-            This separation helped keep the project more readable, easier to debug, and easier to
-            extend.
-          </p>
+          <p>This made the project easier to read, debug, and extend.</p>
 
           <p>
-            A key learning for me was understanding blueprint ownership more clearly: deciding which
-            actor should hold state, which blueprint should coordinate actions, and which one should
-            only execute them.
+            A key part of the project was learning Blueprint ownership more clearly: which actor
+            should hold state, which Blueprint should coordinate actions, and which one should only
+            execute them.
           </p>
         </div>
 
@@ -215,8 +204,8 @@ export function CarConfigurator() {
         <div className="case-copy">
           <h3>1. State-driven scene switching</h3>
           <p>
-            A key part of the project was building scene switching as a controlled state flow
-            instead of a direct jump.
+            A key part of the project was building scene switching as a controlled state flow instead
+            of a direct jump between scenes.
           </p>
           <p>
             The controller tracks values such as <code>CurrentScene</code>,{' '}
@@ -226,8 +215,8 @@ export function CarConfigurator() {
             <code>E_LightingPreset</code> to keep the logic explicit.
           </p>
           <p>
-            This made it possible to define a transition in stages, while preventing repeated input
-            or invalid switching during the process.
+            This made it possible to run transitions in stages while preventing repeated input or
+            invalid switching.
           </p>
         </div>
 
@@ -238,14 +227,14 @@ export function CarConfigurator() {
         <div className="case-copy">
           <h3>2. Sequencer and camera handoff</h3>
           <p>
-            I wanted the experience to feel guided, not just interactive. For that reason, each
-            scene uses its own entry and exit sequence, and the transition flow moves through
-            cinematic cameras before handing control back to the orbit view.
+            I wanted the experience to feel guided, not just interactive. Each scene uses its own
+            entry and exit sequence, and the flow moves through cinematic cameras before handing
+            control back to the orbit view.
           </p>
           <p>
             This required coordinating scene cameras, entry and exit sequences, orbit targets, and
-            free-view handoff. It also helped me better understand how Sequencer can support
-            realtime presentation instead of functioning as a separate cinematic layer.
+            free-view handoff. It also helped me understand how Sequencer can support realtime
+            presentation instead of acting as a separate cinematic layer.
           </p>
         </div>
 
@@ -256,7 +245,7 @@ export function CarConfigurator() {
         <div className="case-copy">
           <h3>3. UI requests and vehicle configuration logic</h3>
           <p>
-            The UI was designed as a request layer rather than a place to store all business logic.
+            The UI was designed as a request layer rather than a place to store all logic.
           </p>
           <p>
             From the interface, users can switch scenes, open panels, enter the interior view,
@@ -264,9 +253,9 @@ export function CarConfigurator() {
             showroom controller, which then forwards them to the relevant vehicle or scene systems.
           </p>
           <p>
-            On the vehicle side, I organized separate logic for material initialization, paint
-            presets, trim presets, interior brightness, and ambient light color changes. This helped
-            keep the interaction flow more consistent and easier to maintain.
+            On the vehicle side, I separated logic for material initialization, paint presets, trim
+            presets, interior brightness, and ambient light color changes. This made the interaction
+            flow more consistent and easier to maintain.
           </p>
         </div>
 
@@ -278,30 +267,29 @@ export function CarConfigurator() {
       <PageSection title="Challenges & Reflection" id="challenges-reflection">
         <div className="case-copy">
           <p>
-            This project was also a practical learning process in working with Unreal Engine beyond
-            static scene setup.
+            This project was also a practical step for me in working with Unreal Engine beyond static
+            scene setup.
           </p>
 
           <p>
-            Some of the challenges came from coordinating multiple systems at once: keeping
-            transitions predictable, deciding blueprint ownership, managing references inside the
-            level, and balancing presentation quality with stable realtime behavior.
+            Some of the main challenges were coordinating multiple systems at once: keeping transitions
+            predictable, deciding Blueprint ownership, managing level references, and balancing
+            presentation quality with stable realtime behavior.
           </p>
 
           <p>
-            I also ran into technical issues that influenced my decisions. For example, I tested
-            Nanite on the vehicle during asset cleanup, but in this case disabling it produced more
-            reliable visual results because some high-detail surfaces were being reduced in ways
-            that were not suitable for the car model. The project also made me more aware of
-            performance trade-offs in UE5, especially when combining multiple environments, lighting
-            setups, and presentation logic in one prototype.
+            I also ran into technical issues that affected my decisions. For example, I tested
+            Nanite on the vehicle during asset cleanup, but disabling it gave more reliable visual
+            results because some high-detail surfaces were being reduced in ways that did not suit the
+            car model. The project also made me more aware of performance trade-offs in UE5, especially
+            when combining multiple environments, lighting setups, and presentation logic in one
+            prototype.
           </p>
 
           <p>
-            Overall, this project reflects where I am strongest right now: as a 3D generalist who
-            can combine scene building, presentation design, and blueprint logic. It also points
-            toward the direction I want to continue growing into next — realtime 3D development and
-            technical-art-adjacent workflows.
+            Overall, this project reflects where I am strongest right now: combining scene building,
+            presentation design, and Blueprint logic. It also points toward the direction I want to
+            keep growing into next — realtime 3D development and technical-art-adjacent work.
           </p>
         </div>
       </PageSection>

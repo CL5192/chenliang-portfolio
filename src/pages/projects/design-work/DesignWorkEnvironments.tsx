@@ -16,7 +16,7 @@ export function DesignWorkEnvironments() {
   return (
     <DesignWorkGalleryView
       title="Environments"
-      intro="A selection of personal environment and concept design studies, covering architecture, interior spaces, and worldbuilding."
+      intro="A selection of personal environment design studies, covering architecture, interior spaces, and worldbuilding."
       galleryImages={galleryImages}
       lightboxLabel="Environments image viewer"
       emptyState={

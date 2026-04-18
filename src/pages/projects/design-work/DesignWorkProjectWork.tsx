@@ -16,7 +16,7 @@ export function DesignWorkProjectWork() {
   return (
     <DesignWorkGalleryView
       title="Project Work"
-      intro="Selected images from past projects, including visual development, concept work, and production-related artwork. In some cases, only partial material can be shown due to project limitations or NDA restrictions."
+      intro="Selected images from past projects, including visual development, concept work, and production artwork. In some cases, only partial material can be shown due to project limitations or NDA restrictions."
       galleryImages={galleryImages}
       lightboxLabel="Project Work image viewer"
       emptyState={

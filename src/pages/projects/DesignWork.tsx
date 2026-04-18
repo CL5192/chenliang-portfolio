@@ -17,8 +17,8 @@ export function DesignWork() {
       </p>
       <h1 className="page-title">{project?.title ?? 'Design Work'}</h1>
       <p className="page-lead">
-        This section includes selected concept design work from past years, covering both personal work
-        and images from previous projects.
+        This section collects selected concept design work from past years, including personal work and
+        images from previous projects.
       </p>
 
       <PageSection title="Categories" id="categories">

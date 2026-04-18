@@ -16,8 +16,8 @@ export function DesignWorkHardSurface() {
   return (
     <DesignWorkGalleryView
       title="Hard-Surface"
-      intro="A selection of hard-surface concept work across vehicles, mecha, and prop design, with both grounded and sci-fi influences."
-      supportLine="Tools used across this work include Blender, Fusion 360, 3ds Max, and ZBrush."
+      intro="A selection of hard-surface concept work across vehicles, mecha, and props, with both grounded and sci-fi influences."
+      supportLine="Tools used in this work include Blender, Fusion 360, 3ds Max, and ZBrush."
       galleryImages={galleryImages}
       lightboxLabel="Hard-Surface image viewer"
       emptyState={
