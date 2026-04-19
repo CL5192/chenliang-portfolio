@@ -8,11 +8,13 @@ export function Contact() {
           title: 'Kontakt',
           lead: 'Für Jobangebote oder Kooperationen kannst du dich gerne melden.',
           location: 'Berlin, Deutschland',
+          phoneLabel: 'Telefon',
         }
       : {
           title: 'Contact',
           lead: 'For opportunities or collaboration, feel free to get in touch.',
           location: 'Berlin, Germany',
+          phoneLabel: 'Phone',
         }
 
   return (
@@ -30,7 +32,7 @@ export function Contact() {
           </p>
 
           <p>
-            <strong>Phone</strong>
+            <strong>{copy.phoneLabel}</strong>
             <br />
             <a href="tel:+4915129555240">+49 151 29555240</a>
           </p>
