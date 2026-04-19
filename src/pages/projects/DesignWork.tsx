@@ -14,10 +14,10 @@ export function DesignWork() {
   const copy =
     locale === 'de'
       ? {
-          backToProjects: '<- Zurueck zu Projekten',
+          backToProjects: '<- Zurück zu Projekten',
           fallbackTitle: 'Designarbeiten',
           intro:
-            'Dieser Bereich sammelt ausgewaehlte Concept-Design-Arbeiten aus den letzten Jahren, inklusive persoenlicher Arbeiten und Bildern aus frueheren Projekten.',
+            'Dieser Bereich sammelt ausgewählte Concept-Design-Arbeiten aus den letzten Jahren, einschließlich persönlicher Arbeiten und Bildern aus früheren Projekten.',
           sectionTitle: 'Kategorien',
           browseCategory: 'Design-Kategorie ansehen',
           browseWork: 'Arbeiten ansehen ->',

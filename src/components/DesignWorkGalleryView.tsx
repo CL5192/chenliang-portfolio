@@ -35,12 +35,12 @@ export function DesignWorkGalleryView({
   const fallbackCopy =
     locale === 'de'
       ? {
-          backLabel: '<- Zurueck zu Designarbeiten',
-          openImage: 'Bild oeffnen',
-          closeImageViewer: 'Bildansicht schliessen',
-          close: 'Schliessen',
+          backLabel: '<- Zurück zu Designarbeiten',
+          openImage: 'Bild öffnen',
+          closeImageViewer: 'Bildansicht schließen',
+          close: 'Schließen',
           previousImage: 'Vorheriges Bild',
-          nextImage: 'Naechstes Bild',
+          nextImage: 'Nächstes Bild',
         }
       : {
           backLabel: '<- Back to Design Work',

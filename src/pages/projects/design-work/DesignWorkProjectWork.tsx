@@ -21,9 +21,9 @@ export function DesignWorkProjectWork() {
       ? {
           fallbackTitle: 'Projektarbeit',
           fallbackIntro:
-            'Ausgewaehlte Bilder aus vergangenen Projekten, inklusive Visual Development, Concept Work und Production Artwork. Teilweise ist nur ein begrenzter Umfang aufgrund von Projektvorgaben oder NDA moeglich.',
+            'Ausgewählte Bilder aus vergangenen Projekten, inklusive Visual Development, Concept Work und Production Artwork. Teilweise ist nur ein begrenzter Umfang aufgrund von Projektvorgaben oder NDA möglich.',
           viewerLabel: 'Bildansicht Projektarbeit',
-          emptyPrefix: 'Fuege Bilder in',
+          emptyPrefix: 'Füge Bilder in',
           emptySuffix: 'ein, zum Beispiel',
         }
       : {

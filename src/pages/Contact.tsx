@@ -6,7 +6,7 @@ export function Contact() {
     locale === 'de'
       ? {
           title: 'Kontakt',
-          lead: 'Bei Jobangeboten oder Kooperationen kannst du dich gerne melden.',
+          lead: 'Für Jobangebote oder Kooperationen kannst du dich gerne melden.',
           location: 'Berlin, Deutschland',
         }
       : {

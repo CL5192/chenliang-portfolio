@@ -21,9 +21,9 @@ export function DesignWorkEnvironments() {
       ? {
           fallbackTitle: 'Umgebungen',
           fallbackIntro:
-            'Eine Auswahl persoenlicher Environment-Design-Studien zu Architektur, Innenraeumen und Worldbuilding.',
+            'Eine Auswahl persönlicher Environment-Design-Studien zu Architektur, Innenräumen und Worldbuilding.',
           viewerLabel: 'Bildansicht Umgebungen',
-          emptyPrefix: 'Fuege Bilder in',
+          emptyPrefix: 'Füge Bilder in',
           emptySuffix: 'ein, zum Beispiel',
         }
       : {

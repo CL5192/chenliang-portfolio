@@ -10,7 +10,7 @@ export function Projects() {
     locale === 'de'
       ? {
           title: 'Projekte',
-          lead: 'Eine Auswahl an Projekten aus Realtime 3D, visuellen Experimenten und Designarbeit.',
+          lead: 'Eine Auswahl an Projekten aus Realtime 3D, visuellen Experimenten und Designarbeiten.',
           sectionTitle: 'Alle Projekte',
         }
       : {

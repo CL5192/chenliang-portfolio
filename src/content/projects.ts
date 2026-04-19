@@ -45,7 +45,7 @@ const projectsSource: ProjectSource[] = [
     },
     summary: {
       en: 'A realtime automotive configurator built in Unreal Engine, featuring Blueprint-driven interaction, cinematic presentation, and structured user exploration.',
-      de: 'Ein Echtzeit-Autokonfigurator in Unreal Engine mit Blueprint-gesteuerter Interaktion, cineastischer Praesentation und klar gefuehrter Nutzerfuehrung.',
+      de: 'Ein Echtzeit-Autokonfigurator in Unreal Engine mit Blueprint-gesteuerter Interaktion, cineastischer Präsentation und klar geführter Nutzerführung.',
     },
     coverImage: carConfiguratorCover,
     tags: ['WebGL', 'Product', 'UX'],

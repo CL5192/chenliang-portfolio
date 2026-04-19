@@ -14,23 +14,23 @@ export function AIExperiment() {
   const copy =
     locale === 'de'
       ? {
-          backToProjects: '<- Zurueck zu Projekten',
+          backToProjects: '<- Zurück zu Projekten',
           fallbackTitle: 'KI-Visual-Experiment',
           videoAria: 'KI-Visual-Experiment YouTube-Video',
           videoTitle: 'KI-Visual-Experiment Video',
           lead:
-            'Ein kurzes visuelles Experiment zur Erkundung eines KI-unterstuetzten Image-to-Video-Workflows und cineastischer Stimmungsentwicklung.',
+            'Ein kurzes visuelles Experiment zur Erkundung eines KI-gestützten Image-to-Video-Workflows und der Entwicklung cineastischer Stimmungen.',
           processTitle: 'Prozess',
           processParagraph1:
-            'Ich habe mit einem einfachen narrativen Setup begonnen: ein retrofuturistisches Buero, eine ruhige Routine und eine kleine visuelle Verschiebung.',
+            'Ich habe mit einem einfachen narrativen Setup begonnen: ein retrofuturistisches Büro, eine ruhige Routine und eine kleine visuelle Verschiebung.',
           processParagraph2:
-            'Fuer den Look nutzte ich Filmreferenzen, Prompt-Exploration und Bilditeration in Midjourney. Ausgewaehlte Stills habe ich in ComfyUI Cloud fuer Wan-2.2-basierte Image-to-Video-Tests weitergefuehrt. Ziel war nicht Zufall, sondern bessere Kontrolle ueber Stimmung, Framing und Konsistenz durch wiederholte Auswahl und Verfeinerung.',
-          processUnavailable: 'Prozessbild nicht verfuegbar.',
+            'Für den Look nutzte ich Filmreferenzen, Prompt-Exploration und Bilditeration in Midjourney. Ausgewählte Stills habe ich in ComfyUI Cloud für Wan-2.2-basierte Image-to-Video-Tests weitergeführt. Ziel war nicht Zufall, sondern mehr Kontrolle über Stimmung, Framing und Konsistenz durch wiederholte Auswahl und Verfeinerung.',
+          processUnavailable: 'Prozessbild nicht verfügbar.',
           processCaption:
             'Prozess-Collage mit visuellen Iterationen und Entwicklung einzelner Frames',
           takeawayTitle: 'Fazit',
           takeawayText:
-            'Dieses Projekt hat mir geholfen, einen neuen visuellen Workflow schnell zu testen und besser zu verstehen, wie KI-Tools Direction und visuelles Urteilsvermoegen unterstuetzen - aber nicht ersetzen - koennen.',
+            'Dieses Projekt hat mir geholfen, einen neuen visuellen Workflow schnell zu testen und besser zu verstehen, wie KI-Tools kreative Direction und visuelles Urteilsvermögen unterstützen - aber nicht ersetzen - können.',
         }
       : {
           backToProjects: '<- Back to projects',

@@ -11,10 +11,10 @@ export function Home() {
       ? {
           heroTitle: 'AAA-Concept-Design Background | Realtime-3D-Visualisierung | Unreal Engine',
           heroSubtitle:
-            'Hintergrund im Concept Design, mit Fokus auf interaktive 3D-Demos und visuelle Prototypen in Unreal Engine und KI-unterstuetzten Workflows.',
-          featuredProjects: 'Ausgewaehlte Projekte',
+            'Hintergrund im Concept Design mit Fokus auf interaktive 3D-Demos sowie visuelle Prototypen in Unreal Engine und KI-gestützten Workflows.',
+          featuredProjects: 'Ausgewählte Projekte',
           noProjects:
-            'Noch keine hervorgehobenen Projekte - setze `featured: true` bei Eintraegen in `src/content/projects.ts`.',
+            'Noch keine hervorgehobenen Projekte - setze `featured: true` bei Einträgen in `src/content/projects.ts`.',
         }
       : {
           heroTitle: 'AAA Concept Design Background | Realtime 3D Visualization | Unreal Engine',

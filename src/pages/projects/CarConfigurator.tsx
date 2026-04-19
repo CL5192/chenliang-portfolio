@@ -71,17 +71,17 @@ export function CarConfigurator() {
   const copy =
     locale === 'de'
       ? {
-          backToProjects: '<- Zurueck zu Projekten',
+          backToProjects: '<- Zurück zu Projekten',
           fallbackTitle: 'Auto-Konfigurator',
           lead:
-            'Ein Echtzeit-Automotive-Showroom-Projekt in Unreal Engine mit Fokus auf Szenenwechsel, cineastische Praesentation und Blueprint-gesteuerte Interaktion.',
+            'Ein Echtzeit-Automotive-Showroom-Projekt in Unreal Engine mit Fokus auf Szenenwechsel, cineastische Präsentation und Blueprint-gesteuerte Interaktion.',
           projectDetails: 'Projektdetails',
           duration: 'Dauer:',
           role: 'Rolle:',
           focus: 'Fokus:',
           videoAria: 'Car Configurator YouTube-Video',
           videoTitle: 'Car Configurator Video-Walkthrough',
-          overview: 'Ueberblick',
+          overview: 'Überblick',
           whatIBuilt: 'Was ich gebaut habe',
           systemDesign: 'Systemdesign',
           technicalHighlights: 'Technische Highlights',

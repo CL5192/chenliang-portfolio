@@ -25,7 +25,7 @@ export function DesignWorkHardSurface() {
           supportLine:
             'Verwendete Tools in diesen Arbeiten: Blender, Fusion 360, 3ds Max und ZBrush.',
           viewerLabel: 'Bildansicht Hard-Surface',
-          emptyPrefix: 'Fuege Bilder in',
+          emptyPrefix: 'Füge Bilder in',
           emptySuffix: 'ein, zum Beispiel',
         }
       : {

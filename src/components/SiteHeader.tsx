@@ -12,10 +12,10 @@ export function SiteHeader() {
   const copy =
     locale === 'de'
       ? {
-          menu: 'Menue',
+          menu: 'Menü',
           home: 'Start',
           projects: 'Projekte',
-          about: 'Ueber mich',
+          about: 'Über mich',
           contact: 'Kontakt',
           resume: 'Lebenslauf',
           languageLabel: 'Sprache',

@@ -35,11 +35,11 @@ const designWorkCategoriesSource: DesignWorkCategorySource[] = [
     },
     summary: {
       en: 'Personal environment design work for game and film-style settings, including architecture, interior scenes, and worldbuilding studies.',
-      de: 'Persoenliche Environment-Design-Arbeiten fuer Spiel- und filmnahe Settings, inklusive Architektur, Innenraeume und Worldbuilding-Studien.',
+      de: 'Persönliche Environment-Design-Arbeiten für spiel- und filmnahe Settings, inklusive Architektur, Innenräumen und Worldbuilding-Studien.',
     },
     intro: {
       en: 'A focused archive of personal environment and concept design studies covering architecture, interior spaces, and worldbuilding direction.',
-      de: 'Ein fokussiertes Archiv persoenlicher Environment- und Concept-Design-Studien zu Architektur, Innenraeumen und Worldbuilding-Richtung.',
+      de: 'Ein fokussiertes Archiv persönlicher Environment- und Concept-Design-Studien zu Architektur, Innenräumen und Worldbuilding-Richtung.',
     },
     coverImage: environmentsCover,
     order: 1,
@@ -52,7 +52,7 @@ const designWorkCategoriesSource: DesignWorkCategorySource[] = [
     },
     summary: {
       en: 'Personal hard-surface design work, including vehicles, mecha, weapons, and other mechanical concepts with realistic and sci-fi influences.',
-      de: 'Persoenliche Hard-Surface-Design-Arbeiten mit Fahrzeugen, Mechas, Waffen und weiteren mechanischen Konzepten zwischen Realismus und Sci-Fi.',
+      de: 'Persönliche Hard-Surface-Design-Arbeiten mit Fahrzeugen, Mechas, Waffen und weiteren mechanischen Konzepten zwischen Realismus und Sci-Fi.',
     },
     intro: {
       en: 'A selection of hard-surface concept explorations across vehicles, mecha, and prop design, with both grounded and sci-fi visual language.',
@@ -69,11 +69,11 @@ const designWorkCategoriesSource: DesignWorkCategorySource[] = [
     },
     summary: {
       en: 'Selected images from past projects, including visual development, concept work, and production artwork.',
-      de: 'Ausgewaehlte Bilder aus vergangenen Projekten, darunter Visual Development, Concept Work und Production Artwork.',
+      de: 'Ausgewählte Bilder aus vergangenen Projekten, darunter Visual Development, Concept Work und Production Artwork.',
     },
     intro: {
       en: 'A compact gallery of selected production-context images, including visual development and concept work created within past project timelines.',
-      de: 'Eine kompakte Galerie ausgewaehlter produktionnaher Bilder, darunter Visual Development und Concept Work aus frueheren Projektphasen.',
+      de: 'Eine kompakte Galerie ausgewählter produktionsnaher Bilder, darunter Visual Development und Concept Work aus früheren Projektphasen.',
     },
     coverImage: projectWorkCover,
     order: 3,

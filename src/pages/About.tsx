@@ -5,14 +5,14 @@ export function About() {
   const copy =
     locale === 'de'
       ? {
-          title: 'Ueber mich',
+          title: 'Über mich',
           lead:
-            'Ich bin Chen Liang, Designer mit Background im Concept Design und Fokus auf Realtime 3D, Visualisierung und interaktive digitale Produktion.',
+            'Ich bin Chen Liang, Designer mit Hintergrund im Concept Design und Fokus auf Realtime 3D, Visualisierung und interaktive digitale Produktion.',
           paragraphs: [
-            'Meine Erfahrung liegt im AAA-Game-Concept-Design mit Arbeiten in den Bereichen Environments, Hard-Surface-Design und Visual Development. Ueber die Jahre habe ich hauptsaechlich an Umgebungen, Fahrzeugen und Props gearbeitet und dabei 3D-Tools als festen Teil des Designprozesses eingesetzt.',
-            'In den letzten Jahren habe ich mich staerker in Unreal Engine, Realtime-Szenenarbeit, Prototyping und digitale Workflows weiterentwickelt. Besonders interessieren mich Rollen, in denen visuelles Design, 3D-Produktion und Umsetzung zusammenkommen - also Arbeit, bei der nicht nur die Optik zaehlt, sondern auch Funktion, Performance und Wartbarkeit.',
-            'Ich verbinde visuelles Denken mit 3D-basiertem Workflow und schneller, praxisnaher Lernfaehigkeit. Ich erkunde Ideen gerne direkt ueber das Machen, lerne neue Tools schnell und bewege mich sicher zwischen Designabsicht und Produktionsrealitaet.',
-            'Ich arbeite mit 3D-, Realtime- und Visual-Design-Tools wie Unreal Engine, Blender, ZBrush, Fusion 360 und Photoshop. Ergaenzend nutze ich KI-unterstuetzte Workflows - darunter Cursor, ComfyUI und Midjourney - fuer Lernen, visuelle Exploration, Recherche und praktische Umsetzung.',
+            'Meine Erfahrung liegt im AAA-Game-Concept-Design mit Arbeiten in den Bereichen Environments, Hard-Surface-Design und Visual Development. Über die Jahre habe ich hauptsächlich an Umgebungen, Fahrzeugen und Props gearbeitet und dabei 3D-Tools als festen Teil des Designprozesses eingesetzt.',
+            'In den letzten Jahren habe ich mich stärker in Unreal Engine, Realtime-Szenenarbeit, Prototyping und digitale Workflows weiterentwickelt. Besonders interessieren mich Rollen, in denen visuelles Design, 3D-Produktion und Umsetzung zusammenkommen - also Arbeit, bei der nicht nur die Optik zählt, sondern auch Funktion, Performance und Wartbarkeit.',
+            'Ich verbinde visuelles Denken mit 3D-basiertem Workflow und schneller, praxisnaher Lernfähigkeit. Ich erkunde Ideen gerne direkt über das Machen, lerne neue Tools schnell und bewege mich sicher zwischen Designabsicht und Produktionsrealität.',
+            'Ich arbeite mit 3D-, Realtime- und Visual-Design-Tools wie Unreal Engine, Blender, ZBrush, Fusion 360 und Photoshop. Ergänzend nutze ich KI-unterstützte Workflows - darunter Cursor, ComfyUI und Midjourney - für Lernen, visuelle Exploration, Recherche und praktische Umsetzung.',
           ],
         }
       : {
