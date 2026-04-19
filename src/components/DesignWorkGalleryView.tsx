@@ -1,5 +1,6 @@
 import { type ReactNode, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useI18n } from '../i18n/I18nContext'
 
 export type DesignWorkGalleryImage = {
   src: string
@@ -26,9 +27,29 @@ export function DesignWorkGalleryView({
   emptyState,
   lightboxLabel,
   backHref = '/projects/design-work',
-  backLabel = 'Back to Design Work',
+  backLabel,
 }: DesignWorkGalleryViewProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
+  const { locale } = useI18n()
+
+  const fallbackCopy =
+    locale === 'de'
+      ? {
+          backLabel: '<- Zurueck zu Designarbeiten',
+          openImage: 'Bild oeffnen',
+          closeImageViewer: 'Bildansicht schliessen',
+          close: 'Schliessen',
+          previousImage: 'Vorheriges Bild',
+          nextImage: 'Naechstes Bild',
+        }
+      : {
+          backLabel: '<- Back to Design Work',
+          openImage: 'Open image',
+          closeImageViewer: 'Close image viewer',
+          close: 'Close',
+          previousImage: 'Previous image',
+          nextImage: 'Next image',
+        }
 
   useEffect(() => {
     if (selectedIndex === null) return
@@ -65,7 +86,7 @@ export function DesignWorkGalleryView({
   return (
     <>
       <p className="page-lead page-back-link">
-        <Link to={backHref}>{backLabel}</Link>
+        <Link to={backHref}>{backLabel ?? fallbackCopy.backLabel}</Link>
       </p>
       <h1 className="page-title">{title}</h1>
       <p className="page-lead">{intro}</p>
@@ -79,7 +100,7 @@ export function DesignWorkGalleryView({
               type="button"
               className="design-work-gallery-item"
               onClick={() => setSelectedIndex(index)}
-              aria-label={`Open image ${index + 1} of ${galleryImages.length}`}
+              aria-label={`${fallbackCopy.openImage} ${index + 1} / ${galleryImages.length}`}
             >
               <img
                 className="design-work-gallery-item__image"
@@ -107,9 +128,9 @@ export function DesignWorkGalleryView({
               type="button"
               className="design-work-lightbox__close"
               onClick={() => setSelectedIndex(null)}
-              aria-label="Close image viewer"
+              aria-label={fallbackCopy.closeImageViewer}
             >
-              Close
+              {fallbackCopy.close}
             </button>
             <button
               type="button"
@@ -121,9 +142,9 @@ export function DesignWorkGalleryView({
                     galleryImages.length,
                 )
               }
-              aria-label="Previous image"
+              aria-label={fallbackCopy.previousImage}
             >
-              ←
+              {'<-'}
             </button>
             <img
               className="design-work-lightbox__image"
@@ -139,9 +160,9 @@ export function DesignWorkGalleryView({
                     (currentIndex === null ? 0 : currentIndex + 1) % galleryImages.length,
                 )
               }
-              aria-label="Next image"
+              aria-label={fallbackCopy.nextImage}
             >
-              →
+              {'->'}
             </button>
             <p className="design-work-lightbox__index">
               {(selectedIndex ?? 0) + 1} / {galleryImages.length}

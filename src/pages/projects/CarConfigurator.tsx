@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { PageSection } from '../../components/PageSection'
 import { getProjectBySlug } from '../../content/projects'
+import { useI18n } from '../../i18n/I18nContext'
 import sceneOverviewImage from '../../assets/projects/Car-configurator/01_scene-overview_triptych.jpg'
 import uiOverviewImage from '../../assets/projects/Car-configurator/02_ui-overview_main.jpg'
 import systemArchitectureImage from '../../assets/projects/Car-configurator/03_system-architecture_collage.jpg'
@@ -65,43 +66,79 @@ function CaseStudyImage({ image }: { image: CaseStudyImageData }) {
 }
 
 export function CarConfigurator() {
-  const project = getProjectBySlug(slug)
+  const { locale } = useI18n()
+  const project = getProjectBySlug(slug, locale)
+  const copy =
+    locale === 'de'
+      ? {
+          backToProjects: '<- Zurueck zu Projekten',
+          fallbackTitle: 'Auto-Konfigurator',
+          lead:
+            'Ein Echtzeit-Automotive-Showroom-Projekt in Unreal Engine mit Fokus auf Szenenwechsel, cineastische Praesentation und Blueprint-gesteuerte Interaktion.',
+          projectDetails: 'Projektdetails',
+          duration: 'Dauer:',
+          role: 'Rolle:',
+          focus: 'Fokus:',
+          videoAria: 'Car Configurator YouTube-Video',
+          videoTitle: 'Car Configurator Video-Walkthrough',
+          overview: 'Ueberblick',
+          whatIBuilt: 'Was ich gebaut habe',
+          systemDesign: 'Systemdesign',
+          technicalHighlights: 'Technische Highlights',
+          challengesReflection: 'Herausforderungen und Reflexion',
+        }
+      : {
+          backToProjects: '<- Back to projects',
+          fallbackTitle: 'Car Configurator',
+          lead:
+            'A realtime automotive showroom project built in Unreal Engine, focused on scene switching, cinematic presentation, and Blueprint-driven interaction.',
+          projectDetails: 'Project details',
+          duration: 'Duration:',
+          role: 'Role:',
+          focus: 'Focus:',
+          videoAria: 'Car Configurator YouTube video',
+          videoTitle: 'Car Configurator video walkthrough',
+          overview: 'Overview',
+          whatIBuilt: 'What I Built',
+          systemDesign: 'System Design',
+          technicalHighlights: 'Technical Highlights',
+          challengesReflection: 'Challenges & Reflection',
+        }
 
   return (
     <>
       <p className="page-lead page-back-link page-back-link--loose">
-        <Link to="/projects">← Back to projects</Link>
+        <Link to="/projects">{copy.backToProjects}</Link>
       </p>
 
       <section className="case-hero" aria-labelledby="car-configurator-hero-title">
         <h1 className="page-title case-hero__title" id="car-configurator-hero-title">
-          {project?.title ?? 'Car Configurator'}
+          {project?.title ?? copy.fallbackTitle}
         </h1>
 
         <p className="page-lead case-hero__lead">
-          A realtime automotive showroom project built in Unreal Engine, focused on scene switching,
-          cinematic presentation, and Blueprint-driven interaction.
+          {copy.lead}
         </p>
 
-        <div className="case-meta" aria-label="Project details">
+        <div className="case-meta" aria-label={copy.projectDetails}>
           <p>
-            <strong>Duration:</strong> 4 weeks
+            <strong>{copy.duration}</strong> 4 weeks
           </p>
           <p>
-            <strong>Role:</strong> 3D Generalist / Blueprint-driven interaction
+            <strong>{copy.role}</strong> 3D Generalist / Blueprint-driven interaction
           </p>
           <p>
             <strong>Tools:</strong> Unreal Engine 5, Blueprint, Sequencer, UMG
           </p>
           <p>
-            <strong>Focus:</strong> Realtime presentation, interaction, scene transition system
+            <strong>{copy.focus}</strong> Realtime presentation, interaction, scene transition system
           </p>
         </div>
 
-        <div className="case-video-embed" aria-label="Car Configurator YouTube video">
+        <div className="case-video-embed" aria-label={copy.videoAria}>
           <iframe
             className="case-video-embed__iframe"
-            title="Car Configurator video walkthrough"
+            title={copy.videoTitle}
             src="https://www.youtube.com/embed/OL9nCV1RQnI"
             loading="lazy"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -111,7 +148,7 @@ export function CarConfigurator() {
         </div>
       </section>
 
-      <PageSection title="Overview" id="overview">
+      <PageSection title={copy.overview} id="overview">
         <div className="case-copy">
           <p>
             This is not a gameplay prototype. It is a realtime automotive showroom and configurator
@@ -134,7 +171,7 @@ export function CarConfigurator() {
         </div>
       </PageSection>
 
-      <PageSection title="What I Built" id="what-i-built">
+      <PageSection title={copy.whatIBuilt} id="what-i-built">
         <div className="case-copy">
           <ul className="case-list">
             <li>Three display scenes organized in one level.</li>
@@ -157,7 +194,7 @@ export function CarConfigurator() {
         </div>
       </PageSection>
 
-      <PageSection title="System Design" id="system-design">
+      <PageSection title={copy.systemDesign} id="system-design">
         <div className="case-copy">
           <p>One of the main things I focused on in this project was structure.</p>
 
@@ -200,7 +237,7 @@ export function CarConfigurator() {
         </div>
       </PageSection>
 
-      <PageSection title="Technical Highlights" id="technical-highlights">
+      <PageSection title={copy.technicalHighlights} id="technical-highlights">
         <div className="case-copy">
           <h3>1. State-driven scene switching</h3>
           <p>
@@ -264,7 +301,7 @@ export function CarConfigurator() {
         </div>
       </PageSection>
 
-      <PageSection title="Challenges & Reflection" id="challenges-reflection">
+      <PageSection title={copy.challengesReflection} id="challenges-reflection">
         <div className="case-copy">
           <p>
             This project was also a practical step for me in working with Unreal Engine beyond static

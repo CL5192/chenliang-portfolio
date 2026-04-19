@@ -143,6 +143,12 @@ p:last-child {
   gap: 1rem;
 }
 
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .site-logo {
   font-weight: 600;
   color: var(--color-text);
@@ -163,6 +169,40 @@ p:last-child {
   font: inherit;
   cursor: pointer;
   color: var(--color-text);
+}
+
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.language-switch__button {
+  border: 0;
+  border-right: 1px solid var(--color-border);
+  background: transparent;
+  padding: 0.35rem 0.55rem;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--color-muted);
+}
+
+.language-switch__button:last-child {
+  border-right: 0;
+}
+
+.language-switch__button.is-active {
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-weight: 600;
+}
+
+.language-switch__button:hover {
+  background: var(--color-bg);
 }
 
 .nav-toggle:hover {
@@ -214,6 +254,10 @@ p:last-child {
     border-bottom: 1px solid var(--color-border);
     gap: 0;
     display: none;
+  }
+
+  .site-header__actions {
+    gap: 0.45rem;
   }
 
   .site-nav.is-open {

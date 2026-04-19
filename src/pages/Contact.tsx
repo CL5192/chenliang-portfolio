@@ -1,11 +1,25 @@
+import { useI18n } from '../i18n/I18nContext'
+
 export function Contact() {
+  const { locale } = useI18n()
+  const copy =
+    locale === 'de'
+      ? {
+          title: 'Kontakt',
+          lead: 'Bei Jobangeboten oder Kooperationen kannst du dich gerne melden.',
+          location: 'Berlin, Deutschland',
+        }
+      : {
+          title: 'Contact',
+          lead: 'For opportunities or collaboration, feel free to get in touch.',
+          location: 'Berlin, Germany',
+        }
+
   return (
     <>
-      <h1 className="page-title top-page-title">Contact</h1>
+      <h1 className="page-title top-page-title">{copy.title}</h1>
 
-      <p className="page-lead page-title-intro contact-lead">
-        For opportunities or collaboration, feel free to get in touch.
-      </p>
+      <p className="page-lead page-title-intro contact-lead">{copy.lead}</p>
 
       <div className="case-copy">
         <div className="contact-stack contact-stack--primary">
@@ -52,7 +66,7 @@ export function Contact() {
           </p>
         </div>
 
-        <p className="contact-locale">Berlin, Germany</p>
+        <p className="contact-locale">{copy.location}</p>
       </div>
     </>
   )
