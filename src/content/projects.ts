@@ -6,6 +6,7 @@
 import carConfiguratorCover from '../assets/projects/car-configurator-cover.jpg'
 import aiExperimentCover from '../assets/projects/ai-experiment-cover.jpg'
 import designWorkCover from '../assets/projects/design-work-cover.jpg'
+import automotiveStudioCinematicCover from '../assets/projects/automotive-studio-cinematic-cover.jpg'
 import type { Locale } from '../i18n/types'
 
 type LocalizedText = {
@@ -64,7 +65,7 @@ const projectsSource: ProjectSource[] = [
     },
     coverImage: aiExperimentCover,
     tags: ['AI', 'Prototype', 'Research'],
-    featured: true,
+    featured: false,
     order: 2,
   },
   {
@@ -81,6 +82,21 @@ const projectsSource: ProjectSource[] = [
     tags: ['UI', 'Systems', 'Brand'],
     featured: true,
     order: 3,
+  },
+  {
+    slug: 'automotive-studio-cinematic',
+    title: {
+      en: 'Automotive Studio Cinematic',
+      de: 'Automotive Studio Cinematic',
+    },
+    summary: {
+      en: 'A short automotive studio cinematic in Unreal Engine 5, focused on lighting, material rendering, camera movement, and product visualization.',
+      de: 'Ein kurzes Automotive-Studio-Cinematic in Unreal Engine 5 mit Fokus auf Beleuchtung, Material-Rendering, Kamerabewegung und Produktvisualisierung.',
+    },
+    coverImage: automotiveStudioCinematicCover,
+    tags: ['Unreal Engine', 'Cinematic', 'Automotive'],
+    featured: true,
+    order: 4,
   },
 ]
 

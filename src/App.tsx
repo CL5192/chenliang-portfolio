@@ -10,6 +10,7 @@ import { DesignWork } from './pages/projects/DesignWork'
 import { DesignWorkEnvironments } from './pages/projects/design-work/DesignWorkEnvironments'
 import { DesignWorkHardSurface } from './pages/projects/design-work/DesignWorkHardSurface'
 import { DesignWorkProjectWork } from './pages/projects/design-work/DesignWorkProjectWork'
+import { AutomotiveStudioCinematic } from './pages/projects/AutomotiveStudioCinematic'
 
 export default function App() {
   return (
@@ -19,6 +20,10 @@ export default function App() {
         <Route path="projects" element={<Projects />} />
         <Route path="projects/car-configurator" element={<CarConfigurator />} />
         <Route path="projects/ai-experiment" element={<AIExperiment />} />
+        <Route
+          path="projects/automotive-studio-cinematic"
+          element={<AutomotiveStudioCinematic />}
+        />
         <Route path="projects/design-work">
           <Route index element={<DesignWork />} />
           <Route path="environments" element={<DesignWorkEnvironments />} />
