@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { PageSection } from '../../components/PageSection'
 import { getProjectBySlug } from '../../content/projects'
@@ -18,14 +19,31 @@ export function DingMuseum() {
           videoTitle: 'Ding – Made to be used, not displayed.',
           lead: 'Ein 45-sekündiger Spec-Spot für Ding, eine fiktive Versicherungsmarke.',
           projectDetails: 'Projektdetails',
-          type: 'Typ',
-          typeValue: 'Spec-Arbeit / fiktive Marke',
-          format: 'Format',
-          formatValue: '45 Sek., 16:9',
+          client: 'Kunde',
+          clientValue: 'Ding (fiktiv) · Versicherung für persönliche Wertsachen · Deutschland, auf Englisch',
+          medium: 'Medium',
+          mediumValue: 'Online-Film, 45 Sek., 16:9',
+          role: 'Meine Rolle',
+          roleValue: 'Jede Phase, vom Client Brief bis zum finalen Mix (Agenturrollen simuliert)',
           tools: 'Tools',
-          toolsValue: 'ChatGPT (Bilder), Seedance 2.5, ElevenLabs, Comfy Cloud',
+          toolsValue: 'Claude Code · ChatGPT (Bilder) · Seedance 2.5 · ElevenLabs (Stimme, Sound) und Sonilo (Musik) auf Comfy Cloud',
           disclaimer:
             'Ding ist eine fiktive Marke. Dies ist ein nicht beauftragtes Spec-Projekt; das Video wurde mit KI-Tools erstellt.',
+          brief: {
+            label: 'Brief auf einen Blick',
+            propositionLabel: 'Proposition',
+            proposition:
+              'Mit Ding dürfen die Dinge, die du am meisten liebst, mit dir hinaus, statt zu Hause eingeschlossen zu bleiben.',
+            rows: [
+              { label: 'Zielgruppe', value: 'Berliner:innen, denen eine bestimmte Sache viel bedeutet: ein selbst gebautes Fahrrad, ein Ring, eine Kamera' },
+              { label: 'Spannung', value: 'Je mehr ich es liebe, desto weniger traue ich mich, es mitzunehmen' },
+              { label: 'Insight', value: 'Ich besitze es, damit mein Leben größer wird – doch weil ich es schütze, wird mein Leben kleiner' },
+              { label: 'Reasons to believe', value: 'Versichert auch unterwegs, weltweit · Viele Schäden werden zuerst repariert · Eine Police, fünf Arten von Dingen' },
+              { label: 'Markenrolle', value: 'Erlaubnis geben, keine Garantie' },
+              { label: 'Tonalität', value: 'Warm, aufmerksam, unaufgeregt' },
+            ],
+            note: 'Fiktive Marke; das Produkt ist realen Wertsachenversicherungen nachempfunden.',
+          },
           sections: [
             {
               id: 'process',
@@ -54,7 +72,7 @@ export function DingMuseum() {
               id: 'idea',
               title: 'Idee',
               paragraphs: [
-                'Single-Minded Proposition: Mit Ding dürfen die Dinge, die du am meisten liebst, mit dir hinaus, statt zu Hause eingeschlossen zu bleiben. Meine erste Version bestand den Brand-Swap-Test nur halb – „sorglos“ könnte jeder Versicherer sagen –, also habe ich den Kontrast „eingeschlossen“ ergänzt.',
+                'Meine erste Proposition bestand den Brand-Swap-Test nur halb – „sorglos“ könnte jeder Versicherer sagen –, also habe ich den Kontrast „zu Hause eingeschlossen“ ergänzt.',
                 'Aus 24 ersten Ideen habe ich fünf ausgewählt und mit selbst gesetzten Kriterien gefiltert: echtes Leben, nichts Vermenschlichtes, ein Mensch, der in einem konkreten Moment zurückweicht – und mit KI umsetzbar. Drei Konzepte blieben. Ich habe The Museum of Things He Loves gewählt, weil sich die Metapher schon an den Keyframes prüfen ließ: Ein Mann hat seine Wohnung in ein Museum seiner Lieblingsdinge verwandelt, bis eine Museumsregel die Wende bringt – „Exhibits may only leave the museum when insured.“ Endzeile: Made to be used, not displayed.',
               ],
             },
@@ -62,7 +80,7 @@ export function DingMuseum() {
               id: 'execution',
               title: 'Umsetzung',
               paragraphs: [
-                'Charakter-, Objekt- und Set-Sheets sowie Keyframes in ChatGPT; Video mit Seedance 2.5 auf Comfy Cloud; Stimme, Musik und Sound mit ElevenLabs. Geplant waren 30 Sekunden, doch eine langsame Figur und ein Witz, der Raum braucht, passten nicht hinein – ich habe auf 45 Sekunden umgeschnitten, den Text von neun auf sechs Sätze gekürzt und von Sekunde 17 bis 25 ganz auf Voiceover verzichtet.',
+                'Charakter-, Objekt- und Set-Sheets sowie Keyframes in ChatGPT; Video mit Seedance 2.5 auf Comfy Cloud; Stimme und Sound mit ElevenLabs, Musik mit Sonilo. Geplant waren 30 Sekunden, doch eine langsame Figur und ein Witz, der Raum braucht, passten nicht hinein – ich habe auf 45 Sekunden umgeschnitten, den Text von neun auf sechs Sätze gekürzt und von Sekunde 17 bis 25 ganz auf Voiceover verzichtet.',
               ],
             },
             {
@@ -82,14 +100,31 @@ export function DingMuseum() {
           videoTitle: 'Ding – Made to be used, not displayed.',
           lead: 'A 45-second spec ad for Ding, a fictional insurance brand.',
           projectDetails: 'Project details',
-          type: 'Type',
-          typeValue: 'Spec work / fictional brand',
-          format: 'Format',
-          formatValue: '45 s, 16:9',
+          client: 'Client',
+          clientValue: 'Ding (fictional) · Insurance for personal valuables · Germany, in English',
+          medium: 'Medium',
+          mediumValue: 'Online film, 45 s, 16:9',
+          role: 'My role',
+          roleValue: 'Every stage, from client brief to final mix (agency roles simulated)',
           tools: 'Tools',
-          toolsValue: 'ChatGPT (images), Seedance 2.5, ElevenLabs, Comfy Cloud',
+          toolsValue: 'Claude Code · ChatGPT (images) · Seedance 2.5 · ElevenLabs (voice, sound) and Sonilo (music) on Comfy Cloud',
           disclaimer:
             'Ding is a fictional brand. This is an uncommissioned spec project; the film was made with AI tools.',
+          brief: {
+            label: 'Brief at a glance',
+            propositionLabel: 'Proposition',
+            proposition:
+              'With Ding, the things you love most can come out with you, instead of staying locked away at home.',
+            rows: [
+              { label: 'Audience', value: 'Berliners who treasure one particular thing: a bike built by hand, a ring, a camera' },
+              { label: 'Tension', value: 'The more I love it, the less I dare take it out' },
+              { label: 'Insight', value: 'I own it to make my life bigger, but protecting it is making my life smaller' },
+              { label: 'Reasons to believe', value: 'Covered away from home, worldwide · Many claims repair the original first · One policy, five kinds of things' },
+              { label: 'Brand role', value: 'Give permission, not a guarantee' },
+              { label: 'Tone', value: 'Warm, attentive, understated' },
+            ],
+            note: 'Fictional brand; product modelled on real valuables insurance.',
+          },
           sections: [
             {
               id: 'process',
@@ -118,7 +153,7 @@ export function DingMuseum() {
               id: 'idea',
               title: 'Idea',
               paragraphs: [
-                'Single-minded proposition: with Ding, the things you love most can come out with you, instead of staying locked away at home. My first version only half passed the brand-swap test (any insurer could promise peace of mind), so I added the contrast with being locked away.',
+                'My first proposition only half passed the brand-swap test (any insurer could promise peace of mind), so I added the contrast with being locked away at home.',
                 'From 24 first ideas I shortlisted five, then filtered them with criteria I set: real life, nothing anthropomorphic, one person backing away from something in a specific moment, and buildable with AI. Three concepts survived. I chose The Museum of Things He Loves because the metaphor could be tested at keyframe stage: a man has turned his flat into a museum of his favourite things, until a museum rule turns the story. "Exhibits may only leave the museum when insured." End line: Made to be used, not displayed.',
               ],
             },
@@ -126,7 +161,7 @@ export function DingMuseum() {
               id: 'execution',
               title: 'Execution',
               paragraphs: [
-                'Character, object and set sheets plus keyframes in ChatGPT; video in Seedance 2.5 on Comfy Cloud; voice, music and sound with ElevenLabs. The film was planned at 30 seconds, but a slow character and a joke that needs space didn’t fit, so I recut it to 45, cut the voiceover from nine lines to six, and left seconds 17–25 without any voiceover.',
+                'Character, object and set sheets plus keyframes in ChatGPT; video in Seedance 2.5 on Comfy Cloud; voice and sound with ElevenLabs, music with Sonilo. The film was planned at 30 seconds, but a slow character and a joke that needs space didn’t fit, so I recut it to 45, cut the voiceover from nine lines to six, and left seconds 17–25 without any voiceover.',
               ],
             },
             {
@@ -163,10 +198,13 @@ export function DingMuseum() {
 
       <div className="case-meta" aria-label={copy.projectDetails}>
         <p>
-          <strong>{copy.type}</strong> {copy.typeValue}
+          <strong>{copy.client}</strong> {copy.clientValue}
         </p>
         <p>
-          <strong>{copy.format}</strong> {copy.formatValue}
+          <strong>{copy.medium}</strong> {copy.mediumValue}
+        </p>
+        <p>
+          <strong>{copy.role}</strong> {copy.roleValue}
         </p>
         <p>
           <strong>{copy.tools}</strong> {copy.toolsValue}
@@ -174,6 +212,20 @@ export function DingMuseum() {
       </div>
 
       <p className="page-lead detail-support-line">{copy.disclaimer}</p>
+
+      <section className="brief-card" aria-label={copy.brief.label}>
+        <p className="brief-card__label">{copy.brief.propositionLabel}</p>
+        <p className="brief-card__proposition">{copy.brief.proposition}</p>
+        <dl className="brief-card__rows">
+          {copy.brief.rows.map((row) => (
+            <Fragment key={row.label}>
+              <dt>{row.label}</dt>
+              <dd>{row.value}</dd>
+            </Fragment>
+          ))}
+        </dl>
+        <p className="brief-card__note">{copy.brief.note}</p>
+      </section>
 
       {copy.sections.map((section) => (
         <PageSection key={section.id} title={section.title} id={section.id}>
