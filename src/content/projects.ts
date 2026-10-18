@@ -81,8 +81,8 @@ const projectsSource: ProjectSource[] = [
     },
     coverImage: designWorkCover,
     tags: ['UI', 'Systems', 'Brand'],
-    featured: true,
-    order: 3,
+    featured: false,
+    order: 5,
   },
   {
     slug: 'automotive-studio-cinematic',
@@ -111,8 +111,8 @@ const projectsSource: ProjectSource[] = [
     },
     coverImage: dingMuseumCover,
     tags: ['AI Video', 'Spec Ad', 'Brand'],
-    featured: false,
-    order: 5,
+    featured: true,
+    order: 3,
   },
 ]
 
