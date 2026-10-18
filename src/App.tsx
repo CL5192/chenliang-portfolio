@@ -11,6 +11,7 @@ import { DesignWorkEnvironments } from './pages/projects/design-work/DesignWorkE
 import { DesignWorkHardSurface } from './pages/projects/design-work/DesignWorkHardSurface'
 import { DesignWorkProjectWork } from './pages/projects/design-work/DesignWorkProjectWork'
 import { AutomotiveStudioCinematic } from './pages/projects/AutomotiveStudioCinematic'
+import { DingMuseum } from './pages/projects/DingMuseum'
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           path="projects/automotive-studio-cinematic"
           element={<AutomotiveStudioCinematic />}
         />
+        <Route path="projects/ding-museum" element={<DingMuseum />} />
         <Route path="projects/design-work">
           <Route index element={<DesignWork />} />
           <Route path="environments" element={<DesignWorkEnvironments />} />

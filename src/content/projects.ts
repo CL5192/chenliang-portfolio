@@ -7,6 +7,7 @@ import carConfiguratorCover from '../assets/projects/car-configurator-cover.jpg'
 import aiExperimentCover from '../assets/projects/ai-experiment-cover.jpg'
 import designWorkCover from '../assets/projects/design-work-cover.jpg'
 import automotiveStudioCinematicCover from '../assets/projects/automotive-studio-cinematic-cover.jpg'
+import dingMuseumCover from '../assets/projects/ding-museum-cover.jpg'
 import type { Locale } from '../i18n/types'
 
 type LocalizedText = {
@@ -97,6 +98,21 @@ const projectsSource: ProjectSource[] = [
     tags: ['Unreal Engine', 'Cinematic', 'Automotive'],
     featured: true,
     order: 4,
+  },
+  {
+    slug: 'ding-museum',
+    title: {
+      en: 'Ding — The Museum of Things I Love',
+      de: 'Ding — The Museum of Things I Love',
+    },
+    summary: {
+      en: 'A 45-second spec ad for Ding, a fictional insurance brand, made with AI video tools.',
+      de: 'Ein 45-sekündiger Spec-Spot für Ding, eine fiktive Versicherungsmarke, umgesetzt mit KI-Videotools.',
+    },
+    coverImage: dingMuseumCover,
+    tags: ['AI Video', 'Spec Ad', 'Brand'],
+    featured: false,
+    order: 5,
   },
 ]
 
