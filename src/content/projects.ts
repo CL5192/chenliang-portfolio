@@ -8,6 +8,7 @@ import aiExperimentCover from '../assets/projects/ai-experiment-cover.jpg'
 import designWorkCover from '../assets/projects/design-work-cover.jpg'
 import automotiveStudioCinematicCover from '../assets/projects/automotive-studio-cinematic-cover.jpg'
 import dingMuseumCover from '../assets/projects/ding-museum-cover.jpg'
+import krospiCover from '../assets/projects/krospi/krospi-cover.jpg'
 import type { Locale } from '../i18n/types'
 
 type LocalizedText = {
@@ -96,7 +97,7 @@ const projectsSource: ProjectSource[] = [
     },
     coverImage: automotiveStudioCinematicCover,
     tags: ['Unreal Engine', 'Cinematic', 'Automotive'],
-    featured: true,
+    featured: false,
     order: 4,
   },
   {
@@ -113,6 +114,21 @@ const projectsSource: ProjectSource[] = [
     tags: ['AI Video', 'Spec Ad', 'Brand'],
     featured: true,
     order: 3,
+  },
+  {
+    slug: 'krospi',
+    title: {
+      en: 'Krospi — three new flavours, three AI-made spots',
+      de: 'Krospi — drei neue Sorten, drei KI-Spots',
+    },
+    summary: {
+      en: 'Three vertical spec ads for a fictional German crisp brand, made with AI video tools: a learning curve from 7 days to 3.',
+      de: 'Drei Hochformat-Spec-Spots für eine fiktive deutsche Chipsmarke, umgesetzt mit KI-Videotools: eine Lernkurve von 7 auf 3 Tage.',
+    },
+    coverImage: krospiCover,
+    tags: ['AI Video', 'Spec Ad', 'Comedy'],
+    featured: true,
+    order: 0,
   },
 ]
 

@@ -12,6 +12,7 @@ import { DesignWorkHardSurface } from './pages/projects/design-work/DesignWorkHa
 import { DesignWorkProjectWork } from './pages/projects/design-work/DesignWorkProjectWork'
 import { AutomotiveStudioCinematic } from './pages/projects/AutomotiveStudioCinematic'
 import { DingMuseum } from './pages/projects/DingMuseum'
+import { KrospiSpec } from './pages/projects/KrospiSpec'
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
           element={<AutomotiveStudioCinematic />}
         />
         <Route path="projects/ding-museum" element={<DingMuseum />} />
+        <Route path="projects/krospi" element={<KrospiSpec />} />
         <Route path="projects/design-work">
           <Route index element={<DesignWork />} />
           <Route path="environments" element={<DesignWorkEnvironments />} />

@@ -745,6 +745,206 @@ p:last-child {
   }
 }
 
+/* Krospi case page — three vertical spots, learning-curve steps, trust lists */
+.krospi-spots {
+  max-width: 44rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.krospi-spots__item {
+  margin: 0;
+}
+
+.krospi-spots__frame {
+  aspect-ratio: 9 / 16;
+  border-radius: calc(var(--radius) - 1px);
+  border: 1px solid var(--color-border);
+  background: #e8e6e1;
+  overflow: hidden;
+}
+
+.krospi-spots__item figcaption {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.krospi-case__meta {
+  max-width: 44rem;
+  margin: -0.35rem 0 1rem;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.krospi-case__media {
+  max-width: 44rem;
+  margin: 1.25rem 0;
+}
+
+.krospi-case__media figcaption {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.krospi-keyframes {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.krospi-keyframes img,
+.krospi-storyboard {
+  border-radius: calc(var(--radius) - 1px);
+  border: 1px solid var(--color-border);
+}
+
+.krospi-storyboard {
+  max-width: 34rem;
+}
+
+/* Flow diagram (Double Diamond notation + layer row); scrolls sideways on narrow screens */
+.flow-diagram {
+  overflow-x: auto;
+  padding: 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.flow-diagram svg {
+  display: block;
+  width: 100%;
+  min-width: 720px;
+  height: auto;
+}
+
+.flow-diagram__label {
+  fill: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.flow-diagram__small {
+  fill: var(--color-muted);
+  font-size: 12px;
+}
+
+.flow-diagram__diamond {
+  fill: var(--color-accent-soft);
+  stroke: var(--color-accent);
+  stroke-width: 1.5;
+}
+
+.flow-diagram__diamond--faint {
+  opacity: 0.5;
+}
+
+.flow-diagram__diamond--mid {
+  opacity: 0.75;
+}
+
+.flow-diagram__divider {
+  stroke: var(--color-accent);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+  opacity: 0.6;
+}
+
+.flow-diagram__anchor {
+  fill: var(--color-accent-soft);
+  stroke: var(--color-accent-strong);
+  stroke-width: 2;
+}
+
+.flow-diagram__box {
+  fill: var(--color-bg);
+  stroke: var(--color-border);
+  stroke-width: 1.5;
+}
+
+.flow-diagram__gate {
+  fill: var(--color-bg);
+  stroke: var(--color-accent-strong);
+  stroke-width: 2;
+}
+
+.flow-diagram__arrow {
+  stroke: var(--color-muted);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.flow-diagram__arrowhead {
+  fill: var(--color-muted);
+}
+
+.flow-diagram__loop {
+  stroke: var(--color-accent);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 4;
+  fill: none;
+}
+
+.krospi-storyboard-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.krospi-storyboard-pair img {
+  border-radius: calc(var(--radius) - 1px);
+  border: 1px solid var(--color-border);
+}
+
+.krospi-trust {
+  max-width: 44rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.krospi-trust__label {
+  margin: 0 0 0.35rem;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.krospi-trust ul,
+.krospi-numbers {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.93rem;
+}
+
+.krospi-numbers {
+  max-width: 44rem;
+}
+
+@media (max-width: 640px) {
+  .krospi-spots {
+    gap: 0.4rem;
+  }
+
+  .krospi-spots__item figcaption {
+    font-size: 0.75rem;
+  }
+
+  .krospi-keyframes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .krospi-trust {
+    grid-template-columns: 1fr;
+    padding: 1.25rem 1rem;
+  }
+}
+
 /* Contact — vertical rhythm (page-specific, Contact.tsx only) */
 .contact-lead {
   margin-bottom: 1.7rem;
