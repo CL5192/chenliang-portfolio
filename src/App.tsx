@@ -13,6 +13,7 @@ import { DesignWorkProjectWork } from './pages/projects/design-work/DesignWorkPr
 import { AutomotiveStudioCinematic } from './pages/projects/AutomotiveStudioCinematic'
 import { DingMuseum } from './pages/projects/DingMuseum'
 import { KrospiSpec } from './pages/projects/KrospiSpec'
+import { HaldeLookStudy } from './pages/projects/HaldeLookStudy'
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
         />
         <Route path="projects/ding-museum" element={<DingMuseum />} />
         <Route path="projects/krospi" element={<KrospiSpec />} />
+        <Route path="projects/halde" element={<HaldeLookStudy />} />
         <Route path="projects/design-work">
           <Route index element={<DesignWork />} />
           <Route path="environments" element={<DesignWorkEnvironments />} />

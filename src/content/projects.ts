@@ -9,6 +9,7 @@ import designWorkCover from '../assets/projects/design-work-cover.jpg'
 import automotiveStudioCinematicCover from '../assets/projects/automotive-studio-cinematic-cover.jpg'
 import dingMuseumCover from '../assets/projects/ding-museum-cover.jpg'
 import krospiCover from '../assets/projects/krospi/krospi-cover.jpg'
+import haldeCover from '../assets/projects/look-study/look-study-cover.jpg'
 import type { Locale } from '../i18n/types'
 
 type LocalizedText = {
@@ -129,6 +130,21 @@ const projectsSource: ProjectSource[] = [
     tags: ['AI Video', 'Spec Ad', 'Comedy'],
     featured: true,
     order: 0,
+  },
+  {
+    slug: 'halde',
+    title: {
+      en: 'HALDE — one cream, three looks',
+      de: 'HALDE — eine Creme, drei Looks',
+    },
+    summary: {
+      en: 'Three sets of AI stills for a fictional alpine skincare brand: the same products, from e-commerce shots to a launch key visual.',
+      de: 'Drei Serien von KI-Stills für eine fiktive alpine Hautpflegemarke: dieselben Produkte, vom E-Commerce-Bild bis zum Launch-Key-Visual.',
+    },
+    coverImage: haldeCover,
+    tags: ['AI Stills', 'Spec Ad', 'Beauty'],
+    featured: false,
+    order: 3.5,
   },
 ]
 

@@ -945,6 +945,41 @@ p:last-child {
   }
 }
 
+/* HALDE look study — one landscape key image per look, portrait formats below */
+.halde-set img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius) - 1px);
+  border: 1px solid var(--color-border);
+}
+
+.halde-steps {
+  padding-left: 1.25rem;
+}
+
+.halde-set {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.halde-set__portraits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.halde-set__portraits--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 640px) {
+  .halde-set__portraits--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 /* Contact — vertical rhythm (page-specific, Contact.tsx only) */
 .contact-lead {
   margin-bottom: 1.7rem;
