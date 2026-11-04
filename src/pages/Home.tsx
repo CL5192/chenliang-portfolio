@@ -9,17 +9,17 @@ export function Home() {
   const copy =
     locale === 'de'
       ? {
-          heroTitle: 'AAA-Concept-Design Background | Realtime-3D-Visualisierung | Unreal Engine',
+          heroTitle: 'Generative AI Artist | Look Development & visuelle Konsistenz',
           heroSubtitle:
-            'Hintergrund im Concept Design mit Fokus auf interaktive 3D-Demos sowie visuelle Prototypen in Unreal Engine und KI-gestützten Workflows.',
+            'Hintergrund in Concept Design und 3D-Visualisierung, heute mit Fokus auf generative KI für Visual Development und Creative Technology.',
           featuredProjects: 'Ausgewählte Projekte',
           noProjects:
             'Noch keine hervorgehobenen Projekte - setze `featured: true` bei Einträgen in `src/content/projects.ts`.',
         }
       : {
-          heroTitle: 'AAA Concept Design Background | Realtime 3D Visualization | Unreal Engine',
+          heroTitle: 'Generative AI Artist | Look Development & Visual Consistency',
           heroSubtitle:
-            'Background in concept design, creating interactive 3D demos and visual prototypes with Unreal Engine and AI-assisted workflows.',
+            'Background in concept design and 3D visualization, now focused on generative AI for visual development and creative technology.',
           featuredProjects: 'Featured projects',
           noProjects:
             'No featured projects yet - set `featured: true` on entries in `src/content/projects.ts`.',

@@ -6,24 +6,22 @@ export function About() {
     locale === 'de'
       ? {
           title: 'Über mich',
-          lead:
-            'Ich bin Chen Liang, Designer mit Hintergrund im Concept Design und Fokus auf Realtime 3D, Visualisierung und interaktive digitale Produktion.',
+          lead: 'Ich bin Liang Chen. Ich mache KI-Videospots und Bildserien in Berlin.',
           paragraphs: [
-            'Meine Erfahrung liegt im AAA-Game-Concept-Design mit Arbeiten in den Bereichen Environments, Hard-Surface-Design und Visual Development. Über die Jahre habe ich hauptsächlich an Umgebungen, Fahrzeugen und Props gearbeitet und dabei 3D-Tools als festen Teil des Designprozesses eingesetzt.',
-            'In den letzten Jahren habe ich mich stärker in Unreal Engine, Realtime-Szenenarbeit, Prototyping und digitale Workflows weiterentwickelt. Besonders interessieren mich Rollen, in denen visuelles Design, 3D-Produktion und Umsetzung zusammenkommen - also Arbeit, bei der nicht nur die Optik zählt, sondern auch Funktion, Performance und Wartbarkeit.',
-            'Ich verbinde visuelles Denken mit 3D-basiertem Workflow und schneller, praxisnaher Lernfähigkeit. Ich erkunde Ideen gerne direkt über das Machen, lerne neue Tools schnell und bewege mich sicher zwischen Designabsicht und Produktionsrealität.',
-            'Ich arbeite mit 3D-, Realtime- und Visual-Design-Tools wie Unreal Engine, Blender, ZBrush, Fusion 360 und Photoshop. Ergänzend nutze ich KI-unterstützte Workflows - darunter Cursor, ComfyUI und Midjourney - für Lernen, visuelle Exploration, Recherche und praktische Umsetzung.',
+            'Viele Jahre war ich Concept Artist in Spielestudios in Warschau und Berlin und habe Umgebungen, Fahrzeuge und Props entworfen. 2025 bin ich gegangen. Die Arbeit passte nicht mehr zu mir, und KI begann, die Branche zu verändern.',
+            'Ich wusste nicht, was als Nächstes kommt, also habe ich Dinge ausprobiert, die mir fremd waren: Frontend-Programmierung, C++, Game Engines, ComfyUI, Deutsch. Gegen manches hatte ich anfangs Widerstand.',
+            'Programmieren zu lernen hat mein Denken stärker verändert als jedes Tool. Heute definiere ich zuerst das Problem, zerlege die Arbeit in Schritte und prüfe eine Behauptung, bevor ich sie glaube. Ich bin von der Arbeitsweise eines Handwerkers zu einer gekommen, in der sich Kunst und Technik verbinden.',
+            'Im Spätsommer 2026 wurde die Richtung klar. Ich mag Arbeit, in der Schönheit und Technik zusammenkommen: Logik, Fakten, Automatisierung und Kreativität in einem Stück. Ich lebe in Berlin und lerne Deutsch; die B2-Prüfung ist Anfang 2027.',
           ],
         }
       : {
           title: 'About',
-          lead:
-            'I am Chen Liang, a designer with a background in concept design, now focused on realtime 3D, visualization, and interactive digital production.',
+          lead: "I'm Liang Chen. I make AI video ads and image series in Berlin.",
           paragraphs: [
-            'My experience is in AAA game concept design, with work spanning environments, hard-surface design, and visual development. Over the years, I worked mainly on environments, vehicles, and props, often using 3D tools as part of the design process.',
-            'More recently, I have been moving further into Unreal Engine, realtime scene work, prototyping, and digital workflows. I am especially interested in roles where visual design, 3D production, and implementation come together - work that values not only how something looks, but also how it functions, performs, and can be maintained.',
-            'What I bring is a combination of visual thinking, 3D-based workflow, and fast practical learning. I am comfortable exploring ideas through making, picking up new tools quickly, and working across the space between design intent and production reality.',
-            'I work across 3D, realtime, and visual design tools including Unreal Engine, Blender, ZBrush, Fusion 360, and Photoshop. Alongside that, I use AI-supported workflows - including tools like Cursor, ComfyUI, and Midjourney - for learning new tools, visual exploration, research, and practical implementation support.',
+            'For many years I was a concept artist in game studios in Warsaw and Berlin, designing environments, vehicles and props. In 2025 I left. The work no longer fit me, and AI was starting to change the field.',
+            "I didn't know what came next, so I tried things I wasn't used to: frontend coding, C++, game engines, ComfyUI, German. Some of it I resisted at first.",
+            'Learning to code changed how I think more than any tool did. I now define the problem before I start, break work into steps, and test a claim before I believe it. I moved from a craftsman’s way of working to one where art and technology meet.',
+            'In late summer 2026 the direction became clear. I like work where beauty and technology meet: logic, facts, automation and creativity in the same piece. I’m in Berlin and learning German, with the B2 exam in early 2027.',
           ],
         }
 
