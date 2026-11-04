@@ -10,12 +10,12 @@ export function Projects() {
     locale === 'de'
       ? {
           title: 'Projekte',
-          lead: 'Eine Auswahl an Projekten aus Realtime 3D, visuellen Experimenten und Designarbeiten.',
+          lead: 'Eine Auswahl an Projekten aus KI-Video, KI-Stills, 3D und Concept Design.',
           sectionTitle: 'Alle Projekte',
         }
       : {
           title: 'Projects',
-          lead: 'A selection of projects across realtime 3D, visual experiments, and visual design work.',
+          lead: 'A selection of projects across AI video, AI stills, 3D and concept design.',
           sectionTitle: 'All projects',
         }
 

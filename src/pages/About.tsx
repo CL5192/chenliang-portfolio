@@ -6,7 +6,7 @@ export function About() {
     locale === 'de'
       ? {
           title: 'Über mich',
-          lead: 'Ich bin Liang Chen. Ich mache KI-Videospots und Bildserien in Berlin.',
+          lead: 'Ich bin Chen Liang. Ich mache KI-Videospots und Bildserien in Berlin.',
           paragraphs: [
             'Viele Jahre war ich Concept Artist in Spielestudios in Warschau und Berlin und habe Umgebungen, Fahrzeuge und Props entworfen. 2025 bin ich gegangen. Die Arbeit passte nicht mehr zu mir, und KI begann, die Branche zu verändern.',
             'Ich wusste nicht, was als Nächstes kommt, also habe ich Dinge ausprobiert, die mir fremd waren: Frontend-Programmierung, C++, Game Engines, ComfyUI, Deutsch. Gegen manches hatte ich anfangs Widerstand.',
@@ -16,7 +16,7 @@ export function About() {
         }
       : {
           title: 'About',
-          lead: "I'm Liang Chen. I make AI video ads and image series in Berlin.",
+          lead: "I'm Chen Liang. I make AI video ads and image series in Berlin.",
           paragraphs: [
             'For many years I was a concept artist in game studios in Warsaw and Berlin, designing environments, vehicles and props. In 2025 I left. The work no longer fit me, and AI was starting to change the field.',
             "I didn't know what came next, so I tried things I wasn't used to: frontend coding, C++, game engines, ComfyUI, German. Some of it I resisted at first.",
