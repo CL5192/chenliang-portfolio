@@ -114,7 +114,7 @@ const projectsSource: ProjectSource[] = [
     },
     coverImage: dingMuseumCover,
     tags: ['AI Video', 'Spec Ad', 'Brand'],
-    featured: true,
+    featured: false,
     order: 3,
   },
   {
@@ -144,7 +144,7 @@ const projectsSource: ProjectSource[] = [
     },
     coverImage: varmrCover,
     tags: ['AI Video', 'Spec Ad', 'UGC'],
-    featured: false,
+    featured: true,
     order: 0.5,
   },
   {
