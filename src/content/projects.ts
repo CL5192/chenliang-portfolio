@@ -54,7 +54,7 @@ const projectsSource: ProjectSource[] = [
     },
     coverImage: carConfiguratorCover,
     tags: ['WebGL', 'Product', 'UX'],
-    featured: true,
+    featured: false,
     order: 1,
   },
   {
@@ -159,8 +159,8 @@ const projectsSource: ProjectSource[] = [
     },
     coverImage: haldeCover,
     tags: ['AI Stills', 'Spec Ad', 'Beauty'],
-    featured: false,
-    order: 3.5,
+    featured: true,
+    order: 0.8,
   },
 ]
 
