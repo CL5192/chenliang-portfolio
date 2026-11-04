@@ -14,6 +14,7 @@ import { AutomotiveStudioCinematic } from './pages/projects/AutomotiveStudioCine
 import { DingMuseum } from './pages/projects/DingMuseum'
 import { KrospiSpec } from './pages/projects/KrospiSpec'
 import { HaldeLookStudy } from './pages/projects/HaldeLookStudy'
+import { VarmrSpec } from './pages/projects/VarmrSpec'
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="projects/ding-museum" element={<DingMuseum />} />
         <Route path="projects/krospi" element={<KrospiSpec />} />
         <Route path="projects/halde" element={<HaldeLookStudy />} />
+        <Route path="projects/varmr" element={<VarmrSpec />} />
         <Route path="projects/design-work">
           <Route index element={<DesignWork />} />
           <Route path="environments" element={<DesignWorkEnvironments />} />

@@ -10,6 +10,7 @@ import automotiveStudioCinematicCover from '../assets/projects/automotive-studio
 import dingMuseumCover from '../assets/projects/ding-museum-cover.jpg'
 import krospiCover from '../assets/projects/krospi/krospi-cover.jpg'
 import haldeCover from '../assets/projects/look-study/look-study-cover.jpg'
+import varmrCover from '../assets/projects/varmr/varmr-cover.jpg'
 import type { Locale } from '../i18n/types'
 
 type LocalizedText = {
@@ -130,6 +131,21 @@ const projectsSource: ProjectSource[] = [
     tags: ['AI Video', 'Spec Ad', 'Comedy'],
     featured: true,
     order: 0,
+  },
+  {
+    slug: 'varmr',
+    title: {
+      en: 'VARMR — a Viking, a storm, a flask',
+      de: 'VARMR — ein Wikinger, ein Sturm, eine Isolierflasche',
+    },
+    summary: {
+      en: 'A 20-second vertical spec ad for a fictional insulated flask. A Viking films himself in a North Sea storm.',
+      de: 'Ein 20-sekündiger Hochformat-Spec-Spot für eine fiktive Isolierflasche. Ein Wikinger filmt sich selbst in einem Nordseesturm.',
+    },
+    coverImage: varmrCover,
+    tags: ['AI Video', 'Spec Ad', 'UGC'],
+    featured: false,
+    order: 0.5,
   },
   {
     slug: 'halde',

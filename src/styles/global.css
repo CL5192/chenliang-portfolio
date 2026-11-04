@@ -1071,3 +1071,129 @@ p:last-child {
   font-size: 0.9rem;
   margin-top: 0.75rem;
 }
+
+.varmr-video {
+  max-width: 15rem;
+}
+
+.varmr-steps {
+  max-width: 44rem;
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.93rem;
+}
+
+.varmr-steps li + li {
+  margin-top: 0.4rem;
+}
+
+.varmr-pair {
+  max-width: 30rem;
+  margin: 1.25rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.varmr-pair figure {
+  margin: 0;
+}
+
+.varmr-pair img {
+  border-radius: calc(var(--radius) - 1px);
+  border: 1px solid var(--color-border);
+}
+
+.varmr-pair figcaption {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+/* VARMR: vertical video on the left, description beside it on wide screens */
+.varmr-hero {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  gap: 1.5rem 2rem;
+  align-items: start;
+  max-width: 54rem;
+  margin-bottom: 1.5rem;
+}
+
+.varmr-hero__text > :first-child {
+  margin-top: 0;
+}
+
+.varmr-hero .case-meta {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 720px) {
+  .varmr-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Running text: even right edge. Hyphenation follows the page language (html lang).
+   Short one- or two-line leads stay ragged: justifying them stretches the words apart. */
+.case-copy p,
+.varmr-hero__text p,
+.varmr-steps li {
+  text-align: justify;
+  hyphens: auto;
+  text-wrap: pretty;
+}
+
+/* Contact lines hold links and addresses: keep them ragged */
+.contact-stack p {
+  text-align: left;
+  hyphens: manual;
+}
+
+/* Typographic rhythm: four distinct steps so the eye can tell lines, paragraphs, headings and sections apart.
+   line gap (leading) < paragraph gap < heading-to-text gap < section gap; media blocks sit between paragraph and section. */
+:root {
+  --leading-text: 1.5;
+  --space-paragraph: 0.8rem;
+  --space-heading-after: 0.95rem;
+  --space-media: 1.5rem;
+  --space-section: 3.25rem;
+}
+
+.case-copy p,
+.page-lead,
+.detail-support-line,
+.varmr-steps li,
+.case-meta p {
+  line-height: var(--leading-text);
+}
+
+.case-copy p {
+  margin-bottom: var(--space-paragraph);
+}
+
+.case-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.page-section {
+  margin-top: var(--space-section);
+}
+
+.page-section:first-of-type {
+  margin-top: 0;
+}
+
+.page-section__title {
+  margin-bottom: var(--space-heading-after);
+  padding-bottom: 0.4rem;
+}
+
+.krospi-case__media,
+.varmr-pair {
+  margin: var(--space-media) 0;
+}
+
+.case-copy + .brief-card {
+  margin-top: 0.9rem;
+}
