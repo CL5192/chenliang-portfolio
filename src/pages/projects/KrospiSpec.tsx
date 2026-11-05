@@ -15,9 +15,9 @@ import tintenfischStoryboard2 from '../../assets/projects/krospi/tintenfisch-sto
 const slug = 'krospi'
 /** Shorts in the order they were made */
 const spots = [
-  { id: 'bLDIdPdpF9Q', name: 'Truffle' },
-  { id: '8nCiStk9IEc', name: 'Tintenfisch' },
-  { id: 'BkuRbuo2dnw', name: 'Meer' },
+  { id: 'bLDIdPdpF9Q', name: { en: 'Truffle', de: 'Trüffel' } },
+  { id: '8nCiStk9IEc', name: { en: 'Squid Ink', de: 'Tintenfisch' } },
+  { id: 'BkuRbuo2dnw', name: { en: 'Sea', de: 'Meer' } },
 ]
 const comparisonEmbedId = 'E1xeBc81RLI'
 const truffleKeyframes = [truffleKeyframe1, truffleKeyframe2, truffleKeyframe3, truffleKeyframe4]
@@ -192,7 +192,7 @@ export function KrospiSpec() {
             proposition: 'Worth embarrassing yourself for.',
             rows: [
               { label: 'Mechanism', value: 'A bag of crisps sets off a daydream; one second later, back to reality, still mid-pose' },
-              { label: 'Flavours', value: 'French Truffle · Tintenfisch (squid ink) · Meer (sea)' },
+              { label: 'Flavours', value: 'French Truffle · Squid Ink · Sea' },
             ],
             note: 'Fictional brand; I designed the flavours and packaging for this project.',
           },
@@ -216,7 +216,7 @@ export function KrospiSpec() {
             },
             {
               id: 'tintenfisch',
-              title: '2 · Tintenfisch — the model is an actor',
+              title: '2 · Squid Ink — the model is an actor',
               meta: 'Exam hall · made second · 5 days',
               before: [
                 'A school gym set up for final exams. A bored teacher on invigilation duty sneaks a black squid-ink crisp from his backpack — a whip pan, and he’s dancing industrial at an underground party. The bell rings: he’s frozen on a student’s desk, out of breath, with the whole room staring.',
@@ -231,7 +231,7 @@ export function KrospiSpec() {
             },
             {
               id: 'meer',
-              title: '3 · Meer — starting from the proposition',
+              title: '3 · Sea — starting from the proposition',
               meta: 'Train station · made last · 3 days, from new concept to final cut',
               before: [
                 'Before this spot I looked back at the first two and saw a problem: one sold a feeling, the other sold a flavour. I tied the series to one proposition — worth embarrassing yourself for — and started this spot from it: a holiday without going anywhere.',
@@ -242,7 +242,7 @@ export function KrospiSpec() {
               after: [
                 'This is also where my way of working took its full shape. Making the first two spots, I found what worked for me: decide one thing at a time, and only one kind of thing per step. A spot is full of choices that are tangled together, from the concept and the joke to the camera, the look and the wording of a prompt. I pulled them apart. First I explored and picked a concept, then fixed the proposition as an anchor, then went beat by beat, each time looking at a few options and choosing one. Only after that came the shot list, storyboard and prompts. Working this way, I didn’t get lost, and it suits the way my head works.',
               ],
-              extraMediaLabel: 'How I worked on Meer: each diamond widens to explore and narrows to choose one; then the spot is built layer by layer.',
+              extraMediaLabel: 'How I worked on Sea: each diamond widens to explore and narrows to choose one; then the spot is built layer by layer.',
               afterExtra: [
                 'No new kinds of failure this time. The system from the first two spots held, so the three days went into decisions like that one.',
               ],
@@ -315,14 +315,14 @@ export function KrospiSpec() {
         />
       </div>
     ),
-    meer: <img className="krospi-storyboard" src={meerStoryboard} alt="Meer storyboard" loading="lazy" />,
+    meer: <img className="krospi-storyboard" src={meerStoryboard} alt="Sea storyboard" loading="lazy" />,
   }
 
   const caseExtraMedia: Record<string, ReactNode> = {
     tintenfisch: (
       <div className="krospi-storyboard-pair">
-        <img src={tintenfischStoryboard1} alt="Tintenfisch storyboard, panels 1–9" loading="lazy" />
-        <img src={tintenfischStoryboard2} alt="Tintenfisch storyboard, panels 10–18" loading="lazy" />
+        <img src={tintenfischStoryboard1} alt="Squid Ink storyboard, panels 1–9" loading="lazy" />
+        <img src={tintenfischStoryboard2} alt="Squid Ink storyboard, panels 10–18" loading="lazy" />
       </div>
     ),
     meer: <FlowDiagram labels={copy.flow} />,
@@ -341,7 +341,7 @@ export function KrospiSpec() {
             <div className="krospi-spots__frame">
               <iframe
                 className="case-video-embed__iframe"
-                title={`Krospi ${spot.name}`}
+                title={`Krospi ${spot.name[locale]}`}
                 src={`https://www.youtube.com/embed/${spot.id}`}
                 loading="lazy"
                 allow={embedAllow}
@@ -350,7 +350,7 @@ export function KrospiSpec() {
               />
             </div>
             <figcaption>
-              {index + 1} · {spot.name} · {copy.spotPlaces[index]}
+              {index + 1} · {spot.name[locale]} · {copy.spotPlaces[index]}
             </figcaption>
           </figure>
         ))}

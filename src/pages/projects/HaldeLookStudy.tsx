@@ -38,8 +38,8 @@ export function HaldeLookStudy() {
     locale === 'de'
       ? {
           backToProjects: '<- Zurück zu Projekten',
-          fallbackTitle: 'HALDE — eine Creme, drei Looks',
-          lead: 'Drei Serien von KI-Stills für eine fiktive alpine Hautpflegemarke: dieselben Produkte, vom E-Commerce-Bild bis zum Launch-Key-Visual.',
+          fallbackTitle: 'HALDE',
+          lead: 'Elf Stills in zwei Tagen für eine erfundene alpine Hautpflegemarke: dieselben vier Produkte auf hellem Grau, auf schwarzem Basalt, dann draußen in Schnee und Moos.',
           projectDetails: 'Projektdetails',
           client: 'Kunde',
           clientValue: 'HALDE (fiktiv) · Hautpflege',
@@ -95,8 +95,8 @@ export function HaldeLookStudy() {
         }
       : {
           backToProjects: '<- Back to projects',
-          fallbackTitle: 'HALDE — one cream, three looks',
-          lead: 'Three sets of AI stills for a fictional alpine skincare brand: the same products, from e-commerce shots to a launch key visual.',
+          fallbackTitle: 'HALDE',
+          lead: 'Eleven stills in two days for a made-up alpine skincare brand: the same four products on light grey, on black basalt, then out in snow and moss.',
           projectDetails: 'Project details',
           client: 'Client',
           clientValue: 'HALDE (fictional) · skincare',

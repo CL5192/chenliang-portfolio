@@ -150,8 +150,8 @@ const projectsSource: ProjectSource[] = [
   {
     slug: 'halde',
     title: {
-      en: 'HALDE — one cream, three looks',
-      de: 'HALDE — eine Creme, drei Looks',
+      en: 'HALDE',
+      de: 'HALDE',
     },
     summary: {
       en: 'Three sets of AI stills for a fictional alpine skincare brand: the same products, from e-commerce shots to a launch key visual.',
