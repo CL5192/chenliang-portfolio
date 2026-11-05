@@ -13,22 +13,15 @@ export function ProjectCard({ project }: ProjectCardProps) {
     locale === 'de'
       ? {
           ariaLabel: `Projekt ansehen: ${project.title}`,
-          viewProject: 'Projekt ansehen ->',
           coverAlt: `${project.title} Titelbild`,
         }
       : {
           ariaLabel: `View project: ${project.title}`,
-          viewProject: 'View project ->',
           coverAlt: `${project.title} cover preview`,
         }
 
   return (
     <Link className="project-card" to={to} aria-label={copy.ariaLabel}>
-      <div className="project-card__top">
-        <h3 className="project-card__title">{project.title}</h3>
-        <p className="project-card__summary">{project.summary}</p>
-        <span className="project-card__link">{copy.viewProject}</span>
-      </div>
       <div className="project-card__image-wrap">
         <img
           className="project-card__image"
@@ -36,6 +29,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
           alt={copy.coverAlt}
           loading="lazy"
         />
+      </div>
+      <div className="project-card__top">
+        <h3 className="project-card__title">{project.title}</h3>
+        <p className="project-card__summary">{project.summary}</p>
       </div>
     </Link>
   )

@@ -1201,3 +1201,171 @@ p:last-child {
 .case-copy + .brief-card {
   margin-top: 0.9rem;
 }
+
+/* ==========================================================================
+   Quiet minimal (style/quiet-minimal)
+   No boxes, no rounded corners, no tinted buttons: the work carries the page.
+   ========================================================================== */
+
+/* Monospace throughout, like an archive index or a code file:
+   reads as rational and engineered rather than decorative (chosen 2026-11-05). */
+:root {
+  --font-sans: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-display: var(--font-sans);
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-text: #111111;
+  --color-muted: #767676;
+  --color-hero-subline: #111111;
+  --color-border: #e4e4e4;
+  --color-accent: #111111;
+  --color-accent-strong: #000000;
+  --title-main-weight: 500;
+  --title-main-letter-spacing: -0.01em;
+}
+
+/* Mono runs wide: scale the whole rem system down a step so every size stays in proportion */
+html {
+  font-size: 93.75%;
+}
+
+:root {
+  --radius: 0;
+}
+
+h1,
+h2,
+h3,
+.home-hero__headline,
+.top-page-title,
+.page-title,
+.page-section__title,
+.project-card__title {
+  font-family: var(--font-display);
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* Header: no bar colour, no tinted active tab */
+.site-header {
+  background: color-mix(in srgb, var(--color-bg) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 0;
+}
+
+.site-logo {
+  font-weight: 500;
+}
+
+.site-nav a,
+.site-nav a:hover,
+.site-nav a.is-active {
+  background: none;
+  border-radius: 0;
+}
+
+.site-nav a.is-active {
+  color: var(--color-text);
+  font-weight: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.35em;
+  text-decoration-thickness: 1px;
+}
+
+.language-switch {
+  border: 0;
+  background: none;
+  gap: 0.15rem;
+}
+
+.language-switch__button,
+.language-switch__button:hover,
+.language-switch__button.is-active {
+  border: 0;
+  background: none;
+  padding: 0.35rem 0.2rem;
+}
+
+.language-switch__button.is-active {
+  color: var(--color-text);
+  font-weight: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.35em;
+}
+
+.nav-toggle {
+  border: 0;
+  background: none;
+}
+
+.site-footer {
+  background: none;
+}
+
+/* Section titles: small label, no rule underneath */
+.page-section__title {
+  border-bottom: 0;
+  padding-bottom: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  font-family: var(--font-sans);
+}
+
+/* Project cards: image first and full width, two quiet lines under it */
+.card-grid {
+  gap: 2.5rem 1.5rem;
+}
+
+.project-card,
+.project-card:hover {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  gap: 0.85rem;
+  justify-content: flex-start;
+}
+
+.project-card__image-wrap {
+  margin-top: 0;
+  border: 0;
+  border-radius: 0;
+  aspect-ratio: 4 / 5;
+  background: var(--color-border);
+}
+
+.project-card__image {
+  transition: opacity 0.2s ease;
+}
+
+.project-card:hover .project-card__image {
+  opacity: 0.88;
+}
+
+.project-card__top {
+  gap: 0.3rem;
+}
+
+.project-card__title {
+  font-size: 1.05rem;
+  font-weight: var(--title-main-weight);
+}
+
+.project-card:hover .project-card__title {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.project-card__summary {
+  font-size: 0.9rem;
+}
+
+/* Remaining boxed blocks lose their frame */
+.brief-card,
+.placeholder-block {
+  border-radius: 0;
+}
