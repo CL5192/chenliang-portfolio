@@ -7,9 +7,9 @@ import carConfiguratorCover from '../assets/projects/car-configurator-cover.jpg'
 import designWorkCover from '../assets/projects/design-work-cover.jpg'
 import automotiveStudioCinematicCover from '../assets/projects/automotive-studio-cinematic-cover.jpg'
 import dingMuseumCover from '../assets/projects/ding-museum-cover.jpg'
-import krospiCover from '../assets/projects/krospi/krospi-cover.jpg'
+import krospiCover from '../assets/projects/krospi/krospi-card.jpg'
 import haldeCover from '../assets/projects/look-study/look-study-cover.jpg'
-import varmrCover from '../assets/projects/varmr/varmr-cover.jpg'
+import varmrCover from '../assets/projects/varmr/varmr-card.jpg'
 import type { Locale } from '../i18n/types'
 
 type LocalizedText = {
