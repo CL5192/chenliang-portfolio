@@ -43,7 +43,7 @@ export function KrospiSpec() {
     locale === 'de'
       ? {
           backToProjects: '<- Zurück zu Projekten',
-          fallbackTitle: 'Krospi — drei neue Sorten, drei KI-Spots',
+          fallbackTitle: 'Krospi',
           videosAria: 'Die drei Krospi-Spots auf YouTube',
           spotPlaces: ['Supermarkt', 'Prüfungshalle', 'Bahnhof'],
           lead: 'Drei Spec-Spots für Krospi, eine fiktive deutsche Chipsmarke, die drei neue Sorten auf den Markt bringt.',
@@ -169,7 +169,7 @@ export function KrospiSpec() {
         }
       : {
           backToProjects: '<- Back to projects',
-          fallbackTitle: 'Krospi — three new flavours, three AI-made spots',
+          fallbackTitle: 'Krospi',
           videosAria: 'The three Krospi spots on YouTube',
           spotPlaces: ['supermarket', 'exam hall', 'train station'],
           lead: 'Three spec ads for Krospi, a fictional German crisp brand launching three new flavours.',

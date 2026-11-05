@@ -89,8 +89,8 @@ const projectsSource: ProjectSource[] = [
   {
     slug: 'ding-museum',
     title: {
-      en: 'Ding — The Museum of Things I Love',
-      de: 'Ding — The Museum of Things I Love',
+      en: 'Ding',
+      de: 'Ding',
     },
     summary: {
       en: 'A 45-second spec ad for Ding, a fictional insurance brand, made with AI video tools.',
@@ -104,8 +104,8 @@ const projectsSource: ProjectSource[] = [
   {
     slug: 'krospi',
     title: {
-      en: 'Krospi — three new flavours, three AI-made spots',
-      de: 'Krospi — drei neue Sorten, drei KI-Spots',
+      en: 'Krospi',
+      de: 'Krospi',
     },
     summary: {
       en: 'Three vertical spec ads for a fictional German crisp brand, made with AI video tools: a learning curve from 7 days to 3.',
@@ -119,8 +119,8 @@ const projectsSource: ProjectSource[] = [
   {
     slug: 'varmr',
     title: {
-      en: 'VARMR — a Viking, a storm, a flask',
-      de: 'VARMR — ein Wikinger, ein Sturm, eine Isolierflasche',
+      en: 'VARMR',
+      de: 'VARMR',
     },
     summary: {
       en: 'A 20-second vertical spec ad for a fictional insulated flask. A Viking films himself in a North Sea storm.',

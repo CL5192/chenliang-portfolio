@@ -19,7 +19,7 @@ export function VarmrSpec() {
     locale === 'de'
       ? {
           backToProjects: '<- Zurück zu Projekten',
-          fallbackTitle: 'VARMR — ein Wikinger, ein Sturm, eine Isolierflasche',
+          fallbackTitle: 'VARMR',
           videoAria: 'VARMR-Spot auf YouTube',
           lead: 'Ein Wikinger filmt sich mit dem Handy in einem Nordseesturm und bewertet seine Ausrüstung: „Shield: wet. Boots: wet. Olaf: wet. Tea… hot.“ Dann die Flasche. Der Witz liegt in der Welt, nicht im Produkt.',
           projectDetails: 'Projektdetails',
@@ -66,7 +66,7 @@ export function VarmrSpec() {
         }
       : {
           backToProjects: '<- Back to projects',
-          fallbackTitle: 'VARMR — a Viking, a storm, a flask',
+          fallbackTitle: 'VARMR',
           videoAria: 'VARMR spot on YouTube',
           lead: 'A Viking films himself on a phone in a North Sea storm and rates his gear: “Shield: wet. Boots: wet. Olaf: wet. Tea… hot.” Then the flask. The joke is the world, not the product.',
           projectDetails: 'Project details',

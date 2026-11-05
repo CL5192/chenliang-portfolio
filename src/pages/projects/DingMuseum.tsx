@@ -14,7 +14,7 @@ export function DingMuseum() {
     locale === 'de'
       ? {
           backToProjects: '<- Zurück zu Projekten',
-          fallbackTitle: 'Ding — The Museum of Things I Love',
+          fallbackTitle: 'Ding',
           videoAria: 'Ding Spec-Spot YouTube-Video',
           videoTitle: 'Ding – Made to be used, not displayed.',
           lead: 'Ein 45-sekündiger Spec-Spot für Ding, eine fiktive Versicherungsmarke.',
@@ -95,7 +95,7 @@ export function DingMuseum() {
         }
       : {
           backToProjects: '<- Back to projects',
-          fallbackTitle: 'Ding — The Museum of Things I Love',
+          fallbackTitle: 'Ding',
           videoAria: 'Ding spec ad YouTube video',
           videoTitle: 'Ding – Made to be used, not displayed.',
           lead: 'A 45-second spec ad for Ding, a fictional insurance brand.',

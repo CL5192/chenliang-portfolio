@@ -24,7 +24,7 @@ function getDocumentTitle(pathname: string, locale: Locale): string {
   const projectSlug = path.match(/^\/projects\/([^/]+)/)?.[1]
   if (projectSlug) {
     const project = getProjectBySlug(projectSlug, locale)
-    // Keep only the name before the dash: "Krospi — three new flavours…" → "Krospi"
+    // Keep only the name before a dash, in case a title gets a subtitle again
     const name = project?.title.split(' — ')[0]
     if (name) return `${name} · ${SITE_NAME}`
   }
