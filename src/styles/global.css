@@ -313,15 +313,21 @@ p:last-child {
 
 .page-lead {
   font-size: 1.05rem;
-  max-width: 42rem;
+  max-width: 44rem;
 }
 
 .page-lead:last-child {
   margin-bottom: 0;
 }
 
+/* The lead belongs to the title above it; the content below starts a new group */
 .page-title-intro {
-  margin-top: 4.5rem;
+  margin-top: 0;
+}
+
+.layout__main .page-title-intro + .page-section,
+.layout__main .page-title-intro + .card-grid {
+  margin-top: var(--space-section);
 }
 
 .page-back-link {
@@ -379,7 +385,7 @@ p:last-child {
 }
 
 .home-hero__subline.page-title-intro {
-  margin-top: 4.5rem;
+  margin-top: 0;
 }
 
 /* Sections & cards */
@@ -1134,13 +1140,11 @@ p:last-child {
   }
 }
 
-/* Running text: even right edge. Hyphenation follows the page language (html lang).
-   Short one- or two-line leads stay ragged: justifying them stretches the words apart. */
+/* Running text: ragged right. Justified text left uneven gaps between words. */
 .case-copy p,
 .varmr-hero__text p,
 .varmr-steps li {
-  text-align: justify;
-  hyphens: auto;
+  text-align: left;
   text-wrap: pretty;
 }
 
