@@ -5,7 +5,6 @@ import { Projects } from './pages/Projects'
 import { About } from './pages/About'
 import { Contact } from './pages/Contact'
 import { CarConfigurator } from './pages/projects/CarConfigurator'
-import { AIExperiment } from './pages/projects/AIExperiment'
 import { DesignWork } from './pages/projects/DesignWork'
 import { DesignWorkEnvironments } from './pages/projects/design-work/DesignWorkEnvironments'
 import { DesignWorkHardSurface } from './pages/projects/design-work/DesignWorkHardSurface'
@@ -23,7 +22,6 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path="projects" element={<Projects />} />
         <Route path="projects/car-configurator" element={<CarConfigurator />} />
-        <Route path="projects/ai-experiment" element={<AIExperiment />} />
         <Route
           path="projects/automotive-studio-cinematic"
           element={<AutomotiveStudioCinematic />}

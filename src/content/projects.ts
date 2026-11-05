@@ -4,7 +4,6 @@
  */
 
 import carConfiguratorCover from '../assets/projects/car-configurator-cover.jpg'
-import aiExperimentCover from '../assets/projects/ai-experiment-cover.jpg'
 import designWorkCover from '../assets/projects/design-work-cover.jpg'
 import automotiveStudioCinematicCover from '../assets/projects/automotive-studio-cinematic-cover.jpg'
 import dingMuseumCover from '../assets/projects/ding-museum-cover.jpg'
@@ -58,21 +57,6 @@ const projectsSource: ProjectSource[] = [
     order: 1,
   },
   {
-    slug: 'ai-experiment',
-    title: {
-      en: 'AI Visual Experiment',
-      de: 'KI-Visual-Experiment',
-    },
-    summary: {
-      en: 'An AI workflow experiment using ComfyUI and Midjourney to explore image-to-video pipelines, visual direction, and rapid iteration.',
-      de: 'Ein KI-Workflow-Experiment mit ComfyUI und Midjourney zur Erkundung von Image-to-Video-Pipelines, visueller Richtung und schneller Iteration.',
-    },
-    coverImage: aiExperimentCover,
-    tags: ['AI', 'Prototype', 'Research'],
-    featured: false,
-    order: 2,
-  },
-  {
     slug: 'design-work',
     title: {
       en: 'Design Work',
@@ -115,7 +99,7 @@ const projectsSource: ProjectSource[] = [
     coverImage: dingMuseumCover,
     tags: ['AI Video', 'Spec Ad', 'Brand'],
     featured: false,
-    order: 3,
+    order: 0.9,
   },
   {
     slug: 'krospi',
