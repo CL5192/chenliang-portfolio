@@ -9,17 +9,15 @@ export function Home() {
   const copy =
     locale === 'de'
       ? {
-          heroTitle: 'Generative AI Artist | Look Development & visuelle Konsistenz',
-          heroSubtitle:
-            'Hintergrund in Concept Design und 3D-Visualisierung, heute mit Fokus auf generative KI für Visual Development und Creative Technology.',
+          heroTitle: 'Ich mache KI-Videospots und Bildserien in Berlin.',
+          heroSubtitle: 'Davor 12 Jahre Concept Design für Spiele.',
           featuredProjects: 'Ausgewählte Projekte',
           noProjects:
             'Noch keine hervorgehobenen Projekte - setze `featured: true` bei Einträgen in `src/content/projects.ts`.',
         }
       : {
-          heroTitle: 'Generative AI Artist | Look Development & Visual Consistency',
-          heroSubtitle:
-            'Background in concept design and 3D visualization, now focused on generative AI for visual development and creative technology.',
+          heroTitle: 'I make AI video ads and image series in Berlin.',
+          heroSubtitle: 'Before that, 12 years of concept design for games.',
           featuredProjects: 'Featured projects',
           noProjects:
             'No featured projects yet - set `featured: true` on entries in `src/content/projects.ts`.',
