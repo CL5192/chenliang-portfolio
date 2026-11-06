@@ -279,7 +279,19 @@ export function CarConfigurator() {
           {project?.title ?? copy.fallbackTitle}
         </h1>
 
-        <p className="page-lead case-hero__lead">
+        <div className="case-video-embed" aria-label={copy.videoAria}>
+          <iframe
+            className="case-video-embed__iframe"
+            title={copy.videoTitle}
+            src="https://www.youtube.com/embed/OL9nCV1RQnI"
+            loading="lazy"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        </div>
+
+        <p className="page-lead case-hero__lead page-lead--after-media">
           {copy.lead}
         </p>
 
@@ -296,18 +308,6 @@ export function CarConfigurator() {
           <p>
             <strong>{copy.focus}</strong> Realtime presentation, interaction, scene transition system
           </p>
-        </div>
-
-        <div className="case-video-embed" aria-label={copy.videoAria}>
-          <iframe
-            className="case-video-embed__iframe"
-            title={copy.videoTitle}
-            src="https://www.youtube.com/embed/OL9nCV1RQnI"
-            loading="lazy"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          />
         </div>
       </section>
 

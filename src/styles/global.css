@@ -1426,3 +1426,159 @@ figcaption {
   color: var(--color-muted);
   font-weight: inherit;
 }
+
+/* ==========================================================================
+   Layout rule: a 3-column grid, two widths.
+   - Reading width = 2 of 3 columns: text, project info, tables, notes, diagrams of words
+   - Full width = 3 of 3 columns: images and videos
+   Media groups snap to the same columns (1, 2 or 3), so every right edge lands
+   on one of two lines: the text edge or the full edge.
+   ========================================================================== */
+:root {
+  --col-gap: 1.5rem;
+  --text-width: calc((100% - 2 * var(--col-gap)) * 2 / 3 + var(--col-gap));
+}
+
+@media (max-width: 720px) {
+  :root {
+    --text-width: 100%;
+  }
+}
+
+/* Reading width */
+.page-lead,
+.home-hero__content,
+.case-hero__lead,
+.case-meta,
+.detail-support-line,
+.case-copy,
+.brief-card,
+.krospi-case__meta,
+.krospi-trust,
+.krospi-numbers,
+.varmr-steps,
+.halde-board,
+.krospi-storyboard,
+.krospi-storyboard-pair,
+.varmr-pair {
+  max-width: var(--text-width);
+}
+
+/* Full width */
+.case-video-embed,
+.krospi-spots,
+.krospi-case__media,
+.case-media-stack,
+.case-image {
+  max-width: none;
+  width: 100%;
+}
+
+/* Media rows use the column gap so they line up with the home grid */
+.card-grid,
+.krospi-spots,
+.varmr-hero {
+  column-gap: var(--col-gap);
+}
+
+.krospi-spots {
+  row-gap: var(--col-gap);
+}
+
+/* Two images side by side fill the reading width (2 columns) */
+.varmr-pair,
+.krospi-storyboard-pair {
+  gap: var(--col-gap);
+}
+
+/* VARMR opening: vertical video in column 1, text across columns 2–3 */
+.varmr-hero {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: none;
+}
+
+.varmr-hero > .varmr-video {
+  grid-column: 1;
+  max-width: none;
+}
+
+.varmr-hero > .varmr-hero__text {
+  grid-column: 2 / span 2;
+}
+
+.varmr-hero__text > * {
+  max-width: none;
+}
+
+.varmr-hero .case-meta {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 720px) {
+  .varmr-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .varmr-hero > .varmr-video,
+  .varmr-hero > .varmr-hero__text {
+    grid-column: 1;
+  }
+
+  .varmr-hero > .varmr-video {
+    max-width: 18rem;
+  }
+}
+
+/* Diagram: no box, full width, starts on the left edge */
+.flow-diagram {
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+
+/* Tables: keep the two-column rows, drop the box around them */
+.brief-card {
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+
+.brief-card__proposition {
+  font-family: var(--font-display);
+}
+
+@media (max-width: 640px) {
+  .brief-card {
+    padding: 0;
+  }
+}
+
+/* Image frames: no rounded corners, a hairline only where an image meets white */
+.case-video-embed,
+.krospi-keyframes img,
+.krospi-storyboard,
+.krospi-storyboard-pair img,
+.varmr-pair img,
+.halde-board img {
+  border-radius: 0;
+}
+
+/* Two-column blocks inside the reading width split on the grid's column line */
+.case-meta,
+.krospi-trust {
+  column-gap: var(--col-gap);
+}
+
+.krospi-trust {
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+
+/* The material board sits inside a list item that is already at reading width */
+.halde-board {
+  max-width: none;
+}
