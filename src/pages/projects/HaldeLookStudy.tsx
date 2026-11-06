@@ -167,7 +167,14 @@ export function HaldeLookStudy() {
       </p>
       <h1 className="page-title">{project?.title ?? copy.fallbackTitle}</h1>
 
-      <p className="page-lead">{copy.lead}</p>
+      {/* Opening: the three key visuals side by side, one per grid column */}
+      <div className="halde-opening">
+        {copy.looks.map((look) => (
+          <img key={look.id} src={lookImages[look.id].hero} alt={look.alts[0]} />
+        ))}
+      </div>
+
+      <p className="page-lead page-lead--after-media">{copy.lead}</p>
 
       <div className="case-meta" aria-label={copy.projectDetails}>
         <p>

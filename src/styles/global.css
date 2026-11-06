@@ -1582,3 +1582,23 @@ figcaption {
 .halde-board {
   max-width: none;
 }
+
+/* HALDE opening: three key visuals, one per grid column */
+.halde-opening {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--col-gap);
+}
+
+.halde-opening img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+@media (max-width: 720px) {
+  .halde-opening {
+    gap: 0.5rem;
+  }
+}
