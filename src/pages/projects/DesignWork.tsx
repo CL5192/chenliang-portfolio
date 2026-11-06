@@ -20,7 +20,6 @@ export function DesignWork() {
             'Dieser Bereich sammelt ausgewählte Concept-Design-Arbeiten aus den letzten Jahren, einschließlich persönlicher Arbeiten und Bildern aus früheren Projekten.',
           sectionTitle: 'Kategorien',
           browseCategory: 'Design-Kategorie ansehen',
-          browseWork: 'Arbeiten ansehen ->',
           coverAlt: 'Titelbild',
         }
       : {
@@ -30,7 +29,6 @@ export function DesignWork() {
             'This section collects selected concept design work from past years, including personal work and images from previous projects.',
           sectionTitle: 'Categories',
           browseCategory: 'Browse design work category',
-          browseWork: 'Browse work ->',
           coverAlt: 'cover preview',
         }
 
@@ -51,11 +49,6 @@ export function DesignWork() {
               to={`/projects/design-work/${category.slug}`}
               aria-label={`${copy.browseCategory}: ${category.title}`}
             >
-              <div className="project-card__top">
-                <h3 className="project-card__title">{category.title}</h3>
-                <p className="project-card__summary">{category.summary}</p>
-                <span className="project-card__link">{copy.browseWork}</span>
-              </div>
               <div className="project-card__image-wrap">
                 <img
                   className="project-card__image"
@@ -66,6 +59,10 @@ export function DesignWork() {
                     event.currentTarget.src = fallbackCoverImage
                   }}
                 />
+              </div>
+              <div className="project-card__top">
+                <h3 className="project-card__title">{category.title}</h3>
+                <p className="project-card__summary">{category.summary}</p>
               </div>
             </Link>
           ))}

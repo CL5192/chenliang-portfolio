@@ -1416,3 +1416,13 @@ figcaption {
 .case-copy + .detail-support-line {
   margin-top: var(--space-paragraph);
 }
+
+/* Same rule for older pages: bullet lists are body text, contact labels are labels */
+.case-list {
+  color: var(--color-text);
+}
+
+.contact-stack strong {
+  color: var(--color-muted);
+  font-weight: inherit;
+}
