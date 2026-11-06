@@ -13,6 +13,7 @@ import look3Topdown from '../../assets/projects/look-study/look3-topdown.jpg'
 import look3Snowfall from '../../assets/projects/look-study/look3-snowfall.jpg'
 import look3Stream from '../../assets/projects/look-study/look3-stream.jpg'
 import look3Fog from '../../assets/projects/look-study/look3-fog.jpg'
+import materialBoard from '../../assets/projects/look-study/material-board.jpg'
 
 const slug = 'halde'
 
@@ -59,10 +60,14 @@ export function HaldeLookStudy() {
             id: 'how',
             title: 'Wie',
             steps: [
-              'Zuerst die Produkte: vier Produkte, eine Materialsprache – jedes trägt dasselbe Stück Stein.',
+              'Zuerst die Produkte: vier Produkte, eine Materialsprache. Damit Stein, Glas, Keramik und Grau bei allen vier gleich bleiben, habe ich zuerst ein Materialboard gemacht: ein Bild, vier Musterzylinder. Danach habe ich jedes Produkt per Text neu generiert, mit zwei Referenzen: das Board nur für das Material, das früheste Produktbild nur für die Form.',
               'Für jeden Look erst Referenzen, dann ein Leitbild; die weiteren Bilder folgen seinem Licht und seinen Farben.',
               'Die drei Looks entfernen sich Schritt für Schritt vom Standard: E-Commerce → Markenbild → Launch-Key-Visual.',
             ],
+            board: {
+              text: 'Das Board muss selbst stimmen. Mein erstes Glasmuster war massiv, und jede Flasche kam leer heraus. Korrigiert habe ich das Board, dünnwandiges Glas mit blassgelber Flüssigkeit, nicht die Flaschen.',
+              alt: 'Materialboard: gesprenkelter Stein, Milchglas mit blassgelber Flüssigkeit, mattweiße Keramik, mattes warmes Grau',
+            },
           },
           looks: [
             {
@@ -116,10 +121,14 @@ export function HaldeLookStudy() {
             id: 'how',
             title: 'How',
             steps: [
-              'Products first: four products, one material language — each carries the same piece of stone.',
+              'Products first: four products, one material language. To keep the stone, glass, ceramic and grey the same on all four, I made a material board first: one image, four sample cylinders. Then I regenerated every product from text with two references: the board for material only, the earliest product image for shape only.',
               'For each look, references first, then one lead image; the rest follow its light and colour.',
               'The three looks move away from the standard step by step: e-commerce → brand image → launch key visual.',
             ],
+            board: {
+              text: 'The board has to be right itself. My first glass sample was solid, and every bottle came out empty. I fixed the board, a thin-walled glass with pale yellow liquid, not the bottles.',
+              alt: 'Material board: speckled stone, frosted glass with pale yellow liquid, matte white ceramic, matte warm grey',
+            },
           },
           looks: [
             {
@@ -185,8 +194,16 @@ export function HaldeLookStudy() {
 
       <PageSection title={copy.how.title} id={copy.how.id}>
         <ol className="case-copy halde-steps">
-          {copy.how.steps.map((step) => (
-            <li key={step}>{step}</li>
+          {copy.how.steps.map((step, index) => (
+            <li key={step}>
+              {step}
+              {index === 0 && (
+                <div className="halde-board">
+                  <img src={materialBoard} alt={copy.how.board.alt} loading="lazy" />
+                  <p>{copy.how.board.text}</p>
+                </div>
+              )}
+            </li>
           ))}
         </ol>
       </PageSection>

@@ -964,6 +964,22 @@ p:last-child {
   padding-left: 1.25rem;
 }
 
+.halde-board {
+  margin: 1rem 0 1.25rem;
+}
+
+.halde-board img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius) - 1px);
+  border: 1px solid var(--color-border);
+}
+
+.halde-board p {
+  margin-top: 0.75rem;
+}
+
 .halde-set {
   display: grid;
   gap: 0.5rem;
