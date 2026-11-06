@@ -42,7 +42,7 @@ export function KrospiSpec() {
   const copy =
     locale === 'de'
       ? {
-          backToProjects: '<- Zurück zu Projekten',
+          backToProjects: '<- Zurück zur Übersicht',
           fallbackTitle: 'Krospi',
           videosAria: 'Die drei Krospi-Spots auf YouTube',
           spotPlaces: ['Supermarkt', 'Prüfungshalle', 'Bahnhof'],
@@ -168,7 +168,7 @@ export function KrospiSpec() {
           } satisfies FlowDiagramLabels,
         }
       : {
-          backToProjects: '<- Back to projects',
+          backToProjects: '<- Back to all work',
           fallbackTitle: 'Krospi',
           videosAria: 'The three Krospi spots on YouTube',
           spotPlaces: ['supermarket', 'exam hall', 'train station'],
@@ -331,7 +331,7 @@ export function KrospiSpec() {
   return (
     <>
       <p className="page-lead page-back-link">
-        <Link to="/projects">{copy.backToProjects}</Link>
+        <Link to="/">{copy.backToProjects}</Link>
       </p>
       <h1 className="page-title">{project?.title ?? copy.fallbackTitle}</h1>
 

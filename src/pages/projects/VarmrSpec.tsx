@@ -18,7 +18,7 @@ export function VarmrSpec() {
   const copy =
     locale === 'de'
       ? {
-          backToProjects: '<- Zurück zu Projekten',
+          backToProjects: '<- Zurück zur Übersicht',
           fallbackTitle: 'VARMR',
           videoAria: 'VARMR-Spot auf YouTube',
           lead: 'Ein Wikinger filmt sich mit dem Handy in einem Nordseesturm und bewertet seine Ausrüstung: „Shield: wet. Boots: wet. Olaf: wet. Tea… hot.“ Dann die Flasche. Der Witz liegt in der Welt, nicht im Produkt.',
@@ -65,7 +65,7 @@ export function VarmrSpec() {
           ],
         }
       : {
-          backToProjects: '<- Back to projects',
+          backToProjects: '<- Back to all work',
           fallbackTitle: 'VARMR',
           videoAria: 'VARMR spot on YouTube',
           lead: 'A Viking films himself on a phone in a North Sea storm and rates his gear: “Shield: wet. Boots: wet. Olaf: wet. Tea… hot.” Then the flask. The joke is the world, not the product.',
@@ -134,7 +134,7 @@ export function VarmrSpec() {
   return (
     <div className="varmr-page">
       <p className="page-lead page-back-link">
-        <Link to="/projects">{copy.backToProjects}</Link>
+        <Link to="/">{copy.backToProjects}</Link>
       </p>
       <h1 className="page-title">{project?.title ?? copy.fallbackTitle}</h1>
 

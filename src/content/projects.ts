@@ -1,6 +1,6 @@
 /**
  * Single source of truth for portfolio projects.
- * Add a new row here, set `order` for list position, and toggle `featured` for the home page grid.
+ * Add a new row here, set `order` for list position, and `group` for the Home section it appears in.
  */
 
 import carConfiguratorCover from '../assets/projects/car-configurator-cover.jpg'
@@ -11,6 +11,9 @@ import krospiCover from '../assets/projects/krospi/krospi-card.jpg'
 import haldeCover from '../assets/projects/look-study/look-study-cover.jpg'
 import varmrCover from '../assets/projects/varmr/varmr-card.jpg'
 import type { Locale } from '../i18n/types'
+
+/** 'ai' = current AI work (shown first on Home); 'earlier' = 3D and concept design */
+export type ProjectGroup = 'ai' | 'earlier'
 
 type LocalizedText = {
   en: string
@@ -23,8 +26,8 @@ export type Project = {
   summary: string
   coverImage: string
   tags: string[]
-  /** When true, the project appears in the Home “Featured projects” section */
-  featured: boolean
+  /** Which Home section the project appears in */
+  group: ProjectGroup
   /** Lower numbers appear first in sorted lists */
   order: number
 }
@@ -35,7 +38,7 @@ type ProjectSource = {
   summary: LocalizedText
   coverImage: string
   tags: string[]
-  featured: boolean
+  group: ProjectGroup
   order: number
 }
 
@@ -53,7 +56,7 @@ const projectsSource: ProjectSource[] = [
     },
     coverImage: carConfiguratorCover,
     tags: ['Unreal Engine', 'Blueprint', 'Automotive'],
-    featured: false,
+    group: 'earlier',
     order: 1,
   },
   {
@@ -68,7 +71,7 @@ const projectsSource: ProjectSource[] = [
     },
     coverImage: designWorkCover,
     tags: ['Concept Art', 'Environments', 'Hard Surface'],
-    featured: false,
+    group: 'earlier',
     order: 5,
   },
   {
@@ -83,7 +86,7 @@ const projectsSource: ProjectSource[] = [
     },
     coverImage: automotiveStudioCinematicCover,
     tags: ['Unreal Engine', 'Cinematic', 'Automotive'],
-    featured: false,
+    group: 'earlier',
     order: 4,
   },
   {
@@ -98,7 +101,7 @@ const projectsSource: ProjectSource[] = [
     },
     coverImage: dingMuseumCover,
     tags: ['AI Video', 'Spec Ad', 'Brand'],
-    featured: false,
+    group: 'ai',
     order: 0.9,
   },
   {
@@ -113,7 +116,7 @@ const projectsSource: ProjectSource[] = [
     },
     coverImage: krospiCover,
     tags: ['AI Video', 'Spec Ad', 'Comedy'],
-    featured: true,
+    group: 'ai',
     order: 0,
   },
   {
@@ -128,7 +131,7 @@ const projectsSource: ProjectSource[] = [
     },
     coverImage: varmrCover,
     tags: ['AI Video', 'Spec Ad', 'UGC'],
-    featured: true,
+    group: 'ai',
     order: 0.5,
   },
   {
@@ -143,7 +146,7 @@ const projectsSource: ProjectSource[] = [
     },
     coverImage: haldeCover,
     tags: ['AI Stills', 'Spec Ad', 'Beauty'],
-    featured: true,
+    group: 'ai',
     order: 0.8,
   },
 ]
@@ -163,7 +166,7 @@ function localizeProject(project: ProjectSource, locale: Locale): Project {
     summary: localizeText(project.summary, locale),
     coverImage: project.coverImage,
     tags: project.tags,
-    featured: project.featured,
+    group: project.group,
     order: project.order,
   }
 }
@@ -173,9 +176,9 @@ export function getAllProjectsSorted(locale: Locale = 'en'): Project[] {
   return projectsSource.map((project) => localizeProject(project, locale)).sort(compareByOrder)
 }
 
-/** Featured projects only, sorted by `order` */
-export function getFeaturedProjectsSorted(locale: Locale = 'en'): Project[] {
-  return getAllProjectsSorted(locale).filter((p) => p.featured)
+/** Projects in one Home section, sorted by `order` */
+export function getProjectsByGroup(group: ProjectGroup, locale: Locale = 'en'): Project[] {
+  return getAllProjectsSorted(locale).filter((p) => p.group === group)
 }
 
 export function getProjectBySlug(slug: string, locale: Locale = 'en'): Project | undefined {

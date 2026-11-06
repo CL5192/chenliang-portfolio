@@ -14,7 +14,7 @@ export function DesignWork() {
   const copy =
     locale === 'de'
       ? {
-          backToProjects: '<- Zurück zu Projekten',
+          backToProjects: '<- Zurück zur Übersicht',
           fallbackTitle: 'Designarbeiten',
           intro:
             'Dieser Bereich sammelt ausgewählte Concept-Design-Arbeiten aus den letzten Jahren, einschließlich persönlicher Arbeiten und Bildern aus früheren Projekten.',
@@ -24,7 +24,7 @@ export function DesignWork() {
           coverAlt: 'Titelbild',
         }
       : {
-          backToProjects: '<- Back to projects',
+          backToProjects: '<- Back to all work',
           fallbackTitle: 'Design Work',
           intro:
             'This section collects selected concept design work from past years, including personal work and images from previous projects.',
@@ -37,7 +37,7 @@ export function DesignWork() {
   return (
     <>
       <p className="page-lead page-back-link">
-        <Link to="/projects">{copy.backToProjects}</Link>
+        <Link to="/">{copy.backToProjects}</Link>
       </p>
       <h1 className="page-title">{project?.title ?? copy.fallbackTitle}</h1>
       <p className="page-lead">{copy.intro}</p>

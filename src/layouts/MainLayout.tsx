@@ -9,7 +9,6 @@ import type { Locale } from '../i18n/types'
 const SITE_NAME = 'Chen Liang'
 
 const pageNames: Record<string, Record<Locale, string>> = {
-  '/projects': { en: 'Projects', de: 'Projekte' },
   '/about': { en: 'About', de: 'Über mich' },
   '/contact': { en: 'Contact', de: 'Kontakt' },
 }

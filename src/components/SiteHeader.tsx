@@ -14,7 +14,6 @@ export function SiteHeader() {
       ? {
           menu: 'Menü',
           home: 'Start',
-          projects: 'Projekte',
           about: 'Über mich',
           contact: 'Kontakt',
           resume: 'Lebenslauf',
@@ -26,7 +25,6 @@ export function SiteHeader() {
       : {
           menu: 'Menu',
           home: 'Home',
-          projects: 'Projects',
           about: 'About',
           contact: 'Contact',
           resume: 'Resume',
@@ -63,9 +61,6 @@ export function SiteHeader() {
           >
             <NavLink to="/" className={navLinkClass} end onClick={closeMenu}>
               {copy.home}
-            </NavLink>
-            <NavLink to="/projects" className={navLinkClass} onClick={closeMenu}>
-              {copy.projects}
             </NavLink>
             <NavLink to="/about" className={navLinkClass} onClick={closeMenu}>
               {copy.about}

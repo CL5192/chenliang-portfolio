@@ -12,7 +12,7 @@ export function AutomotiveStudioCinematic() {
   const copy =
     locale === 'de'
       ? {
-          backToProjects: '<- Zurück zu Projekten',
+          backToProjects: '<- Zurück zur Übersicht',
           fallbackTitle: 'Automotive Studio Cinematic',
           videoAria: 'Automotive Studio Cinematic YouTube-Video',
           videoTitle: 'Automotive Studio Cinematic Video',
@@ -45,7 +45,7 @@ export function AutomotiveStudioCinematic() {
             'Das Projekt vertieft meine Arbeit an automotive Lighting, Materialqualität und cineastischer Produktpräsentation in Echtzeit-3D — als Grundlage für weiteres Visualisierungs- und Cinematic-Arbeiten.',
         }
       : {
-          backToProjects: '<- Back to projects',
+          backToProjects: '<- Back to all work',
           fallbackTitle: 'Automotive Studio Cinematic',
           videoAria: 'Automotive Studio Cinematic YouTube video',
           videoTitle: 'Automotive Studio Cinematic video',
@@ -81,7 +81,7 @@ export function AutomotiveStudioCinematic() {
   return (
     <>
       <p className="page-lead page-back-link">
-        <Link to="/projects">{copy.backToProjects}</Link>
+        <Link to="/">{copy.backToProjects}</Link>
       </p>
       <h1 className="page-title">{project?.title ?? copy.fallbackTitle}</h1>
 

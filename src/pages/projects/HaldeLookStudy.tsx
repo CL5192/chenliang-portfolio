@@ -37,7 +37,7 @@ export function HaldeLookStudy() {
   const copy =
     locale === 'de'
       ? {
-          backToProjects: '<- Zurück zu Projekten',
+          backToProjects: '<- Zurück zur Übersicht',
           fallbackTitle: 'HALDE',
           lead: 'Elf Stills in zwei Tagen für eine erfundene alpine Hautpflegemarke: dieselben vier Produkte auf hellem Grau, auf schwarzem Basalt, dann draußen in Schnee und Moos.',
           projectDetails: 'Projektdetails',
@@ -94,7 +94,7 @@ export function HaldeLookStudy() {
           },
         }
       : {
-          backToProjects: '<- Back to projects',
+          backToProjects: '<- Back to all work',
           fallbackTitle: 'HALDE',
           lead: 'Eleven stills in two days for a made-up alpine skincare brand: the same four products on light grey, on black basalt, then out in snow and moss.',
           projectDetails: 'Project details',
@@ -154,7 +154,7 @@ export function HaldeLookStudy() {
   return (
     <>
       <p className="page-lead page-back-link">
-        <Link to="/projects">{copy.backToProjects}</Link>
+        <Link to="/">{copy.backToProjects}</Link>
       </p>
       <h1 className="page-title">{project?.title ?? copy.fallbackTitle}</h1>
 

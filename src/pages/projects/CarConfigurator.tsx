@@ -118,7 +118,7 @@ export function CarConfigurator() {
   const copy =
     locale === 'de'
       ? {
-          backToProjects: '<- Zurück zu Projekten',
+          backToProjects: '<- Zurück zur Übersicht',
           fallbackTitle: 'Auto-Konfigurator',
           lead:
             'Ein Echtzeit-Automotive-Showroom-Projekt in Unreal Engine mit Fokus auf Szenenwechsel, cineastische Präsentation und Blueprint-gesteuerte Interaktion.',
@@ -195,7 +195,7 @@ export function CarConfigurator() {
           ],
         }
       : {
-          backToProjects: '<- Back to projects',
+          backToProjects: '<- Back to all work',
           fallbackTitle: 'Car Configurator',
           lead:
             'A realtime automotive showroom project built in Unreal Engine, focused on scene switching, cinematic presentation, and Blueprint-driven interaction.',
@@ -271,7 +271,7 @@ export function CarConfigurator() {
   return (
     <>
       <p className="page-lead page-back-link page-back-link--loose">
-        <Link to="/projects">{copy.backToProjects}</Link>
+        <Link to="/">{copy.backToProjects}</Link>
       </p>
 
       <section className="case-hero" aria-labelledby="car-configurator-hero-title">

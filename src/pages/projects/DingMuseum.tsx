@@ -13,7 +13,7 @@ export function DingMuseum() {
   const copy =
     locale === 'de'
       ? {
-          backToProjects: '<- Zurück zu Projekten',
+          backToProjects: '<- Zurück zur Übersicht',
           fallbackTitle: 'Ding',
           videoAria: 'Ding Spec-Spot YouTube-Video',
           videoTitle: 'Ding – Made to be used, not displayed.',
@@ -94,7 +94,7 @@ export function DingMuseum() {
           ],
         }
       : {
-          backToProjects: '<- Back to projects',
+          backToProjects: '<- Back to all work',
           fallbackTitle: 'Ding',
           videoAria: 'Ding spec ad YouTube video',
           videoTitle: 'Ding – Made to be used, not displayed.',
@@ -178,7 +178,7 @@ export function DingMuseum() {
   return (
     <>
       <p className="page-lead page-back-link">
-        <Link to="/projects">{copy.backToProjects}</Link>
+        <Link to="/">{copy.backToProjects}</Link>
       </p>
       <h1 className="page-title">{project?.title ?? copy.fallbackTitle}</h1>
 

@@ -1,7 +1,6 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { MainLayout } from './layouts/MainLayout'
 import { Home } from './pages/Home'
-import { Projects } from './pages/Projects'
 import { About } from './pages/About'
 import { Contact } from './pages/Contact'
 import { CarConfigurator } from './pages/projects/CarConfigurator'
@@ -20,7 +19,7 @@ export default function App() {
     <Routes>
       <Route element={<MainLayout />}>
         <Route index element={<Home />} />
-        <Route path="projects" element={<Projects />} />
+        <Route path="projects" element={<Navigate to="/" replace />} />
         <Route path="projects/car-configurator" element={<CarConfigurator />} />
         <Route
           path="projects/automotive-studio-cinematic"
