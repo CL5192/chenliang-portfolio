@@ -1385,3 +1385,34 @@ a:hover {
 .placeholder-block {
   border-radius: 0;
 }
+
+/* Text tone: body copy is dark; grey is only for labels and secondary notes.
+   (Before, every <p> was grey and every <li> dark, so tone followed the tag, not importance.) */
+p {
+  color: var(--color-text);
+}
+
+.page-back-link,
+.case-meta p,
+.case-meta strong,
+.detail-support-line,
+.krospi-case__meta,
+.case-image__caption,
+.brief-card__label,
+.brief-card__note,
+.krospi-trust__label,
+.flow-diagram__label,
+.contact-locale,
+.design-work-lightbox__index,
+.project-card__summary,
+figcaption {
+  color: var(--color-muted);
+}
+
+.page-back-link a {
+  color: inherit;
+}
+
+.case-copy + .detail-support-line {
+  margin-top: var(--space-paragraph);
+}
