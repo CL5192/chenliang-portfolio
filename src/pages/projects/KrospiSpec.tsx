@@ -24,8 +24,7 @@ const truffleKeyframes = [truffleKeyframe1, truffleKeyframe2, truffleKeyframe3, 
 
 const embedAllow = 'accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
 
-/** Each spot tells its own story: paragraphs before the media, the media, paragraphs after, optional second media */
-type CaseCopy = {
+/** Each spot tells its own story: paragraphs before the media, the media, paragraphs after, optional second media */type CaseCopy = {
   id: string
   title: string
   meta: string
@@ -33,7 +32,6 @@ type CaseCopy = {
   mediaLabel: string
   after: string[]
   extraMediaLabel?: string
-  afterExtra?: string[]
 }
 
 export function KrospiSpec() {
@@ -49,7 +47,7 @@ export function KrospiSpec() {
           lead: 'Drei Spec-Spots für Krospi, eine fiktive deutsche Chipsmarke, die drei neue Sorten auf den Markt bringt.',
           projectDetails: 'Projektdetails',
           client: 'Kunde',
-          clientValue: 'Krospi (fiktiv) · Chips · Deutschland',
+          clientValue: 'Krospi · Chips · Deutschland',
           medium: 'Medium',
           mediumValue: 'Drei Hochformat-Spots, 35–44 Sek., 9:16',
           role: 'Meine Rolle',
@@ -59,7 +57,7 @@ export function KrospiSpec() {
           roleLine:
             'Konzept, Beats, Shot Lists, Look und jede Prüf- und Schnittentscheidung kamen von mir. Bilder, Video, Musik und Sound hat KI generiert. Claude Code war mein Produktionsassistent: Es hat Prompts entworfen, Schnitte nach meinen Notizen montiert und Asset-, Kosten- und Änderungsprotokolle geführt.',
           disclaimer:
-            'Krospi ist eine fiktive Marke. Dies ist ein nicht beauftragtes Spec-Projekt; die Filme wurden mit KI-Tools erstellt.',
+            'Ein nicht beauftragtes Spec-Projekt; die Filme wurden mit KI-Tools erstellt.',
           brief: {
             label: 'Serie auf einen Blick',
             propositionLabel: 'Proposition der Serie',
@@ -68,12 +66,12 @@ export function KrospiSpec() {
               { label: 'Mechanik', value: 'Eine Tüte Chips löst einen Tagtraum aus – eine Sekunde später zurück in der Realität, noch mitten in der Pose' },
               { label: 'Sorten', value: 'Französischer Trüffel · Tintenfisch · Meer' },
             ],
-            note: 'Fiktive Marke; Sorten und Verpackung habe ich für dieses Projekt entworfen.',
+            note: 'Sorten und Verpackung habe ich für dieses Projekt entworfen.',
           },
           intro: {
             id: 'learning-curve',
-            title: 'Drei Spots, eine Lernkurve',
-            text: 'Ich habe die Spots nacheinander gemacht und den Workflow dabei aufgebaut. Jeder hat mir etwas anderes beigebracht, und jeder ging schneller als der vorherige: 7 → 5 → 3 Tage.',
+            title: 'Drei Spots, in der Reihenfolge ihrer Entstehung',
+            text: 'Ich habe die Spots nacheinander gemacht und den Workflow beim ersten aufgebaut. Jeder ging schneller als der vorherige: 7 → 5 → 3 Tage.',
           },
           cases: [
             {
@@ -82,8 +80,8 @@ export function KrospiSpec() {
               meta: 'Supermarkt · als Erstes gemacht · 7 Tage, inklusive Aufbau des Workflows',
               before: [
                 'Ein gelangweiltes Mädchen in der Schlange eines Discounters nascht heimlich aus der Chipstüte in ihrem Einkaufswagen. Die Kamera taucht in die Tüte, und sie läuft über einen Laufsteg in einem Palast aus Goldfolie, in einer Robe aus Trüffeln. Ein Blitz, und sie ist zurück: Sie steht mitten in der Pose auf dem Kassenband, und die Kassiererin starrt in die Linse.',
-                'Die Realität habe ich wie eine trockene Mockumentary gedreht. Als sie ertappt wird, ruckt die Kamera nach vorne und sucht den Fokus, als wäre auch die Person hinter der Kamera in Panik. Diese Unbeholfenheit aus der Hand ist ein großer Teil davon, warum der Spot nicht nach KI aussieht: Die meisten Freunde, denen ich ihn gezeigt habe, haben es nicht bemerkt.',
-                'Beim ersten Versuch habe ich den ganzen Spot in einem Durchgang generiert. Jede Einstellung sah für sich richtig aus, aber sie passten nicht zusammen: Sie landete nie auf dem Kassenband, und die Kassiererin stand plötzlich in einem grauen Studio. Zufall war das nicht; die Fehler hatten ein Muster. Also habe ich den Spot Einstellung für Einstellung aus Keyframes neu gebaut und angefangen, in drei Ebenen zu planen: Beat, Shot List, Prompt.',
+                'Die Realität habe ich wie eine trockene Mockumentary gedreht. Als sie ertappt wird, ruckt die Kamera nach vorne und sucht den Fokus, als wäre auch die Person hinter der Kamera in Panik. Diese Unbeholfenheit aus der Hand trägt viel dazu bei, dass der Spot nicht generiert wirkt.',
+                'Beim ersten Versuch habe ich den ganzen Spot in einem Durchgang generiert. Jede Einstellung sah für sich richtig aus, aber sie passten nicht zusammen: Sie landete nie auf dem Kassenband, und die Kassiererin stand plötzlich in einem grauen Studio. Also habe ich den Spot Einstellung für Einstellung aus Keyframes neu gebaut und angefangen, in drei Ebenen zu planen: Beat, Shot List, Prompt.',
               ],
               mediaLabel: 'Keyframes aus dem Neuaufbau, einer pro Einstellung',
               after: [],
@@ -95,13 +93,11 @@ export function KrospiSpec() {
               before: [
                 'Eine Schulturnhalle, aufgebaut für die Abschlussprüfung. Ein gelangweilter Lehrer bei der Aufsicht nascht einen schwarzen Tintenfisch-Chip aus seinem Rucksack – ein Reißschwenk, und er tanzt Industrial auf einer Underground-Party. Die Glocke klingelt: Er steht erstarrt auf dem Tisch eines Schülers, außer Atem, und der ganze Saal starrt ihn an.',
                 'Verwandlungseffekte habe ich bewusst weggelassen; sie hätten billig gewirkt und nach KI geschrien. Die Komik steckt stattdessen in der Kamera: Reißschwenks, Crash Zooms und Schnitte in der Bewegung, im Stil von Edgar Wright.',
-                'Hier habe ich gelernt, das Modell wie einen Schauspieler zu führen. Ich schrieb: „Er führt den Chip zur Linse, als ob zum Mund“ – und es hielt den Chip hoch, um ihn der Kamera zu zeigen, wahrscheinlich weil Chips in seinen Trainingsdaten meistens so vorkommen. Die Absicht noch genauer zu erklären half nicht. Nur die Bewegung zu beschreiben schon: Hand schnell zur Bildunterkante, der Chip verlässt das Bild nach unten. Es hat beim ersten Versuch funktioniert.',
+                'Hier habe ich gelernt, das Modell wie einen Schauspieler zu führen. Ich schrieb: „Er führt den Chip zur Linse, als ob zum Mund“ – und es hielt den Chip hoch, um ihn der Kamera zu zeigen, wahrscheinlich weil Chips in seinen Trainingsdaten meistens so vorkommen. Die Absicht noch genauer zu erklären half nicht. Nur die Bewegung zu beschreiben schon: Hand schnell zur Bildunterkante, der Chip verlässt das Bild nach unten.',
               ],
               mediaLabel: 'Erster Versuch links, meine Lösung rechts',
-              after: [
-                'Das andere Schwierige war der Raum: wo der Lehrer steht, in welche Richtung die Kamera schwenkt. Ich habe ein nummeriertes Storyboard gemacht, und von da an konnten die KI und ich einfach „Feld 6“ sagen.',
-              ],
-              extraMediaLabel: 'Storyboard, 18 nummerierte Felder auf zwei Blättern',
+              after: [],
+              extraMediaLabel: 'Storyboard für Blocking und Kamerarichtung, 18 Felder',
             },
             {
               id: 'meer',
@@ -113,57 +109,34 @@ export function KrospiSpec() {
                 'Die Fantasie habe ich bewusst typisch gehalten, fast wie billiger Urlaubskitsch: Mittagssonne, ein oranges Brett, Ukulele und Steeldrum. Die Realität ist flaches graues Licht und eine leichte Handkamera. Am meisten Zeit hat der Witz mit der Flaschensammlerin bekommen: Ihr erster Griff wird von seinem Arm blockiert, sie tritt zurück und wartet höflich, dann nimmt sie zwei Flaschen und geht. Er wacht nie auf.',
               ],
               mediaLabel: 'Storyboard, 13 nummerierte Felder',
-              after: [
-                'Hier hat meine Arbeitsweise ihre endgültige Form bekommen. Bei den ersten beiden Spots habe ich gemerkt, was für mich funktioniert: eine Sache nach der anderen entscheiden, und pro Schritt nur eine Art von Entscheidung. Ein Spot steckt voller Entscheidungen, die miteinander verknüpft sind – Konzept, Witz, Kamera, Look, die Formulierung des Prompts. Ich habe sie entkoppelt. Zuerst habe ich Ideen gesammelt und ein Konzept gewählt, dann die Proposition als Anker festgelegt, dann Beat für Beat jeweils ein paar Optionen angesehen und eine gewählt. Erst danach kamen Shot List, Storyboard und Prompts. So habe ich mich nicht verloren, und es passt zu der Art, wie mein Kopf arbeitet.',
-              ],
-              extraMediaLabel: 'So habe ich an Meer gearbeitet: Jede Raute öffnet sich zum Erkunden und schließt sich zur Wahl; danach wird der Spot Ebene für Ebene gebaut.',
-              afterExtra: [
-                'Diesmal gab es keine neuen Fehlerarten. Das System aus den ersten beiden Spots hat gehalten, also gingen die drei Tage in Entscheidungen wie diese.',
-              ],
+              after: [],
+              extraMediaLabel: 'So habe ich Meer geplant: von oben nach unten entscheiden, dann Ebene für Ebene bauen',
             },
           ] satisfies CaseCopy[],
-          trust: {
-            id: 'trust',
-            title: 'Wo ich der KI vertraue',
-            trustLabel: 'Überlasse ich der KI',
-            checkLabel: 'Prüfe ich selbst',
-            trustItems: ['die Ausführung einer einzelnen Einstellung', 'realistische Physik und Bewegung', 'Emotion in einer Performance', 'korrekt benannte Kamerabewegungen'],
-            checkItems: ['Kontinuität zwischen Einstellungen', 'Blocking und links / rechts', 'Tanz aus Text', '„Absichts“-Wörter', 'Stil und Perspektive, die aus Referenzbildern durchsickern', 'wie Musik endet'],
-          },
-          method: {
-            id: 'method',
-            title: 'Arbeitsweise',
-            paragraphs: [
-              'Jede Einstellung ging durch drei Ebenen: Beat (was das Publikum fühlen soll) → Shot List (nur, was man sieht) → Prompt. Ich habe jede Ebene freigegeben, bevor generiert wurde. Wenn ein Ergebnis nicht stimmte, habe ich nachverfolgt, welche Ebene versagt hat, statt neu zu würfeln.',
-            ],
-          },
-          numbers: {
-            id: 'numbers',
-            title: 'In Zahlen',
-            items: ['3 Spots', '7 → 5 → 3 Tage', 'ca. 33 € Generierungskosten', '~200 protokollierte Änderungen, davon weniger als 10, die das Modell schlicht nicht konnte'],
-          },
           flow: {
             aria: 'Ablauf: Konzept, Proposition, Beats, dann Ebenen von Shot List bis Schnitt',
-            legendDiamond: 'Raute: öffnen zum Erkunden, schließen zum Auswählen (Double Diamond)',
-            legendLoop: 'Ergebnis falsch: zurück zur fehlerhaften Ebene',
+            legendDiamond: 'öffnen zum Erkunden, schließen zum Auswählen (Double Diamond)',
+            decide: 'Entscheiden, eins nach dem anderen',
+            build: 'Bauen, Ebene für Ebene',
             explore: 'erkunden',
             choose: 'wählen',
             concept: 'Konzept',
-            conceptNote: ['Brainstorming: wie zeigt man Peinlichkeit,', '1 von 3 Ideen gewählt'],
+            conceptNote: 'Brainstorming: wie zeigt man Peinlichkeit, 1 von 3 Ideen gewählt',
             proposition: 'Proposition',
-            propositionLines: ['Es lohnt sich, sich', 'dafür zu blamieren', '+ Urlaub, ohne', 'wegzufahren'],
-            beats: 'Beats, einzeln',
-            beatsNote: ['pro Beat ein paar Optionen,', 'ich wähle eine'],
+            propositionLines: ['Es lohnt sich, sich dafür zu blamieren', '+ Urlaub, ohne wegzufahren'],
+            beats: 'Beats',
+            beatsNote: 'einzeln, je ein paar Optionen, ich wähle eine',
             beatCheck: ['Beat Sheet', 'als Ganzes prüfen'],
             layers: [
               ['Shot List', 'nur Sichtbares'],
               ['Storyboard', 'nummerierte Felder'],
               ['Performance', 'Referenzbilder'],
-              ['Prompt', 'auf Englisch'],
+              ['Prompt', 'Bewegung statt Absicht'],
               ['Mein OK', 'vor dem Generieren'],
-              ['Generieren', 'Seedance'],
+              ['Generieren', ''],
               ['Schnitt', 'Bild und Ton'],
             ],
+            gateIndex: 4,
             loop: 'Ergebnis falsch? Nach oben verfolgen: Prompt → Shot List → Beat',
           } satisfies FlowDiagramLabels,
         }
@@ -175,7 +148,7 @@ export function KrospiSpec() {
           lead: 'Three spec ads for Krospi, a fictional German crisp brand launching three new flavours.',
           projectDetails: 'Project details',
           client: 'Client',
-          clientValue: 'Krospi (fictional) · Crisps · Germany',
+          clientValue: 'Krospi · Crisps · Germany',
           medium: 'Medium',
           mediumValue: 'Three vertical spots, 35–44 s, 9:16',
           role: 'My role',
@@ -185,7 +158,7 @@ export function KrospiSpec() {
           roleLine:
             'I did the concept, beats, shot lists, look and every review and cut decision. AI generated the images, video, music and sound. Claude Code was my production assistant: it drafted prompts, assembled cuts from my notes and kept the asset, cost and revision logs.',
           disclaimer:
-            'Krospi is a fictional brand. This is an uncommissioned spec project; the films were made with AI tools.',
+            'An uncommissioned spec project; the films were made with AI tools.',
           brief: {
             label: 'Series at a glance',
             propositionLabel: 'Series proposition',
@@ -194,12 +167,12 @@ export function KrospiSpec() {
               { label: 'Mechanism', value: 'A bag of crisps sets off a daydream; one second later, back to reality, still mid-pose' },
               { label: 'Flavours', value: 'French Truffle · Squid Ink · Sea' },
             ],
-            note: 'Fictional brand; I designed the flavours and packaging for this project.',
+            note: 'I designed the flavours and packaging for this project.',
           },
           intro: {
             id: 'learning-curve',
-            title: 'Three spots, one learning curve',
-            text: 'I made the spots one after another and built the workflow as I went. Each one taught me something different, and each took less time than the one before: 7 → 5 → 3 days.',
+            title: 'Three spots, in the order I made them',
+            text: 'I made the spots one after another and built the workflow on the first. Each took less time than the one before: 7 → 5 → 3 days.',
           },
           cases: [
             {
@@ -208,8 +181,8 @@ export function KrospiSpec() {
               meta: 'Supermarket · made first · 7 days, including building the workflow',
               before: [
                 'A bored girl in a discount-supermarket queue sneaks a crisp from the bag in her trolley. The camera dives into the bag, and she’s on a runway in a gold-foil palace, wearing a gown made of truffles. A flash, and she’s back, standing on the checkout belt mid-pose, while the cashier stares into the lens.',
-                'I shot reality like a deadpan mockumentary. When she’s caught, the camera lurches forward and hunts for focus, as if the person filming panicked too. That handheld clumsiness is a big part of why the spot doesn’t feel like AI: most of the friends I showed it to didn’t notice.',
-                'My first attempt generated the whole spot in one go. Every shot looked right on its own, but they didn’t connect: she never ended up on the belt, and the cashier appeared in a grey studio. It wasn’t random; the errors had a pattern. So I rebuilt the spot shot by shot from keyframes and started planning in three layers: beat, shot list, prompt.',
+                'I shot reality like a deadpan mockumentary. When she’s caught, the camera lurches forward and hunts for focus, as if the person filming panicked too. That handheld clumsiness does a lot to keep the spot from looking generated.',
+                'My first attempt generated the whole spot in one go. Every shot looked right on its own, but they didn’t connect: she never ended up on the belt, and the cashier appeared in a grey studio. So I rebuilt the spot shot by shot from keyframes and started planning in three layers: beat, shot list, prompt.',
               ],
               mediaLabel: 'Keyframes from the rebuild, one per shot',
               after: [],
@@ -221,13 +194,11 @@ export function KrospiSpec() {
               before: [
                 'A school gym set up for final exams. A bored teacher on invigilation duty sneaks a black squid-ink crisp from his backpack — a whip pan, and he’s dancing industrial at an underground party. The bell rings: he’s frozen on a student’s desk, out of breath, with the whole room staring.',
                 'I left out transformation effects on purpose; they would have looked cheesy and screamed AI. The comedy is in the camera instead: whip pans, crash zooms and cuts on motion, Edgar Wright style.',
-                'This is where I learned to direct the model like an actor. I wrote “he brings the crisp toward the lens, as if to his mouth”, and it held the crisp up to show the camera, most likely because that’s how crisps appear in its training data. Explaining the intent harder didn’t help. Describing only the motion did: hand quickly to the bottom of the frame, the crisp leaving through the bottom edge. It worked first time.',
+                'This is where I learned to direct the model like an actor. I wrote “he brings the crisp toward the lens, as if to his mouth”, and it held the crisp up to show the camera, most likely because that’s how crisps appear in its training data. Explaining the intent harder didn’t help. Describing only the motion did: hand quickly to the bottom of the frame, the crisp leaving through the bottom edge.',
               ],
               mediaLabel: 'First try on the left, my fix on the right',
-              after: [
-                'The other hard part was space: where the teacher stands, which way the camera turns. I made a numbered storyboard, and from then on the AI and I could simply say “panel 6”.',
-              ],
-              extraMediaLabel: 'Storyboard, 18 numbered panels on two sheets',
+              after: [],
+              extraMediaLabel: 'Storyboard for blocking and camera direction, 18 panels',
             },
             {
               id: 'meer',
@@ -239,57 +210,34 @@ export function KrospiSpec() {
                 'I kept the fantasy deliberately typical, almost cheap-holiday: midday sun, an orange board, ukulele and steel drum. Reality is flat grey light and a light handheld camera. The joke I spent the most time on is the bottle collector: her first reach is blocked by his arm, she steps back and waits politely, then takes two bottles and leaves. He never wakes up.',
               ],
               mediaLabel: 'Storyboard, 13 numbered panels',
-              after: [
-                'This is also where my way of working took its full shape. Making the first two spots, I found what worked for me: decide one thing at a time, and only one kind of thing per step. A spot is full of choices that are tangled together, from the concept and the joke to the camera, the look and the wording of a prompt. I pulled them apart. First I explored and picked a concept, then fixed the proposition as an anchor, then went beat by beat, each time looking at a few options and choosing one. Only after that came the shot list, storyboard and prompts. Working this way, I didn’t get lost, and it suits the way my head works.',
-              ],
-              extraMediaLabel: 'How I worked on Sea: each diamond widens to explore and narrows to choose one; then the spot is built layer by layer.',
-              afterExtra: [
-                'No new kinds of failure this time. The system from the first two spots held, so the three days went into decisions like that one.',
-              ],
+              after: [],
+              extraMediaLabel: 'How I planned Sea: decide top-down, then build layer by layer',
             },
           ] satisfies CaseCopy[],
-          trust: {
-            id: 'trust',
-            title: 'What I trust AI with',
-            trustLabel: 'I trust AI with',
-            checkLabel: 'I check myself',
-            trustItems: ['a single shot’s execution', 'realistic physics and motion', 'emotion in a performance', 'camera moves named correctly'],
-            checkItems: ['continuity between shots', 'blocking and left / right', 'dance from text', '“intent” words', 'style and perspective leaking from reference images', 'how music ends'],
-          },
-          method: {
-            id: 'method',
-            title: 'How I worked',
-            paragraphs: [
-              'Every shot passed three layers: beat (what the audience should feel) → shot list (only what’s visible) → prompt. I approved each layer before generating. When a result was off, I traced which layer failed instead of re-rolling.',
-            ],
-          },
-          numbers: {
-            id: 'numbers',
-            title: 'In numbers',
-            items: ['3 spots', '7 → 5 → 3 days', 'about €33 in generation costs', '~200 logged revisions, fewer than 10 where the model simply couldn’t do it'],
-          },
           flow: {
             aria: 'Flow: concept, proposition, beats, then layers from shot list to edit',
-            legendDiamond: 'Diamond: widen to explore options, narrow to choose one (Double Diamond)',
-            legendLoop: 'Result off: trace back to the layer that failed',
+            legendDiamond: 'widen to explore options, narrow to choose one (Double Diamond)',
+            decide: 'Decide, one thing at a time',
+            build: 'Build, one layer at a time',
             explore: 'explore',
             choose: 'choose',
             concept: 'Concept',
-            conceptNote: ['brainstorm how to show embarrassment,', 'pick 1 of 3 ideas'],
+            conceptNote: 'brainstorm how to show embarrassment, pick 1 of 3 ideas',
             proposition: 'Proposition',
-            propositionLines: ['worth embarrassing', 'yourself for', '+ a holiday without', 'going anywhere'],
-            beats: 'Beats, one at a time',
-            beatsNote: ['a few options per beat,', 'I pick one'],
+            propositionLines: ['worth embarrassing yourself for', '+ a holiday without going anywhere'],
+            beats: 'Beats',
+            beatsNote: 'one at a time, a few options each, I pick one',
             beatCheck: ['Beat sheet', 'check the whole'],
             layers: [
               ['Shot list', 'only what’s visible'],
               ['Storyboard', 'numbered panels'],
               ['Performance', 'reference frames'],
-              ['Prompt', 'in English'],
+              ['Prompt', 'motion, not intent'],
               ['My OK', 'before generating'],
-              ['Generate', 'Seedance'],
+              ['Generate', ''],
               ['Edit', 'cut and sound'],
             ],
+            gateIndex: 4,
             loop: 'Result off? Trace upward: prompt → shot list → beat',
           } satisfies FlowDiagramLabels,
         }
@@ -424,52 +372,9 @@ export function KrospiSpec() {
               <figcaption>{item.extraMediaLabel}</figcaption>
             </figure>
           )}
-          {item.afterExtra && (
-            <div className="case-copy">
-              {item.afterExtra.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-          )}
         </PageSection>
       ))}
 
-      <PageSection title={copy.trust.title} id={copy.trust.id}>
-        <div className="krospi-trust">
-          <div>
-            <p className="krospi-trust__label">{copy.trust.trustLabel}</p>
-            <ul>
-              {copy.trust.trustItems.map((entry) => (
-                <li key={entry}>{entry}</li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <p className="krospi-trust__label">{copy.trust.checkLabel}</p>
-            <ul>
-              {copy.trust.checkItems.map((entry) => (
-                <li key={entry}>{entry}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </PageSection>
-
-      <PageSection title={copy.method.title} id={copy.method.id}>
-        <div className="case-copy">
-          {copy.method.paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
-      </PageSection>
-
-      <PageSection title={copy.numbers.title} id={copy.numbers.id}>
-        <ul className="krospi-numbers">
-          {copy.numbers.items.map((entry) => (
-            <li key={entry}>{entry}</li>
-          ))}
-        </ul>
-      </PageSection>
     </>
   )
 }

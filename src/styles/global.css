@@ -811,87 +811,215 @@ p:last-child {
   max-width: 34rem;
 }
 
-/* Flow diagram (Double Diamond notation + layer row); scrolls sideways on narrow screens */
-.flow-diagram {
-  overflow-x: auto;
-  padding: 1rem;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
+/* Flow diagram (Krospi Meer): decisions in a row, then the build as a vertical chain.
+   Sits in the text column; on phones the row stacks. */
+.flow {
+  max-width: var(--text-width);
+  font-size: 0.85rem;
+  line-height: 1.45;
 }
 
-.flow-diagram svg {
-  display: block;
-  width: 100%;
-  min-width: 720px;
-  height: auto;
+.flow__legend {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1.25rem;
+  color: var(--color-muted);
+  font-size: 0.8rem;
 }
 
-.flow-diagram__label {
-  fill: var(--color-text);
-  font-size: 14px;
+.flow__legend svg {
+  width: 20px;
+  height: 14px;
+  flex: none;
+}
+
+.flow__stage {
+  margin: 0 0 0.6rem;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  text-transform: lowercase;
+}
+
+.flow__decide,
+.flow__build {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.flow__decide {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.flow__step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.flow__step strong {
+  color: var(--color-text);
   font-weight: 600;
 }
 
-.flow-diagram__small {
+.flow__step span {
+  color: var(--color-muted);
+}
+
+.flow__step:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  top: 0.9rem;
+  right: -1.15rem;
+  color: var(--color-muted);
+}
+
+.flow__step--box {
+  align-self: start;
+}
+
+.flow__step--anchor,
+.flow__step--box {
+  padding: 0.6rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+}
+
+.flow__step--anchor {
+  background: var(--color-accent-soft);
+  border: 2px solid var(--color-accent-strong);
+}
+
+.flow__step--anchor:not(:last-child)::after,
+.flow__step--box:not(:last-child)::after {
+  right: -1.2rem;
+}
+
+.flow__glyph {
+  display: block;
+  width: 100%;
+  max-width: 10rem;
+  height: auto;
+  margin-bottom: 0.35rem;
+  overflow: visible;
+}
+
+.flow__glyph--small {
+  max-width: 7.5rem;
+}
+
+.flow__glyph text {
   fill: var(--color-muted);
   font-size: 12px;
 }
 
-.flow-diagram__diamond {
+.flow__diamond {
   fill: var(--color-accent-soft);
   stroke: var(--color-accent);
   stroke-width: 1.5;
 }
 
-.flow-diagram__diamond--faint {
-  opacity: 0.5;
+.flow__diamond--faint {
+  opacity: 0.45;
 }
 
-.flow-diagram__diamond--mid {
-  opacity: 0.75;
+.flow__diamond--mid {
+  opacity: 0.7;
 }
 
-.flow-diagram__divider {
+.flow__divider {
   stroke: var(--color-accent);
   stroke-width: 1;
   stroke-dasharray: 3 3;
   opacity: 0.6;
 }
 
-.flow-diagram__anchor {
-  fill: var(--color-accent-soft);
-  stroke: var(--color-accent-strong);
-  stroke-width: 2;
+/* Build: one layer after another, a line down the left */
+.flow__build li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 1rem;
+  padding: 0.3rem 0 0.3rem 1.25rem;
 }
 
-.flow-diagram__box {
-  fill: var(--color-bg);
-  stroke: var(--color-border);
-  stroke-width: 1.5;
+.flow__build li::before {
+  content: '';
+  position: absolute;
+  left: 0.3rem;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid var(--color-border);
 }
 
-.flow-diagram__gate {
-  fill: var(--color-bg);
-  stroke: var(--color-accent-strong);
-  stroke-width: 2;
+.flow__build li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.75rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--color-bg);
+  border: 1px solid var(--color-muted);
+  box-sizing: border-box;
 }
 
-.flow-diagram__arrow {
-  stroke: var(--color-muted);
-  stroke-width: 1.5;
-  fill: none;
+.flow__build li:first-child::before {
+  top: 0.75rem;
 }
 
-.flow-diagram__arrowhead {
-  fill: var(--color-muted);
+.flow__build li:last-child::before {
+  bottom: auto;
+  height: 0.75rem;
 }
 
-.flow-diagram__loop {
-  stroke: var(--color-accent);
-  stroke-width: 1.5;
-  stroke-dasharray: 5 4;
-  fill: none;
+.flow__build strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.flow__build span {
+  color: var(--color-muted);
+}
+
+.flow__build li.is-gate::after {
+  background: var(--color-accent-strong);
+  border-color: var(--color-accent-strong);
+}
+
+.flow__loop {
+  margin: 0.75rem 0 0;
+  padding-top: 0.6rem;
+  border-top: 1px dashed var(--color-accent);
+  color: var(--color-accent-strong);
+}
+
+@media (max-width: 640px) {
+  .flow__decide {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .flow__step:not(:last-child)::after,
+  .flow__step--anchor:not(:last-child)::after,
+  .flow__step--box:not(:last-child)::after {
+    content: '↓';
+    top: auto;
+    right: auto;
+    left: 0.4rem;
+    bottom: -1.45rem;
+  }
+
+  .flow__build li {
+    grid-template-columns: 7.5rem 1fr;
+    gap: 0.5rem;
+  }
 }
 
 .krospi-storyboard-pair {
@@ -1401,7 +1529,6 @@ p {
 .brief-card__label,
 .brief-card__note,
 .krospi-trust__label,
-.flow-diagram__label,
 .contact-locale,
 .design-work-lightbox__index,
 .project-card__summary,
@@ -1527,14 +1654,6 @@ figcaption {
   .varmr-hero > .varmr-video {
     max-width: 18rem;
   }
-}
-
-/* Diagram: no box, full width, starts on the left edge */
-.flow-diagram {
-  padding: 0;
-  background: none;
-  border: 0;
-  border-radius: 0;
 }
 
 /* Tables: keep the two-column rows, drop the box around them */
