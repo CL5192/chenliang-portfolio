@@ -55,7 +55,7 @@ export function KrospiSpec() {
           tools: 'Tools',
           toolsValue: 'Claude Code · Seedance 2.5 und 2.0 Fast (Dreamina) · GPT Image, Nano Banana, Sonilo (Musik) und ElevenLabs (Stimme, Sound) auf Comfy Cloud',
           roleLine:
-            'Konzept, Beats, Shot Lists, Look und jede Prüf- und Schnittentscheidung kamen von mir. Bilder, Video, Musik und Sound hat KI generiert. Claude Code war mein Produktionsassistent: Es hat Prompts entworfen, Schnitte nach meinen Notizen montiert und Asset-, Kosten- und Änderungsprotokolle geführt.',
+            'Konzept, Beats, Shot Lists, Look und jede Prüf- und Schnittentscheidung kamen von mir. Bilder, Video, Musik und Sound hat KI generiert. Claude Code war mein Produktionsassistent: Es hat Prompts entworfen, Schnitte nach meinen Notizen montiert und die Protokolle geführt (mehr unten).',
           disclaimer:
             'Ein nicht beauftragtes Spec-Projekt; die Filme wurden mit KI-Tools erstellt.',
           brief: {
@@ -113,6 +113,24 @@ export function KrospiSpec() {
               extraMediaLabel: 'So habe ich Meer geplant: von oben nach unten entscheiden, dann Ebene für Ebene bauen',
             },
           ] satisfies CaseCopy[],
+          tracking: {
+            id: 'tracking',
+            title: 'Den Überblick über das Hin und Her behalten',
+            intro: [
+              'Zur fehlerhaften Ebene zurückzugehen funktioniert nur, wenn man findet, was man schon versucht hat. Krospi war das erste Projekt, bei dem ich diese Buchführung an Claude Code abgegeben habe. Die Regeln standen in einer Datei im Projektordner: Jede Art von Protokoll hat einen festen Ort, alte Versionen werden beiseitegelegt statt überschrieben, und ich lese nur eine kurze Statusseite, während die KI den Rest führt.',
+              'Sie hat vier Protokolle geführt:',
+            ],
+            records: [
+              { label: 'Asset-Liste:', text: 'jedes Bild und jeder Clip, ob er verwendet wurde und mit welchem Workflow und welchen Referenzen er entstand (mehrere Hundert Dateien)' },
+              { label: 'Änderungsprotokoll,', text: 'eines pro Spot: was ich gesehen habe, aus welcher Ebene es kam, was geändert wurde, was passiert ist (rund 200 Einträge)' },
+              { label: 'Entscheidungsprotokoll:', text: 'was entschieden, offen oder verworfen ist, und warum' },
+              { label: 'Workflow-Versionen,', text: 'als neue Dateien gespeichert, nie an Ort und Stelle überschrieben' },
+            ],
+            outro: [
+              'Die Bildgenerierungen hat sie über MCP auf Comfy Cloud ausgeführt und die Ergebnisse abgelegt. Videos habe ich in Dreamina generiert; sie hat jeden Download umbenannt, geprüft und protokolliert. Bevor sie eine Korrektur vorschlug, hat sie das Änderungsprotokoll geprüft, damit eine schon gescheiterte Korrektur nicht noch einmal versucht wurde.',
+              'Nichts davon ist der kreative Teil, aber es macht es sicher, seine Meinung zu ändern. Es abzugeben hat meine Aufmerksamkeit bei den Entscheidungen gehalten.',
+            ],
+          },
           flow: {
             aria: 'Ablauf: Konzept, Proposition, Beats, dann Ebenen von Shot List bis Schnitt',
             explore: 'erkunden',
@@ -154,7 +172,7 @@ export function KrospiSpec() {
           tools: 'Tools',
           toolsValue: 'Claude Code · Seedance 2.5 and 2.0 Fast (Dreamina) · GPT Image, Nano Banana, Sonilo (music) and ElevenLabs (voice, sound) on Comfy Cloud',
           roleLine:
-            'I did the concept, beats, shot lists, look and every review and cut decision. AI generated the images, video, music and sound. Claude Code was my production assistant: it drafted prompts, assembled cuts from my notes and kept the asset, cost and revision logs.',
+            'I did the concept, beats, shot lists, look and every review and cut decision. AI generated the images, video, music and sound. Claude Code was my production assistant: it drafted prompts, assembled cuts from my notes and kept the records (more below).',
           disclaimer:
             'An uncommissioned spec project; the films were made with AI tools.',
           brief: {
@@ -212,6 +230,24 @@ export function KrospiSpec() {
               extraMediaLabel: 'How I planned Sea: decide top-down, then build layer by layer',
             },
           ] satisfies CaseCopy[],
+          tracking: {
+            id: 'tracking',
+            title: 'Keeping track of the back and forth',
+            intro: [
+              'Going back to the layer that failed only works if you can find what you tried. Krospi was the first project where I handed that bookkeeping to Claude Code. The rules lived in a file in the project folder: every kind of record has one place, old versions are moved aside instead of overwritten, and I read only a short status page while the AI keeps the rest.',
+              'It kept four records:',
+            ],
+            records: [
+              { label: 'Asset ledger:', text: 'every image and clip, whether it was used, and which workflow and references made it (several hundred files)' },
+              { label: 'Revision log,', text: 'one per spot: what I saw, which layer it came from, what changed, what happened (about 200 entries)' },
+              { label: 'Decision log:', text: 'what is settled, open or dropped, and why' },
+              { label: 'Workflow versions,', text: 'saved as new files, never edited in place' },
+            ],
+            outro: [
+              'It ran the image generations on Comfy Cloud over MCP and filed the results. Video I generated in Dreamina; it renamed, checked and logged each download. Before suggesting a fix, it checked the revision log, so a fix that had already failed wasn’t tried again.',
+              'None of this is the creative part, but it’s what makes changing your mind safe. Handing it off kept my attention on the decisions.',
+            ],
+          },
           flow: {
             aria: 'Flow: concept, proposition, beats, then layers from shot list to edit',
             explore: 'explore',
@@ -371,6 +407,23 @@ export function KrospiSpec() {
         </PageSection>
       ))}
 
+      <PageSection title={copy.tracking.title} id={copy.tracking.id}>
+        <div className="case-copy">
+          {copy.tracking.intro.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+          <ul>
+            {copy.tracking.records.map((record) => (
+              <li key={record.label}>
+                <strong>{record.label}</strong> {record.text}
+              </li>
+            ))}
+          </ul>
+          {copy.tracking.outro.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+      </PageSection>
     </>
   )
 }
