@@ -115,7 +115,7 @@ export function KrospiSpec() {
           ] satisfies CaseCopy[],
           tracking: {
             id: 'tracking',
-            title: 'Den Überblick über das Hin und Her behalten',
+            title: 'Jede Iteration im Blick behalten',
             intro: [
               'Zur fehlerhaften Ebene zurückzugehen funktioniert nur, wenn man findet, was man schon versucht hat. Krospi war das erste Projekt, bei dem ich diese Buchführung an Claude Code abgegeben habe. Die Regeln standen in einer Datei im Projektordner: Jede Art von Protokoll hat einen festen Ort, alte Versionen werden beiseitegelegt statt überschrieben, und ich lese nur eine kurze Statusseite, während die KI den Rest führt.',
               'Sie hat vier Protokolle geführt:',
@@ -232,7 +232,7 @@ export function KrospiSpec() {
           ] satisfies CaseCopy[],
           tracking: {
             id: 'tracking',
-            title: 'Keeping track of the back and forth',
+            title: 'Keeping track of every iteration',
             intro: [
               'Going back to the layer that failed only works if you can find what you tried. Krospi was the first project where I handed that bookkeeping to Claude Code. The rules lived in a file in the project folder: every kind of record has one place, old versions are moved aside instead of overwritten, and I read only a short status page while the AI keeps the rest.',
               'It kept four records:',
