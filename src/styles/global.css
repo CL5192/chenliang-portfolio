@@ -1891,3 +1891,264 @@ figcaption,
 .home-hero + .page-section {
   margin-top: 0;
 }
+
+/* ==========================================================================
+   Fashion Shoot Pipeline (draft)
+   ========================================================================== */
+/* Animation: the standalone HTML, 4:3, full width so its text stays readable */
+.fashion-flow {
+  max-width: none;
+  width: 100%;
+  margin: var(--sp-3) 0;
+}
+
+.fashion-flow iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1204 / 960;
+  border: 0;
+}
+
+.fashion-points {
+  padding-left: 1.1rem;
+}
+
+.fashion-points li + li {
+  margin-top: var(--sp-1);
+}
+
+.fashion-points strong {
+  font-weight: 500;
+}
+
+.fashion-selects img {
+  display: block;
+  width: 100%;
+}
+
+.fashion-selects {
+  max-width: var(--text-width);
+  margin: var(--sp-3) 0;
+}
+
+/* Problem → cause → fix: same hairline look as the project info */
+.fashion-table {
+  max-width: var(--text-width);
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid var(--color-border);
+  font-size: var(--fs-s);
+  margin: 0 0 var(--sp-3);
+}
+
+.fashion-table th,
+.fashion-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.6rem var(--col-gap) 0.6rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.fashion-table th {
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+.page-section > .fashion-table:last-child {
+  margin-bottom: 0;
+}
+
+/* Click to enlarge, then scroll sideways (wide images like a workflow canvas) */
+.zoom-scroll {
+  max-width: var(--text-width);
+  margin: 0 0 var(--sp-3);
+}
+
+.zoom-scroll__thumb {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  background: none;
+  cursor: zoom-in;
+}
+
+.zoom-scroll__thumb img {
+  display: block;
+  width: 100%;
+}
+
+.zoom-scroll__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg, #fff);
+}
+
+.zoom-scroll__close {
+  align-self: flex-end;
+  margin: var(--sp-2);
+  padding: 0.3rem 0.7rem;
+  font: inherit;
+  font-size: var(--fs-s);
+  color: var(--color-text);
+  background: none;
+  border: 1px solid var(--color-text);
+  cursor: pointer;
+}
+
+.zoom-scroll__track {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0 var(--sp-2) var(--sp-2);
+}
+
+.zoom-scroll__track img {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: none;
+}
+
+.page-section > .zoom-scroll:last-child {
+  margin-bottom: 0;
+}
+
+/* Fashion opening: one input photo -> arrow -> a grid of shots */
+.fashion-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) 2.5rem minmax(0, 3fr);
+  align-items: start;
+  margin: 0 0 var(--sp-3);
+}
+
+.fashion-hero figure {
+  margin: 0;
+}
+
+.fashion-hero img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.fashion-hero__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 3px;
+}
+
+.fashion-hero__arrow {
+  align-self: center;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-text);
+  padding-bottom: 1.5rem;
+}
+
+.fashion-hero figcaption {
+  margin-top: var(--sp-1);
+  font-size: var(--fs-s);
+  color: var(--color-muted);
+}
+
+/* Input: four small garment tiles stacked beside the look photo; same height as the look */
+.fashion-hero__in {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  gap: 3px;
+}
+
+/* The look photo sets the height; the tiles fill that height exactly */
+.fashion-hero__in {
+  position: relative;
+}
+
+.fashion-hero__items {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: calc((100% - 3px) / 4);
+  display: grid;
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  gap: 3px;
+}
+
+.fashion-hero__look {
+  grid-column: 2;
+}
+
+.fashion-hero .fashion-hero__items img {
+  aspect-ratio: auto;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+}
+
+@media (max-width: 720px) {
+  .fashion-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .fashion-hero__input {
+    max-width: 80%;
+  }
+
+  .fashion-hero__arrow {
+    transform: rotate(90deg);
+    width: 2rem;
+    padding: var(--sp-1) 0;
+  }
+}
+
+/* Fixes: two before/after pairs side by side, full width */
+.fashion-fixes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--col-gap);
+  margin: var(--sp-3) 0;
+}
+
+.fashion-fixes figure {
+  margin: 0;
+}
+
+.fashion-fixes__pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3px;
+}
+
+.fashion-fixes__pair img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.fashion-fixes__pair span {
+  display: block;
+  margin-top: var(--sp-1);
+  font-size: var(--fs-s);
+  color: var(--color-muted);
+}
+
+.fashion-fixes figcaption {
+  margin-top: var(--sp-1);
+  font-size: var(--fs-s);
+}
+
+@media (max-width: 720px) {
+  .fashion-fixes {
+    grid-template-columns: 1fr;
+  }
+}

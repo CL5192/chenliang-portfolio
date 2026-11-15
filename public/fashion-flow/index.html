@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fashion Shoot Pipeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #111111;
+  --muted: #8a8a8a;
+  --line: #d6d6d6;
+  --bg: #ffffff;
+  --panel: #efefec;
+  --accent: #e8452c;
+  --t: 450ms;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); overflow: hidden; }
+body { font-family: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace; color: var(--ink); }
+.wrap { width: 100%; max-width: 1204px; margin: 0 auto; aspect-ratio: 1204 / 960; position: relative; overflow: hidden; }
+.stage { position: absolute; left: 0; top: 0; width: 1280px; height: 960px; transform-origin: 0 0; }
+
+#title { position: absolute; left: 40px; top: 22px; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+#step { position: absolute; right: 40px; top: 22px; font-size: 13px; color: var(--muted); }
+
+/* ---- workflow (top) ---- */
+.box { position: absolute; border: 1px solid var(--line); background: var(--bg); padding: 10px 12px;
+       transition: border-color var(--t), background var(--t), color var(--t), opacity var(--t); }
+.box .k { font-size: 11px; letter-spacing: .08em; color: var(--muted); text-transform: uppercase; transition: color var(--t); }
+.box .v { font-size: 20px; font-weight: 500; margin-top: 4px; }
+.box.on { border-color: var(--ink); background: var(--ink); color: #fff; }
+.box.on .k { color: #bbb; }
+.box .s { font-size: 11px; color: var(--muted); margin-top: 6px; transition: color var(--t); }
+.box.on .s { color: #ddd; }
+.box.check { border-style: dashed; }
+.box.check.on { border-style: solid; border-color: var(--accent); background: var(--accent); }
+.box.check .k::before { content: "\25C6  "; color: var(--accent); }
+.box.check.on .k::before { color: #fff; }
+
+#outfit { left: 40px; top: 74px; width: 210px; height: 120px; padding: 10px; display: flex; gap: 12px; opacity: 0; }
+#outfit.show { opacity: 1; }
+#outfit img { height: 98px; display: block; }
+#outfit .list { flex: 1; }
+.lib { display: flex; justify-content: space-between; align-items: baseline; font-size: 11px; line-height: 1.75; padding: 0 3px; opacity: 0; transition: opacity var(--t), background var(--t), color var(--t); }
+.lib .k { font-size: 11px; letter-spacing: .02em; text-transform: none; color: var(--muted); }
+.lib .v { display: none; }
+.lib.on { background: var(--ink); color: #fff; }
+.lib.on .k { color: #ddd; }
+.lib.show { opacity: 1; }
+
+#plan     { left: 300px;  top: 74px; width: 170px; height: 120px; }
+#director { left: 530px;  top: 74px; width: 190px; height: 120px; }
+#generate { left: 780px;  top: 74px; width: 170px; height: 120px; }
+#results  { left: 990px;  top: 74px; width: 120px; height: 120px; }
+#pick     { left: 1126px; top: 74px; width: 112px; height: 120px; }
+.tags { margin-top: 10px; display: flex; gap: 6px; }
+.tag { font-size: 11px; border: 1px solid currentColor; padding: 2px 6px; opacity: .35; transition: opacity var(--t), background var(--t), color var(--t); }
+.tag.sel { opacity: 1; background: #fff; color: var(--accent); border-color: #fff; }
+
+svg.lines { position: absolute; left: 0; top: 0; width: 1280px; height: 960px; pointer-events: none; }
+svg.lines > path { fill: none; stroke: var(--line); stroke-width: 1.5; transition: stroke var(--t); marker-end: url(#ah); }
+svg.lines > path.on { stroke: var(--ink); marker-end: url(#ahOn); }
+svg.lines > path.loop { opacity: 0; transition: opacity 600ms, stroke var(--t); }
+svg.lines > path.loop.on { opacity: 1; }
+
+/* ---- explanation (bottom) ---- */
+#explain { position: absolute; left: 40px; top: 238px; width: 1200px; height: 692px; background: var(--panel); }
+#pointer { position: absolute; top: -22px; width: 0; height: 0; border-left: 22px solid transparent; border-right: 22px solid transparent;
+           border-bottom: 22px solid var(--panel); left: 80px; opacity: 0; transition: left 650ms cubic-bezier(.5,0,.3,1), opacity 300ms; }
+#explainHead { position: absolute; left: 32px; top: 22px; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+#explainHead b { color: var(--ink); font-weight: 500; }
+#panel { position: absolute; left: 32px; top: 132px; width: 1136px; height: 520px; }
+#caption { position: absolute; left: 32px; top: 52px; width: 1136px; font-size: 26px; font-weight: 500; line-height: 1.35; transition: opacity 300ms; }
+
+.scene { position: absolute; inset: 0; opacity: 0; transition: opacity var(--t); }
+.scene.show { opacity: 1; }
+.txt { font-size: 22px; line-height: 1.75; }
+.muted { color: var(--muted); }
+.acc { color: var(--accent); }
+.strike { text-decoration: line-through; color: var(--muted); }
+.fade-in { opacity: 0; transition: opacity var(--t); }
+.fade-in.show { opacity: 1; }
+
+/* step 1: mini tables, same width as the reels in step 2 */
+.mini { display: flex; gap: 22px; }
+.mini table { width: 340px; border-collapse: collapse; background: #fff; border: 1px solid #ddd; }
+.mini th { text-align: left; font-weight: 400; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 10px 14px; border-bottom: 1px solid #ddd; }
+.mini td { font-size: 18px; padding: 12px 14px; border-bottom: 1px solid #eee; white-space: nowrap; }
+.mini tr { opacity: 0; transition: opacity 250ms; }
+.mini table.show tr { opacity: 1; }
+.mini table.show tr:nth-child(1) { transition-delay: 0ms; }
+.mini table.show tr:nth-child(2) { transition-delay: 90ms; }
+.mini table.show tr:nth-child(3) { transition-delay: 180ms; }
+.mini table.show tr:nth-child(4) { transition-delay: 270ms; }
+.mini table.show tr:nth-child(5) { transition-delay: 360ms; }
+.mini table.show tr:nth-child(6) { transition-delay: 450ms; }
+.mini table.show tr:nth-child(7) { transition-delay: 540ms; }
+
+.mini tr.more td { color: #b5b5b5; padding: 6px 14px 10px; border-bottom: 0; }
+/* reels */
+.reels { display: flex; gap: 22px; }
+.reel { width: 340px; }
+.reel .lab { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.reel .lab .who { float: right; text-transform: none; letter-spacing: 0; }
+.reel .win { position: relative; height: 210px; overflow: hidden; background: #fff; border: 1px solid #ddd; }
+.reel .win::before, .reel .win::after { content: ""; position: absolute; left: 0; right: 0; height: 70px; z-index: 2; pointer-events: none; }
+.reel .win::before { top: 0; background: linear-gradient(#fff, rgba(255,255,255,.2)); }
+.reel .win::after { bottom: 0; background: linear-gradient(rgba(255,255,255,.2), #fff); }
+.reel .sel { position: absolute; left: 0; right: 0; top: 70px; height: 70px; border-top: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); z-index: 3; pointer-events: none; }
+.reel.dir .sel { border-color: var(--accent); }
+.reel .strip { position: absolute; left: 0; right: 0; top: 0; }
+.reel .strip div { height: 70px; line-height: 70px; padding: 0 14px; font-size: 18px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.reel.idle .win { opacity: .35; }
+.reel { transition: opacity var(--t); }
+.reel.away { opacity: 0; }
+/* step 2: the shot list table that fills up */
+#shotTbl { position: absolute; left: 0; top: 262px; width: 702px; border-collapse: collapse; background: #fff; border: 1px solid #ddd; }
+#shotTbl th { text-align: left; font-weight: 400; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 8px 14px; border-bottom: 1px solid #ddd; }
+#shotTbl td { font-size: 16px; padding: 6px 14px; border-bottom: 1px solid #eee; white-space: nowrap; color: var(--muted); }
+#shotTbl td:first-child { width: 362px; }
+#shotTbl tr.new td { color: var(--ink); font-weight: 500; }
+#shotTbl tr.more td { color: #b5b5b5; padding: 2px 14px; }
+.reel .q { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; color: #bbb; z-index: 1; background: #fff; transition: opacity 300ms; }
+.reel .q.gone { opacity: 0; }
+
+#sGen img { height: 440px; filter: blur(16px); transition: filter 1400ms ease; }
+#sGen.show img.sharp { filter: blur(0); }
+#sLog table { border-collapse: collapse; font-size: 21px; }
+#sLog td { border-top: 1px solid #d9d9d5; padding: 14px 30px 14px 0; vertical-align: top; }
+#sLog td:first-child { color: var(--muted); width: 150px; }
+#sLog tr { opacity: 0; transition: opacity 300ms; }
+#sLog tr.show { opacity: 1; }
+#thumbs { position: relative; width: 600px; height: 320px; transform: scale(1.2); transform-origin: 0 0; }
+#thumbs img { width: 600px; display: block; }
+#thumbs .x { position: absolute; width: 60px; height: 80px; opacity: 0; transition: opacity 300ms; background: rgba(255,255,255,.55); }
+#thumbs .x::before, #thumbs .x::after { content: ""; position: absolute; left: 50%; top: 50%; width: 82px; height: 4px; background: var(--accent); }
+#thumbs .x::before { transform: translate(-50%, -50%) rotate(53deg); }
+#thumbs .x::after { transform: translate(-50%, -50%) rotate(-53deg); }
+#thumbs .x.show { opacity: 1; }
+#sPick .count { position: absolute; left: 760px; top: 40px; font-size: 22px; line-height: 1.8; }
+#sFix .row { display: flex; align-items: center; gap: 28px; }
+#sFix img { height: 420px; display: block; }
+#endcard { position: absolute; inset: 0; background: var(--bg); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 700ms; pointer-events: none; }
+#endcard.show { opacity: 1; }
+#endcard img { height: 880px; }
+
+
+.nav { position: absolute; top: 300px; width: 44px; height: 64px; border: 1px solid var(--ink); background: #fff; color: var(--ink);
+       font: inherit; font-size: 18px; cursor: pointer; z-index: 5; }
+.nav:hover { background: var(--ink); color: #fff; }
+#bPrev { left: -1px; }
+#bNext { right: -1px; }
+#bPlay { position: absolute; right: 32px; top: 18px; font: inherit; font-size: 20px; padding: 10px 22px; border: 1px solid var(--ink); background: #fff; color: var(--ink); cursor: pointer; z-index: 5; }
+#bPlay:hover { background: var(--ink); color: #fff; }
+.clickable { cursor: pointer; }
+.clickable:not(.on):hover { border-color: var(--ink); }
+#panel { left: 64px !important; width: 1072px !important; }
+#explainHead, #caption { left: 64px !important; }
+#caption { width: 940px; white-space: pre-line; }
+</style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+<div class="stage" id="stage">
+  <div id="title">Fashion shoot pipeline</div>
+  <div id="step"></div>
+
+
+  <svg class="lines" viewBox="0 0 1280 960">
+    <defs>
+      <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#d6d6d6"/></marker>
+      <marker id="ahOn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#111"/></marker>
+    </defs>
+    <path d="M252 134 H296"/>
+    <path d="M472 134 H526"/>
+    <path d="M722 134 H776"/>
+    <path d="M952 134 H986"/>
+    <path d="M1112 134 H1122"/>
+    <path class="loop" id="loopArrow" d="M1050 72 V50 H625 V70"/>
+  </svg>
+
+  <div class="box" id="outfit"><img src="anim_assets/look.jpg" alt=""><div class="list"><div class="k">Input</div><div class="v">1 look</div><div class="s">one photo</div></div></div>
+
+  <div class="box" id="plan"><div class="k">Shot list</div><div class="v">30 shots</div><div class="s">table: pose + camera</div></div>
+  <div class="box check" id="director"><div class="k">AI director</div><div class="v">GPT-5 mini</div>
+    <div class="tags"><span class="tag" id="tGo">keep</span><span class="tag" id="tMod">change</span><span class="tag" id="tSkip">skip</span></div></div>
+  <div class="box" id="generate"><div class="k">Image model</div><div class="v">Seedream 5.5</div><div class="s">via Comfy Cloud</div></div>
+  <div class="box" id="results"><div class="k">Log</div><div class="v" id="resCount">0</div><div class="s">results table</div></div>
+  <div class="box check" id="pick"><div class="k">Human pick</div><div class="v" id="pickCount">–</div><div class="s">by me</div></div>
+
+  <div id="explain">
+    <div id="pointer"></div>
+    <button class="nav" id="bPrev" title="Previous step">&#9664;</button>
+    <button class="nav" id="bNext" title="Next step">&#9654;</button>
+    <button id="bPlay" title="Play / pause">&#10074;&#10074; pause</button>
+    <div id="explainHead"></div>
+    <div id="panel">
+      <div class="scene" id="sIn"><div class="mini">
+        <table class="fade-in" id="mt0"><tr><th>pose</th></tr><tr><td>walking</td></tr><tr><td>slouched, arm over backrest</td></tr><tr><td>hand on head</td></tr><tr><td>leaning forward</td></tr><tr><td>kneeling</td></tr><tr class="more"><td>&hellip;</td></tr></table>
+        <table class="fade-in" id="mt1"><tr><th>camera angle</th></tr><tr><td>eye level</td></tr><tr><td>wide-angle, close</td></tr><tr><td>from above</td></tr><tr><td>three-quarter</td></tr><tr><td>side view</td></tr><tr class="more"><td>&hellip;</td></tr></table>
+        <table class="fade-in" id="mt2"><tr><th>prop</th></tr><tr><td>none</td></tr><tr><td>Bauhaus chrome chair</td></tr><tr><td>walnut bar stool</td></tr><tr><td>boucle armchair</td></tr><tr><td>white plinth</td></tr><tr class="more"><td>&hellip;</td></tr></table>
+      </div></div>
+
+      <div class="scene" id="sReels"><div class="reels" id="reels"></div>
+        <table id="shotTbl" class="fade-in"><tr><th>shot list &middot; pose</th><th>camera angle</th></tr><tr><td>vest open</td><td>eye level</td></tr><tr><td>walking</td><td>low angle</td></tr><tr class="more"><td>&hellip;</td><td></td></tr><tr class="new"><td>slouched, arm over backrest</td><td>wide-angle, close</td></tr><tr class="more"><td>&hellip;</td><td></td></tr></table>
+        <div class="txt muted fade-in" id="noneNote" style="margin-top:26px;font-size:19px">why: the pose needs a backrest. Chrome goes with the silver in the outfit.</div></div>
+
+      <div class="scene" id="sCheck"><div class="txt">
+        <div>does the pose work?</div>
+        <div>can you still see the outfit?</div>
+        <div class="acc">&rarr; keep. A natural slouch, the outfit stays readable.</div>
+        <div class="muted fade-in" id="sCheckNote" style="margin-top:18px">on another shot: change. <span class="strike">waist-up</span> &rarr; side view</div>
+      </div></div>
+
+      <div class="scene" id="sGen"><img src="anim_assets/n30.jpg" alt="" id="genImg"></div>
+
+      <div class="scene" id="sLog"><table>
+        <tr><td>shot</td><td>slouched &middot; wide-angle, close</td></tr>
+        <tr><td>GPT-5 mini</td><td class="acc">keep &middot; Bauhaus chrome chair</td></tr>
+        <tr><td>why</td><td>a natural slouch, the outfit stays readable</td></tr>
+        <tr><td>image</td><td>saved to a folder</td></tr>
+      </table></div>
+
+      <div class="scene" id="sBatch"><div class="txt"><div>shot <span id="loopN">1</span> of 30</div></div></div>
+
+      <div class="scene" id="sPick"><div id="thumbs"><img src="anim_assets/thumbs37.jpg" alt=""></div>
+        <div class="count txt"><div>every image, side by side</div><div class="acc fade-in" id="pickNote">✕ = rejected</div></div></div>
+
+    </div>
+    <div id="caption"></div>
+  </div>
+
+  <div id="endcard"><img src="anim_assets/selects.jpg" alt=""></div>
+</div>
+</div>
+
+<script>
+(function () {
+  const $ = id => document.getElementById(id);
+  const stage = $('stage'), wrap = $('wrap');
+  // the content spans x 40..1240 of the 1280 stage: show 38..1242 (2px to spare), so there is no empty margin at the sides
+  function fit() { stage.style.transform = 'scale(' + (wrap.clientWidth / 1204) + ') translateX(-38px)'; }
+  window.addEventListener('resize', fit); fit();
+
+  // ---- reels ----
+  const REELS = [
+    { lab: 'Pose', who: 'drawn at random', dir: false, target: 'slouched, arm over backrest',
+      items: ['vest open', 'walking', 'hand on head', 'arms crossed', 'fixing a cuff', 'leaning forward', 'kneeling', 'slouched, arm over backrest', 'hand on hip', 'crouching'] },
+    { lab: 'Camera angle', who: 'takes turns', dir: false, target: 'wide-angle, close',
+      items: ['eye level', 'low angle', 'from above', 'three-quarter', 'from behind', 'side view', 'waist-up', 'wide-angle, close'] },
+    { lab: 'Prop', who: 'GPT-5 mini picks', dir: true, target: 'Bauhaus chrome chair',
+      items: ['none', 'walnut bar stool', 'school stool', 'orange metal stool', 'steel stool', "director's chair", 'folding chair', 'Bauhaus chrome chair', 'boucle armchair', 'white plinth'] },
+
+  ];
+  const H = 70, REP = 4;
+  const reelEls = REELS.map(r => {
+    const el = document.createElement('div'); el.className = 'reel' + (r.dir ? ' dir' : '');
+    el.innerHTML = '<div class="lab">' + r.lab + '<span class="who">' + r.who + '</span></div><div class="win"><div class="strip"></div><div class="sel"></div><div class="q">?</div></div>';
+    const strip = el.querySelector('.strip');
+    for (let k = 0; k < REP; k++) r.items.forEach(t => { const d = document.createElement('div'); d.textContent = t; strip.appendChild(d); });
+    $('reels').appendChild(el);
+    return el;
+  });
+  function reelReset(i, idle) {
+    const el = reelEls[i], strip = el.querySelector('.strip');
+    strip.style.transition = 'none'; strip.style.transform = 'translateY(' + H + 'px)';
+    el.classList.toggle('idle', !!idle); el.querySelector('.q').classList.remove('gone');
+  }
+  function reelSpin(i, ms) {
+    const r = REELS[i], el = reelEls[i], strip = el.querySelector('.strip');
+    el.classList.remove('idle'); el.querySelector('.q').classList.add('gone');
+    const idx = (REP - 1) * r.items.length + r.items.indexOf(r.target);
+    void strip.offsetHeight;
+    strip.style.transition = FF ? 'none' : 'transform ' + ms + 'ms cubic-bezier(.12,.7,.18,1)';
+    strip.style.transform = 'translateY(' + (H - idx * H) + 'px)';
+  }
+
+  // ---- thumbs ----
+  const REJ = [3, 4, 13, 14, 17, 23, 27];
+  const thumbs = $('thumbs');
+  REJ.forEach(i => { const x = document.createElement('div'); x.className = 'x';
+    x.style.left = (i % 10) * 60 + 'px'; x.style.top = Math.floor(i / 10) * 80 + 'px'; thumbs.appendChild(x); });
+  const xs = [...thumbs.querySelectorAll('.x')];
+
+  // ---- helpers ----
+  const boxes = ['plan', 'director', 'generate', 'results', 'pick'].map($);
+  function only(id) { boxes.forEach(b => b.classList.toggle('on', b.id === id)); }
+  function arr(i) { document.querySelectorAll('svg.lines > path').forEach((p, k) => p.classList.toggle('on', k === i)); }
+  function scene(id) { document.querySelectorAll('.scene').forEach(s => s.classList.toggle('show', s.id === id)); }
+  const HEADS = { 1: ['Input', 140], 2: ['Shot list', 385], 3: ['AI director', 625], 4: ['AI director', 625], 5: ['Image model', 865],
+                  6: ['Log', 1050], 7: ['All 30 shots', 1050], 8: ['Human pick', 1182] };
+  function head(n) {
+    const h = HEADS[n], el = $('explainHead'), pt = $('pointer');
+    if (!h) { el.innerHTML = ''; pt.style.opacity = 0; return; }
+    el.innerHTML = 'Step ' + n + ' / 8 &middot; <b>' + h[0] + '</b>';
+    pt.style.left = (h[1] - 40 - 22) + 'px'; pt.style.opacity = 1;
+  }
+  function cap(text, n) { const c = $('caption'); c.style.opacity = 0; setTimeout(() => { c.textContent = text; c.style.opacity = 1; }, 250);
+    $('step').textContent = ''; head(n); }
+  function count(el, to, ms) { if (FF) { el.textContent = to; return; } const t0 = performance.now(); (function f(t) { const k = Math.min(1, (t - t0) / ms); el.textContent = Math.round(to * k); if (k < 1) requestAnimationFrame(f); })(t0); }
+
+  let timers = [];
+  let OFF = 0, STOP = Infinity, FF = false;
+  const at = (ms, fn) => {
+    if (ms < OFF) { timers.push(setTimeout(() => { FF = true; try { fn(); } finally { FF = false; } }, 0)); return; }
+    if (ms >= STOP) return;
+    timers.push(setTimeout(fn, ms - OFF));
+  };
+  const STEPS = [200, 4200, 8600, 13000, 17200, 20600, 24000, 27200];
+  const END = 32400, LOOP = 36400;
+  let cur = 0, playing = true;
+
+  function reset() {
+    timers.forEach(clearTimeout); timers = [];
+    document.querySelectorAll('.lib, #outfit').forEach(e => e.classList.remove('show'));
+    document.querySelectorAll('.lib .v').forEach(v => v.textContent = '0');
+    ['tGo', 'tMod', 'tSkip'].forEach(t => $(t).classList.remove('sel'));
+    document.querySelectorAll('.fade-in').forEach(e => e.classList.remove('show'));
+    document.querySelectorAll('#sLog tr').forEach(r => r.classList.remove('show'));
+    $('genImg').classList.remove('sharp');
+    xs.forEach(x => x.classList.remove('show'));
+    $('resCount').textContent = '0'; $('pickCount').textContent = '–';
+    $('endcard').classList.remove('show');
+    reelReset(0, false); reelReset(1, false); reelReset(2, true); reelEls[2].classList.add('away');
+    only(null); scene(null); arr(-1); cap('', 0);
+  }
+
+  function run() {
+    reset();
+    // 1 inputs
+    at(200, () => { cap('Everything starts with one photo of a look.\nThe workflow shoots it in different poses.', 1); $('outfit').classList.add('show'); scene('sIn'); });
+    [0, 1, 2].forEach(i => at(700 + i * 400, () => { $('mt' + i).classList.add('show'); }));
+    // 2 shot list: pose + camera reels
+    at(4200, () => { cap('Poses are drawn at random. Camera angles take turns.\nTogether they make 30 shots.', 2); only('plan'); arr(0); scene('sReels'); });
+    at(4800, () => reelSpin(0, 2000));
+    at(5200, () => reelSpin(1, 2000));
+    at(7500, () => $('shotTbl').classList.add('show'));
+    // 3 director checks
+    at(8600, () => { cap('GPT-5 mini looks at each shot before any image is made.\nIt can keep it, change it, or skip it.', 3); only('director'); arr(1); scene('sCheck'); });
+    at(9300, () => $('tSkip').classList.add('sel'));
+    at(9700, () => { $('tSkip').classList.remove('sel'); $('tMod').classList.add('sel'); });
+    at(10100, () => { $('tMod').classList.remove('sel'); $('tGo').classList.add('sel'); });
+    at(11000, () => $('sCheckNote').classList.add('show'));
+    // 4 director picks prop + composition
+    at(13000, () => { cap('GPT-5 mini acts as the director.\nIt makes sure pose, camera and prop fit together.', 4); scene('sReels'); reelEls[2].classList.remove('away'); $('shotTbl').classList.remove('show'); });
+    at(13500, () => reelSpin(2, 2000));
+    at(15700, () => $('noneNote').classList.add('show'));
+    // 5 generate
+    at(17200, () => { cap('Now Seedream 5.5 turns the prompt into an image.', 5); only('generate'); arr(2); scene('sGen'); });
+    at(17500, () => $('genImg').classList.add('sharp'));
+    // 6 log
+    at(20600, () => { cap('Every image is documented and tracked in a results table.', 6); only('results'); arr(3); scene('sLog'); $('resCount').textContent = '1'; });
+    document.querySelectorAll('#sLog tr').forEach((r, i) => at(20900 + i * 350, () => r.classList.add('show')));
+    // 7 batch
+    at(24000, () => { cap('One click in n8n repeats this for all 30 shots.', 7); scene('sBatch'); only(null); arr(-1); const P = document.querySelectorAll('svg.lines > path'); [2, 3, 5].forEach(k => P[k].classList.add('on')); });
+    for (let n = 2; n <= 30; n++) at(24300 + (n - 2) * 80, () => { $('resCount').textContent = n; $('loopN').textContent = n; });
+
+    // 8 pick
+    at(27200, () => { cap('Last, I go through every image and keep the best 30.', 8); only('pick'); arr(4); scene('sPick'); $('pickCount').textContent = '…'; });
+    at(27900, () => $('pickNote').classList.add('show'));
+    xs.forEach((x, i) => at(28100 + i * 200, () => x.classList.add('show')));
+    at(29800, () => { $('pickCount').textContent = '30'; });
+    // end
+    at(32400, () => { cap('', 0); scene(null); only(null); $('endcard').classList.add('show'); });
+    at(LOOP, () => { if (playing) goTo(0, true); });
+  }
+  // ---- controller ----
+  function paintDots() {}
+  function setPlaying(v) { playing = v; $('bPlay').innerHTML = v ? '&#10074;&#10074; pause' : '&#9654; play'; }
+  const BOX_STEP = { outfit: 0, plan: 1, director: 2, generate: 4, results: 5, pick: 7 };
+  Object.entries(BOX_STEP).forEach(([id, st]) => { const el = $(id); el.classList.add('clickable'); el.title = 'Show this step'; el.onclick = () => goTo(st, false); });
+  // keep `cur` in sync while autoplaying
+  function track() { STEPS.forEach((t, i) => at(t, () => { cur = i; paintDots(); })); at(END, () => { cur = STEPS.length - 1; paintDots(); }); }
+  function goTo(i, autoplay) {
+    cur = Math.max(0, Math.min(STEPS.length - 1, i));
+    setPlaying(autoplay);
+    OFF = cur === 0 ? 0 : STEPS[cur];
+    STOP = autoplay ? Infinity : (cur + 1 < STEPS.length ? STEPS[cur + 1] : END);
+    run(); track(); paintDots();
+  }
+  // loop: after the last step comes step 1 again, and before step 1 comes the last step
+  const N = STEPS.length;
+  const prev = () => goTo((cur - 1 + N) % N, false);
+  const next = () => goTo((cur + 1) % N, false);
+  $('bPrev').onclick = prev;
+  $('bNext').onclick = next;
+  $('bPlay').onclick = () => { if (playing) { timers.forEach(clearTimeout); timers = []; setPlaying(false); } else { goTo(cur + 1 < STEPS.length ? cur + 1 : 0, true); } };
+  window.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') next();
+    else if (e.key === 'ArrowLeft') prev();
+    else if (e.key === ' ') { e.preventDefault(); $('bPlay').click(); }
+  });
+  const startT = Number(new URLSearchParams(location.search).get('t') || 0) * 1000;
+  if (startT) { let i = 0; STEPS.forEach((t, k) => { if (startT >= t) i = k; }); goTo(i, true); } else { goTo(0, true); }
+})();
+</script>
+</body>
+</html>

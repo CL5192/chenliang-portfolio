@@ -10,6 +10,7 @@ import dingMuseumCover from '../assets/projects/ding-museum-cover.jpg'
 import krospiCover from '../assets/projects/krospi/krospi-card.jpg'
 import haldeCover from '../assets/projects/look-study/look-study-cover.jpg'
 import varmrCover from '../assets/projects/varmr/varmr-card.jpg'
+import fashionShootCover from '../assets/projects/fashion-shoot/cover-grid.jpg'
 import type { Locale } from '../i18n/types'
 
 /** 'ai' = current AI work (shown first on Home); 'earlier' = 3D and concept design */
@@ -148,6 +149,22 @@ const projectsSource: ProjectSource[] = [
     tags: ['AI Stills', 'Spec Ad', 'Beauty'],
     group: 'ai',
     order: 0.8,
+  },
+  {
+    slug: 'fashion-shoot',
+    title: {
+      en: 'Fashion Shoot Pipeline',
+      de: 'Fashion Shoot Pipeline',
+    },
+    summary: {
+      // Draft: DE follows once the EN page is final
+      en: 'An n8n workflow that shoots one look in thirty poses, with an AI check before every image.',
+      de: 'An n8n workflow that shoots one look in thirty poses, with an AI check before every image.',
+    },
+    coverImage: fashionShootCover,
+    tags: ['AI Workflow', 'n8n', 'Fashion'],
+    group: 'ai',
+    order: 0.2,
   },
 ]
 
