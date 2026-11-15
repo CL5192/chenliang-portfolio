@@ -157,9 +157,8 @@ const projectsSource: ProjectSource[] = [
       de: 'Fashion Shoot Pipeline',
     },
     summary: {
-      // Draft: DE follows once the EN page is final
       en: 'An n8n workflow that shoots one look in thirty poses, with an AI check before every image.',
-      de: 'An n8n workflow that shoots one look in thirty poses, with an AI check before every image.',
+      de: 'Ein n8n-Workflow, der einen Look in dreißig Posen fotografiert, mit einer KI-Prüfung vor jedem Bild.',
     },
     coverImage: fashionShootCover,
     tags: ['AI Workflow', 'n8n', 'Fashion'],

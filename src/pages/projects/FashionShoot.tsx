@@ -25,8 +25,7 @@ import { useI18n } from '../../i18n/I18nContext'
 
 const slug = 'fashion-shoot'
 
-// Draft: EN only for now. DE is written once the EN text is final.
-const copy = {
+const copyEn = {
   backToProjects: '<- Back to all work',
   fallbackTitle: 'Fashion Shoot Pipeline',
   lead: 'An n8n workflow that turns one photo of a look into a 30-shot editorial. GPT-5 mini checks each shot before it is generated; I pick the final images.',
@@ -115,9 +114,99 @@ const copy = {
   },
 }
 
+const copyDe: typeof copyEn = {
+  backToProjects: '<- Zurück zur Übersicht',
+  fallbackTitle: 'Fashion Shoot Pipeline',
+  lead: 'Ein n8n-Workflow, der aus einem Foto eines Looks ein Editorial mit 30 Shots macht. GPT-5 mini prüft jeden Shot, bevor er generiert wird; die finalen Bilder wähle ich aus.',
+  hero: {
+    inputLabel: 'Input · der Look + vier Referenzen der Einzelteile',
+    itemAlts: ['Silberne Pufferweste, vorne und hinten', 'Gestreiftes T-Shirt, vorne und hinten', 'Hellblaue Cargo-Jeans, vorne und hinten', 'Silberblaue Sneaker von drei Seiten'],
+    inputAlt: 'Der Look von vorne: silberne Pufferweste, gestreiftes T-Shirt, hellblaue Cargo-Jeans, silberne Sneaker',
+    outputLabel: 'Output · 30 Shots, 8 davon hier',
+    outputAlt: 'Derselbe Look in einer anderen Pose',
+  },
+  projectDetails: 'Projektdetails',
+  medium: 'Medium',
+  mediumValue: '30 Stills aus einem Look',
+  role: 'Meine Rolle',
+  roleValue: 'Allein, November 2026',
+  output: 'Output',
+  outputValue: '37 Bilder generiert, 30 ausgewählt',
+  tools: 'Tools',
+  toolsValue: 'n8n · Comfy Cloud API · Seedream 5.5 · OpenAI GPT-5 mini · Claude Code als Produktionsassistent',
+  disclaimer: 'Ein selbst initiiertes Testprojekt; die Bilder wurden mit KI erstellt.',
+  workflow: {
+    id: 'workflow',
+    title: 'Der Workflow',
+    text: 'Eine Shotliste kombiniert je eine Pose mit einem Kamerawinkel. Für jeden Shot holt der Workflow die vollständigen Beschreibungen aus kleinen Tabellen, lässt GPT-5 mini den Shot prüfen und anpassen, schickt den Prompt mit fünf Outfit-Referenzen an Seedream 5.5, speichert das Bild und protokolliert die Entscheidung. Ein Durchlauf deckt alle 30 Shots ab.',
+    animationTitle: 'So läuft der Workflow, Schritt für Schritt',
+    animationHint: 'Mit den Pfeilen oder per Klick auf einen Schritt durchgehen. Die Animation ist auf Englisch.',
+    canvasAlt: 'Der Workflow im n8n-Editor',
+    canvasCaption: 'Der echte Workflow in n8n. Zum Vergrößern klicken.',
+    close: 'schließen ×',
+  },
+  design: {
+    id: 'design',
+    title: 'Aufbau',
+    points: [
+      {
+        lead: 'Tabellen statt eines langen Prompts.',
+        text: 'Posen, Kamerawinkel, Requisiten und Bildausschnitte sind Zeilen, die ich bearbeiten kann, ohne den Workflow anzufassen.',
+      },
+      {
+        lead: 'Die Pose kommt zuerst.',
+        text: 'GPT-5 mini darf eine Pose umformulieren, die Kamera wechseln oder Requisite und Bildausschnitt wählen, aber die Pose nicht ersetzen.',
+      },
+      {
+        lead: 'Prüfen vor dem Generieren.',
+        text: 'Jeder Shot wird behalten, geändert oder übersprungen, bevor er etwas kostet.',
+      },
+    ],
+  },
+  testing: {
+    id: 'fixes',
+    title: 'Korrekturen aus echten Durchläufen',
+    text: 'Ich habe kleine Batches laufen lassen und jedes fehlerhafte Bild bis zu seiner Ursache zurückverfolgt.',
+    before: 'Vorher',
+    after: 'Nachher',
+    pairs: [
+      {
+        caption: 'Kopf abgeschnitten → Bildausschnitt korrigiert',
+        alts: ['Model sitzt am Boden, der Bildrand schneidet den Kopf oben ab', 'Derselbe Shot nach der Korrektur, der ganze Kopf im Bild'],
+      },
+      {
+        caption: 'Stuhl verbogen, damit die Pose passt → echte Proportionen',
+        alts: ['Holzstuhl mit schräger Sitzfläche und gestreckten Beinen', 'Dieselbe Pose auf einem verchromten Klappstuhl mit normalen Proportionen'],
+      },
+    ],
+    head: ['Problem', 'Ursache', 'Korrektur'],
+    rows: [
+      ['Kopf abgeschnitten', 'Die Tabelle mit den Bildausschnitten sagte „Kopf oben anschneiden“', 'Diesen Ausschnitt neu geschrieben: Kopf immer im Bild'],
+      ['Stühle verbogen, damit die Pose passt', 'Die Regel ließ den Stuhl nachgeben', 'Den Körper anpassen, nicht den Stuhl; sonst überspringen'],
+      ['Schlichte Holzstühle', 'Sitzbeschreibungen zu vage', 'Material und Oberfläche pro Sitz; Metall passend zum Outfit'],
+      ['Katalogartige Ausschnitte', 'Jeder Kamerawinkel sagte „Ganzkörper“', 'Eine Tabelle mit Bildausschnitten ergänzt'],
+    ],
+  },
+  results: {
+    id: 'results',
+    title: 'Ergebnis',
+    text: 'Letzter Durchlauf: 30 Shots geplant, 37 Bilder generiert (7 Wiederholungen nach der Korrektur des Bildausschnitts), 30 Bilder ausgewählt. Bei zwei Shots habe ich beide Versionen behalten.',
+    selectsAlt: 'Die 30 ausgewählten Bilder im Raster',
+  },
+  soft: {
+    id: 'soft-rules',
+    title: 'Weiche Regeln, harte Grenzen',
+    text: [
+      'Die Posentabelle ist locker. Jeder Eintrag sagt, wie der Körper zum Sitz und zur Kamera steht. Er sagt nicht, wo die Hände sind. Das entscheiden GPT-5 mini und das Bildmodell, und die Posen wirken dadurch natürlicher.',
+      'Der Nachteil: Das Modell verbiegt, was nicht festgelegt ist, damit eine Pose funktioniert. In einem Batch hat es den Stuhl verbogen. Harte Regeln habe ich nur dort ergänzt, wo das passiert ist: Sitze behalten echte Proportionen, der Kopf bleibt im Bild.',
+    ],
+  },
+}
+
 export function FashionShoot() {
   const { locale } = useI18n()
   const project = getProjectBySlug(slug, locale)
+  const copy = locale === 'de' ? copyDe : copyEn
 
   return (
     <>

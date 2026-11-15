@@ -10,7 +10,7 @@ type ZoomScrollImageProps = {
 /**
  * A small image on the page; click it to open it large.
  * Large view: the image fills the screen height and scrolls sideways,
- * for wide images like a workflow canvas.
+ * for wide images like a workflow canvas. Click the large image (or Esc / close) to go back.
  */
 export function ZoomScrollImage({ src, alt, caption, closeLabel }: ZoomScrollImageProps) {
   const [open, setOpen] = useState(false)
@@ -49,6 +49,7 @@ export function ZoomScrollImage({ src, alt, caption, closeLabel }: ZoomScrollIma
               alt={alt}
               style={naturalHeight ? { maxHeight: naturalHeight * 1.5 } : undefined}
               onLoad={(event) => setNaturalHeight(event.currentTarget.naturalHeight)}
+              onClick={() => setOpen(false)}
             />
           </div>
         </div>

@@ -2014,6 +2014,7 @@ figcaption,
   height: 100%;
   width: auto;
   max-width: none;
+  cursor: zoom-out;
 }
 
 .page-section > .zoom-scroll:last-child {
