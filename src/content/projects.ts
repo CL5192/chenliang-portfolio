@@ -163,7 +163,7 @@ const projectsSource: ProjectSource[] = [
     coverImage: fashionShootCover,
     tags: ['AI Workflow', 'n8n', 'Fashion'],
     group: 'ai',
-    order: 0.2,
+    order: -1,
   },
 ]
 
