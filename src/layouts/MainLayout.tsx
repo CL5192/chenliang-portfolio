@@ -17,7 +17,7 @@ const pageNames: Record<string, Record<Locale, string>> = {
 function getDocumentTitle(pathname: string, locale: Locale): string {
   const path = pathname.replace(/\/+$/, '') || '/'
   if (path === '/') {
-    return `${SITE_NAME} · Generative AI Artist`
+    return `${SITE_NAME} · Creative Technologist`
   }
 
   const projectSlug = path.match(/^\/projects\/([^/]+)/)?.[1]

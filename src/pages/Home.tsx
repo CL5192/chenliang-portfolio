@@ -10,13 +10,13 @@ export function Home() {
   const copy =
     locale === 'de'
       ? {
-          heroTitle: 'Ich mache KI-Videospots und Bildserien in Berlin.',
+          heroTitle: 'Creative Technologist in Berlin. Ich mache KI-Videos und Bilder und baue die Workflows dahinter.',
           heroSubtitle: 'Davor 12 Jahre Concept Design für Spiele.',
           aiWork: 'KI-Arbeiten',
           earlierWork: 'Frühere Arbeiten: 3D und Concept Design',
         }
       : {
-          heroTitle: 'I make AI video ads and image series in Berlin.',
+          heroTitle: 'Creative technologist in Berlin. I make AI video and images, and build the workflows behind them.',
           heroSubtitle: 'Before that, 12 years of concept design for games.',
           aiWork: 'AI work',
           earlierWork: 'Earlier work: 3D and concept design',
